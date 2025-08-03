@@ -1,165 +1,76 @@
 <?php
-if ( ! function_exists( 'echonews_setup' ) ) :
+function theme_support_EchoNews()
+{
+    //add the support for title tag
+    add_theme_support('title-tag');
 
-function echonews_setup() {
+    //add theme support or thepost thumbnails
+    add_theme_support('post-thumbnails');
 
-    /*
-     * Make theme available for translation.
-     * Translations can be filed in the /languages/ directory.
-     */
-    /* Pinegrow generated Load Text Domain Begin */
-    load_theme_textdomain( 'echonews', get_template_directory() . '/languages' );
-    /* Pinegrow generated Load Text Domain End */
+    //add theme support for custom logo
+    add_theme_support('custom-logo', array(
+        'height' => 200,
+        'width' => 400,
+        'flex-height' => true,
+        'flex-width' => true,
+    ));
 
-    // Add default posts and comments RSS feed links to head.
-    add_theme_support( 'automatic-feed-links' );
+    //add theme support for the custom background
+    // add_theme_support('custon-backlground', array(
+    //     'default-color' => 'ffffff',
+    //     'default-image' => '',
+    // ));
 
-    /*
-     * Let WordPress manage the document title.
-     */
-    add_theme_support( 'title-tag' );
-    
-    /*
-     * Enable support for Post Thumbnails on posts and pages.
-     */
-    add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 825, 510, true );
+    //add theme support for the HTML5 support
+    add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
 
-    // Add menus.
-    register_nav_menus( array(
-        'primary' => __( 'Primary Menu', 'echonews' ),
-        'social'  => __( 'Social Links Menu', 'echonews' ),
-    ) );
+    //add theme support for the automatic feed links
+    // add_theme_support('automatic-feed-links');
 
-    /*
-     * Switch default core markup for search form, comment form, and comments
-     * to output valid HTML5.
-     */
-    add_theme_support( 'html5', array(
-        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
-    ) );
-
-    /*
-     * Enable support for Post Formats.
-     */
-    add_theme_support( 'post-formats', array(
-        'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
-    ) );
+    //add theme support for selective refresh widgets(This feature enables Selective Refresh for Widgets being managed within the Customizer.)
+    add_theme_support('customize-selective-refresh-widgets');
 }
-endif; // echonews_setup
-
-add_action( 'after_setup_theme', 'echonews_setup' );
+add_action('after_setup_theme', 'theme_support_EchoNews');
 
 
-if ( ! function_exists( 'echonews_init' ) ) :
+// enqueue styles and scripts
+function register_style_EchoNews()
+{
+    // wp_enqueue_style($handle, $src, $deps, $ver, $media);
 
-function echonews_init() {
+    $version = wp_get_theme()->get('version');
 
-    
-    // Use categories and tags with attachments
-    register_taxonomy_for_object_type( 'category', 'attachment' );
-    register_taxonomy_for_object_type( 'post_tag', 'attachment' );
-
-    /*
-     * Register custom post types. You can also move this code to a plugin.
-     */
-    /* Pinegrow generated Custom Post Types Begin */
-
-    /* Pinegrow generated Custom Post Types End */
-    
-    /*
-     * Register custom taxonomies. You can also move this code to a plugin.
-     */
-    /* Pinegrow generated Taxonomies Begin */
-
-    /* Pinegrow generated Taxonomies End */
-
+    wp_enqueue_style('EchoNews-style', get_template_directory_uri() . '/style.css', array(), $version, 'all');
+    wp_enqueue_style('Fontawesome-EchoNews', get_template_directory_uri() . '/assets/css/plugins/fontawesome-5.css', array(), '6.1.1', 'all');
+    wp_enqueue_style('Bootstrap-EchoNews', get_template_directory_uri() . '/assets/css/vendor/bootstrap.min.css', array(), '5.0.2', 'all');
+    wp_enqueue_style('Swiper-EchoNews', get_template_directory_uri() . '/assets/css/vendor/swiper.css', array(), '9.3.2', 'all');
+    wp_enqueue_style('Metismenu-EchoNews',  get_template_directory_uri() . '/assets/css/vendor/metismenu.css', array(), $version, 'all');
+    wp_enqueue_style('magnificpopup-EchoNews', get_template_directory_uri() . '/assets/css/vendor/magnific-popup.css', array(), $version, 'all');
 }
-endif; // echonews_setup
+add_action('wp_enqueue_scripts', 'register_style_EchoNews');
 
-add_action( 'init', 'echonews_init' );
+function register_scripts_EchoNews()
+{
+    // wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
 
+    $version = wp_get_theme()->get('version');
 
-if ( ! function_exists( 'echonews_widgets_init' ) ) :
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('mainjs-EchoNews', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $version, true);
+    wp_enqueue_script('audio-EchoNews', get_template_directory_uri() . '/assets/js/plugins.audio.js', array('jquery'), $version, true);
+    wp_enqueue_script('bootstrap-EchoNews', get_template_directory_uri() . '/assets/js/vendor/bootstrap.min.js', array('jquery'), '5.0.2', true);
+    wp_enqueue_script('swiper-EchoNews', get_template_directory_uri() . '/assets/js/vendor/swiper.js', array('jquery'), '9.3.2', true);
+    wp_enqueue_script('metismenu-EchoNews', get_template_directory_uri() . '/assets/js/vendor/metisMenu.min.js', array('jquery'), $version, true);
+    wp_enqueue_script('magnificpopup-EchoNews', get_template_directory_uri() . '/assets/js/plugins/magnific-popup.js', array('jquery'), $version, true);
+    wp_enqueue_script('contactform-EchoNews', get_template_directory_uri() . '/assets/js/plugins/contact-form.js', array('jquery'), $version, true);
+    wp_enqueue_script('resize-sensor-EchoNews', get_template_directory_uri() . '/assets/js/plugins/resize-sensor.min.js', array('jquery'), $version, true);
+    wp_enqueue_script('theia-sticky-sidebar-EchoNews', get_template_directory_uri() . '/assets/js/plugins/theia-sticky-sidebar.min.js', array('jquery'), $version, true);
+    // wp_enqueue_script('anywhere-home-EchoNews', get_template_directory_uri() . '/assets/js/anywhere-home.js', array('jquery'), $version, true);
 
-function echonews_widgets_init() {
-
-    /*
-     * Register widget areas.
-     */
-    /* Pinegrow generated Register Sidebars Begin */
-
-    /* Pinegrow generated Register Sidebars End */
+    // Localize script to pass data from PHP to JavaScript
+    // wp_localize_script('mainjs-EchoNews', 'echoNewsData', array(
+    //     'ajaxUrl' => admin_url('admin-ajax.php'),
+    //     'nonce' => wp_create_nonce('echo_news_nonce'),
+    // ));
 }
-add_action( 'widgets_init', 'echonews_widgets_init' );
-endif;// echonews_widgets_init
-
-
-
-if ( ! function_exists( 'echonews_customize_register' ) ) :
-
-function echonews_customize_register( $wp_customize ) {
-    // Do stuff with $wp_customize, the WP_Customize_Manager object.
-
-    /* Pinegrow generated Customizer Controls Begin */
-
-    /* Pinegrow generated Customizer Controls End */
-
-}
-add_action( 'customize_register', 'echonews_customize_register' );
-endif;// echonews_customize_register
-
-
-if ( ! function_exists( 'echonews_enqueue_scripts' ) ) :
-    function echonews_enqueue_scripts() {
-
-        /* Pinegrow generated Enqueue Scripts Begin */
-
-    wp_deregister_script( 'jquery' );
-    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/vendor/jquery.min.js', false, null, true);
-
-    wp_deregister_script( 'audio' );
-    wp_enqueue_script( 'audio', get_template_directory_uri() . '/assets/js/plugins/audio.js', false, null, true);
-
-    wp_deregister_script( 'bootstrap' );
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/vendor/bootstrap.min.js', false, null, true);
-
-    wp_deregister_script( 'swiper' );
-    wp_enqueue_script( 'swiper', get_template_directory_uri() . '/assets/js/vendor/swiper.js', false, null, true);
-
-    wp_deregister_script( 'metismenu' );
-    wp_enqueue_script( 'metismenu', get_template_directory_uri() . '/assets/js/vendor/metisMenu.min.js', false, null, true);
-
-    wp_deregister_script( 'magnificpopup' );
-    wp_enqueue_script( 'magnificpopup', get_template_directory_uri() . '/assets/js/plugins/magnific-popup.js', false, null, true);
-
-    wp_deregister_script( 'contactform' );
-    wp_enqueue_script( 'contactform', get_template_directory_uri() . '/assets/js/plugins/contact-form.js', false, null, true);
-
-    wp_deregister_script( 'resizesensor' );
-    wp_enqueue_script( 'resizesensor', get_template_directory_uri() . '/assets/js/plugins/resize-sensor.min.js', false, null, true);
-
-    wp_deregister_script( 'theiastickysidebar' );
-    wp_enqueue_script( 'theiastickysidebar', get_template_directory_uri() . '/assets/js/plugins/theia-sticky-sidebar.min.js', false, null, true);
-
-    wp_deregister_script( 'main' );
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
-
-    /* Pinegrow generated Enqueue Scripts End */
-
-        /* Pinegrow generated Enqueue Styles Begin */
-
-    /* Pinegrow generated Enqueue Styles End */
-
-    }
-    add_action( 'wp_enqueue_scripts', 'echonews_enqueue_scripts' );
-endif;
-
-function pgwp_sanitize_placeholder($input) { return $input; }
-/*
- * Resource files included by Pinegrow.
- */
-/* Pinegrow generated Include Resources Begin */
-
-    /* Pinegrow generated Include Resources End */
-?>
+add_action('wp_enqueue_scripts', 'register_scripts_EchoNews');
