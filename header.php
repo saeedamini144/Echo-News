@@ -6,14 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-    <!-- <title>Echo News</title>
-    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
-    <link rel="stylesheet preload" href="assets/css/plugins/fontawesome-5.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/bootstrap.min.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/swiper.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/metismenu.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/magnific-popup.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/style.css" as="style"> -->
 </head>
 
 <body class="home-one">
@@ -27,7 +19,7 @@
                         <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                             <div class="echo-meta-total-jobs">
                                 <div class="echo-meta-jobs-icons">
-                                    <img src="assets/images/home-1/header-top/home-1-header-top.png" alt="Echo">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/header-top/home-1-header-top.png" alt="Echo">
                                 </div>
                                 <div class="echo-meta-jobs-text">
                                     <div class="swiper rt-treding-slider10">
@@ -110,10 +102,10 @@
                         <div class="col-xl-2 col-lg-2 col-md-7 col-sm-7 col-7">
                             <div class="echo-site-logo">
                                 <a class="logo-light" href="index-2.html">
-                                    <img src="assets/images/home-1/site-logo/site-logo.svg" alt="Echo">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/site-logo/site-logo.svg" alt="Echo">
                                 </a>
                                 <a class="logo-dark" href="index-2.html">
-                                    <img src="assets/images/home-1/site-logo/site-logo-dark.svg" alt="Echo">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/site-logo/site-logo-dark.svg" alt="Echo">
                                 </a>
                             </div>
                         </div>
@@ -196,7 +188,7 @@
                                                     <a href="post-style-1.html">
                                                         <div class="mega-menu-item">
                                                             <div class="mega-menu-img img-transition-scales">
-                                                                <img src="assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hovers">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hovers">
                                                             </div>
                                                             <div class="mega-menu-title">
                                                                 <h5>Xi, Putin hail 'new era'....</h5>
@@ -208,7 +200,7 @@
                                                     <a href="post-style-2.html">
                                                         <div class="mega-menu-item">
                                                             <div class="mega-menu-img img-transition-scales">
-                                                                <img src="assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hovers">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hovers">
                                                             </div>
                                                             <div class="mega-menu-title">
                                                                 <h5>Elon Musk's global empire....</h5>
@@ -220,7 +212,7 @@
                                                     <a href="post-style-3.html">
                                                         <div class="mega-menu item">
                                                             <div class="mega-menu-img img-transition-scales">
-                                                                <img src="assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hovers">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hovers">
                                                             </div>
                                                             <div class="mega-menu-title">
                                                                 <h5>Sri Lanka to receive first ....</h5>
@@ -232,7 +224,7 @@
                                                     <a href="post-details.html">
                                                         <div class="mega-menu item">
                                                             <div class="mega-menu-img img-transition-scales">
-                                                                <img src="assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hovers">
+                                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hovers">
                                                             </div>
                                                             <div class="mega-menu-title">
                                                                 <h5>Turkey earthquake prepare....</h5>

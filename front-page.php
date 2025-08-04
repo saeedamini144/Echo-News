@@ -8,7 +8,7 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk d-none d-lg-block">
             <div class="thumbnail">
-                <img src="assets/images/sidemenu-logo.svg" alt="echo">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sidemenu-logo.svg" alt="echo">
             </div>
             <div class="inner-content">
                 <div class="category-menu-area">
@@ -16,7 +16,7 @@
                         <li class="item">
                             <div class="image-area">
                                 <a href="#">
-                                    <img src="assets/images/category-style-1/1.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/category-style-1/1.png" alt="">
                                 </a>
                             </div>
                             <div class="content">
@@ -29,7 +29,7 @@
                         <li class="item">
                             <div class="image-area">
                                 <a href="#">
-                                    <img src="assets/images/category-style-1/2.png" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/category-style-1/2.png" alt="">
                                 </a>
                             </div>
                             <div class="content">
@@ -45,7 +45,7 @@
                     <div class="form-inner">
                         <div class="content">
                             <div class="newsletter-image">
-                                <img src="assets/images/home-1/feature-right/news-item-1.png" alt="">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="">
                             </div>
                             <h3 class="title">Get Newsletter</h3>
                             <p class="desc">Notification products, updates</p>
@@ -183,7 +183,7 @@
             <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='none'"><i class="fa-regular fa-xmark"></i></a>
             <div class="echo-p-flexing">
                 <div class="echo-p-img">
-                    <img src="assets/images/home-1/feature-right/news-item-1.png" alt="Echo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="Echo">
                 </div>
                 <div class="form">
                     <div class="echo-p-sub-heading">
@@ -218,7 +218,7 @@
                         <div class="echo-hero-baner">
                             <div class="echo-hero-banner-main-img  img-transition-scale">
                                 <a href="post-details.html">
-                                    <img class="banner-image-one img-hover" src="assets/images/home-1/hero/hero-benar.png" alt="Echo">
+                                    <img class="banner-image-one img-hover" src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/hero-benar.png" alt="Echo">
                                 </a>
                             </div>
                             <h1 class="echo-hero-title text-capitalize font-weight-bold"><a href="post-details.html" class="title-hover">This banking crisis won't <br> wreck the economy</a></h1>
@@ -249,7 +249,7 @@
                             <div class="echo-top-story first">
                                 <div class="echo-story-picture img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/hero/top-story11.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story11.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-story-text">
@@ -263,7 +263,7 @@
                             <div class="echo-top-story">
                                 <div class="echo-story-picture img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/hero/top-story1.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story1.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-story-text">
@@ -274,7 +274,7 @@
                             <div class="echo-top-story">
                                 <div class="echo-story-picture img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/hero/top-story2.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story2.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-story-text">
@@ -285,7 +285,7 @@
                             <div class="echo-top-story">
                                 <div class="echo-story-picture img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/hero/top-story3.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story3.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-story-text">
@@ -321,7 +321,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hover" wp-the-post-thumbnail="thumnail">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hover" wp-the-post-thumbnail="thumnail">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -338,7 +338,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -355,7 +355,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -372,7 +372,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -389,7 +389,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -406,7 +406,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -423,7 +423,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -440,7 +440,7 @@
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-latest-news-single-title">
@@ -471,7 +471,7 @@
                         <div class="echo-trending-left-site-post">
                             <div class="echo-trending-left-site-post-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/trending-left/item-1.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-1.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-trending-right-site-post-title">
@@ -486,7 +486,7 @@
                         <div class="echo-trending-left-site-post">
                             <div class="echo-trending-left-site-post-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/trending-left/item-2.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-2.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-trending-right-site-post-title">
@@ -501,7 +501,7 @@
                         <div class="echo-trending-left-site-post">
                             <div class="echo-trending-left-site-post-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/trending-left/item-3.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-3.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-trending-right-site-post-title">
@@ -516,7 +516,7 @@
                         <div class="echo-trending-left-site-post">
                             <div class="echo-trending-left-site-post-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/trending-left/item-4.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-4.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-trending-right-site-post-title">
@@ -533,7 +533,7 @@
                         <div class="echo-trending-right-site-post">
                             <div class="echo-trending-right-site-post-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/trending-right/item-1.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-right/item-1.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-trending-right-site-post-title">
@@ -561,7 +561,7 @@
                         <div class="echo-trending-right-site-post">
                             <div class="echo-trending-right-site-post-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/trending-right/item-2.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-right/item-2.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-trending-right-site-post-title">
@@ -604,7 +604,7 @@
                     <div class="col-xl-8 col-lg-8 col-md-12">
                         <div class="echo-video-left-site">
                             <a href="post-details.html">
-                                <img src="assets/images/home-1/video-left/item.png" alt="Echo">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-left/item.png" alt="Echo">
                             </a>
                             <div class="vedio-icone">
                                 <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=sfmaJTwFP24"> <span></span> </a>
@@ -634,7 +634,7 @@
                                 </div>
                                 <div class="echo-video-right-site-content-video">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/video-right/item-1.png" alt="Echo">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-1.png" alt="Echo">
                                     </a>
                                     <div class="vedio-icone">
                                         <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=Jf1BB4EN36g"> <span></span> </a>
@@ -653,7 +653,7 @@
                                 </div>
                                 <div class="echo-video-right-site-content-video">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/video-right/item-2.png" alt="Echo">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-2.png" alt="Echo">
                                     </a>
                                     <div class="vedio-icone">
                                         <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=Jf1BB4EN36g"> <span></span> </a>
@@ -672,7 +672,7 @@
                                 </div>
                                 <div class="echo-video-right-site-content-video">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/video-right/item-3.png" alt="Echo">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-3.png" alt="Echo">
                                     </a>
                                     <div class="vedio-icone">
                                         <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=Jf1BB4EN36g"> <span></span> </a>
@@ -707,7 +707,7 @@
                             <div class="echo-de-category-content-img-title" wp-no-export cms-post cms-post-type="blog" cms-post-type-count="3">
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html" cms-post-link="not_singular">
-                                        <img src="assets/images/home-1/de-category/item-1.png" alt="Echo" class="img-hover" wp-featured-bck="thumnail">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-1.png" alt="Echo" class="img-hover" wp-featured-bck="thumnail">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -722,7 +722,7 @@
                             <div class="echo-de-category-content-img-title" wp-no-export>
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-2.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-2.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -737,7 +737,7 @@
                             <div class="echo-de-category-content-img-title" wp-no-export>
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-3.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-3.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -761,7 +761,7 @@
                             <div class="echo-de-category-content-img-title">
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-4.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-4.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -776,7 +776,7 @@
                             <div class="echo-de-category-content-img-title">
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-5.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-5.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -791,7 +791,7 @@
                             <div class="echo-de-category-content-img-title">
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-6.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-6.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -815,7 +815,7 @@
                             <div class="echo-de-category-content-img-title">
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-7.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-7.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -830,7 +830,7 @@
                             <div class="echo-de-category-content-img-title">
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-8.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-8.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -845,7 +845,7 @@
                             <div class="echo-de-category-content-img-title">
                                 <div class="echo-de-category-content-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="assets/images/home-1/de-category/item-9.png" alt="Echo" class="img-hover">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-9.png" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-de-category-content-title">
@@ -881,7 +881,7 @@
                                     <div class="echo-feature-area-post">
                                         <div class="echo-feature-area-post-img img-transition-scale">
                                             <a href="post-details.html">
-                                                <img src="assets/images/home-1/feature-left/item-1.png" alt="Echo" class="img-hover">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-1.png" alt="Echo" class="img-hover">
                                             </a>
                                         </div>
                                         <div class="echo-feature-area-post-hins">
@@ -901,7 +901,7 @@
                                     <div class="echo-feature-area-post">
                                         <div class="echo-feature-area-post-img img-transition-scale">
                                             <a href="post-details.html">
-                                                <img src="assets/images/home-1/feature-left/item-2.png" alt="Echo" class="img-hover">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-2.png" alt="Echo" class="img-hover">
                                             </a>
                                         </div>
                                         <div class="echo-feature-area-post-hins">
@@ -987,7 +987,7 @@
                                         <div class="echo-feature-area-last-content">
                                             <div class="echo-feature-area-last-content-img img-transition-scale">
                                                 <a href="post-details.html">
-                                                    <img src="assets/images/home-1/feature-left/item-3.png" alt="Echo" class="img-hover">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-3.png" alt="Echo" class="img-hover">
                                                 </a>
                                             </div>
                                             <div class="echo-feature-area-last-content-text">
@@ -1006,7 +1006,7 @@
                                         <div class="echo-feature-area-last-content">
                                             <div class="echo-feature-area-last-content-img img-transition-scale">
                                                 <a href="post-details.html">
-                                                    <img src="assets/images/home-1/feature-left/item-4.png" alt="Echo" class="img-hover">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-4.png" alt="Echo" class="img-hover">
                                                 </a>
                                             </div>
                                             <div class="echo-feature-area-last-content-text">
@@ -1058,7 +1058,7 @@
                                     <div class="echo-feature-area-right-site-audio-news">
                                         <div class="echo-feature-area-right-img">
                                             <a href="post-details.html">
-                                                <img src="assets/images/home-1/feature-right/item-1.png" alt="Echo">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/item-1.png" alt="Echo">
                                             </a>
                                         </div>
                                         <div class="echo-feature-area-right-audio-text">
@@ -1068,7 +1068,7 @@
                                                 <!-- Start Audio Player -->
                                                 <div class="wrappers">
                                                     <audio preload="auto" controls>
-                                                        <source src="assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
+                                                        <source src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
                                                     </audio>
                                                 </div>
                                                 <!-- End Audio Player -->
@@ -1079,7 +1079,7 @@
                                     <div class="echo-feature-area-right-site-audio-news">
                                         <div class="echo-feature-area-right-img">
                                             <a href="post-details.html">
-                                                <img src="assets/images/home-1/feature-right/item-2.png" alt="Echo">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/item-2.png" alt="Echo">
                                             </a>
                                         </div>
                                         <div class="echo-feature-area-right-audio-text">
@@ -1088,7 +1088,7 @@
                                                 <!-- Start Audio Player -->
                                                 <div class="wrappers">
                                                     <audio preload="auto" controls>
-                                                        <source src="assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
+                                                        <source src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
                                                     </audio>
                                                 </div>
                                                 <!-- End Audio Player -->
@@ -1099,7 +1099,7 @@
                                     <div class="echo-feature-area-right-site-audio-news">
                                         <div class="echo-feature-area-right-img">
                                             <a href="post-details.html">
-                                                <img src="assets/images/home-1/feature-right/item-3.png" alt="Echo">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/item-3.png" alt="Echo">
                                             </a>
                                         </div>
                                         <div class="echo-feature-area-right-audio-text">
@@ -1108,7 +1108,7 @@
                                                 <!-- Start Audio Player -->
                                                 <div class="wrappers">
                                                     <audio preload="auto" controls>
-                                                        <source src="assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
+                                                        <source src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
                                                     </audio>
                                                 </div>
                                                 <!-- End Audio Player -->
@@ -1122,7 +1122,7 @@
                                     <h5>Newsletter</h5>
                                 </div>
                                 <div class="echo-feature-area-right-site-newsletter-img">
-                                    <img src="assets/images/home-1/feature-right/news-item-1.png" alt="Echo">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="Echo">
                                 </div>
                                 <div class="echo-feature-area-right-site-sub-title">
                                     <p>Stay Tuned With Updates</p>
@@ -1163,7 +1163,7 @@
                         <div class="echo-popular-area-single-item">
                             <div class="echo-popular-area-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/popular/item-1.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/popular/item-1.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-popular-area-item-title">
@@ -1179,7 +1179,7 @@
                         <div class="echo-popular-area-single-item">
                             <div class="echo-popular-area-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/popular/item-2.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/popular/item-2.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-popular-area-item-title">
@@ -1196,7 +1196,7 @@
                         <div class="echo-popular-area-single-item echo-popular-news-responsive-home-1">
                             <div class="echo-popular-area-img img-transition-scale">
                                 <a href="post-details.html">
-                                    <img src="assets/images/home-1/popular/item-3.png" alt="Echo" class="img-hover">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/popular/item-3.png" alt="Echo" class="img-hover">
                                 </a>
                             </div>
                             <div class="echo-popular-area-item-title">
@@ -1219,7 +1219,7 @@
     <div class="container">
         <div class="echo-software-download-full-content-bg">
             <div class="echo-software-download-img-content">
-                <img src="assets/images/home-1/our-android-app-download/item-1.png" alt="Echo">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/our-android-app-download/item-1.png" alt="Echo">
             </div>
             <div class="row">
                 <div class="col-xl-12">

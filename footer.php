@@ -110,7 +110,7 @@
             <div class="copyright-area-inner">
                 <div class="footer-logo">
                     <a href="index-2.html">
-                        <img src="assets/images/home-1/site-logo/footer-logo-1.svg" alt="logo">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/site-logo/footer-logo-1.svg" alt="logo">
                     </a>
                 </div>
                 <div class="copyright-content">
@@ -133,15 +133,13 @@
     </div>
 </footer>
 <!-- End Footer Area -->
-<!-- End Footer Area -->
-<!-- Start Scricpt Area -->
 <!--scroll top button-->
 <button class="scroll-top-btn">
     <i class="fa-regular fa-angles-up"></i>
 </button>
 <!-- End Footer Area -->
 </body>
-<!-- Mirrored from html.themewant.com/echo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 30 Apr 2024 09:20:08 GMT -->
+
 <?php wp_footer(); ?>
 
 </html>
