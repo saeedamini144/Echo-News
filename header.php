@@ -280,13 +280,13 @@
                                         <a href="#"><i class="fa-brands fa-youtube"></i></a>
                                     </li>
                                 </ul>
-                                <!-- <div class="echo-header-top-menu-bar menu-btn">
+                                <div class="echo-header-top-menu-bar menu-btn">
                                     <a href="javascript:void(0)">
                                         <svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M0.526001 0.953461H20V3.11724H0.526001V0.953461ZM7.01733 8.52668H20V10.6905H7.01733V8.52668ZM0.526001 16.0999H20V18.2637H0.526001V16.0999Z" fill="#5E5E5E" />
                                         </svg>
                                     </a>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -294,5 +294,215 @@
             </div>
         </div>
         <!-- End Home-1 Menu & Site Logo & Social Media -->
+
+        <!-- side bar for desktop -->
+        <div id="side-bar" class="side-bar header-one">
+            <div class="inner">
+                <button class="close-icon-menu">
+                    <i class="far fa-times"></i>
+                </button>
+                <!-- inner menu area desktop start -->
+                <div class="inner-main-wrapper-desk d-none d-lg-block">
+                    <div class="thumbnail">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sidemenu-logo.svg" alt="echo">
+                    </div>
+                    <div class="inner-content">
+                        <div class="category-menu-area">
+                            <ul class="category-area">
+                                <li class="item">
+                                    <div class="image-area">
+                                        <a href="#">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/category-style-1/1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <div class="recent-post-title">
+                                            <a href="#">The incident began as an argument among.</a>
+                                        </div>
+                                        <p class="desc"><a href="#"><i class="fa-light fa-user"></i>Asley Graham</a></p>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="image-area">
+                                        <a href="#">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/category-style-1/2.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <div class="recent-post-title">
+                                            <a href="#">The incident began as an argument among.</a>
+                                        </div>
+                                        <p class="desc"><a href="#"><i class="fa-light fa-user"></i>Emily Dicingson</a></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="newsletter-form">
+                            <div class="form-inner">
+                                <div class="content">
+                                    <div class="newsletter-image">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="">
+                                    </div>
+                                    <h3 class="title">Get Newsletter</h3>
+                                    <p class="desc">Notification products, updates</p>
+                                </div>
+                                <form action="#">
+                                    <div class="input-div">
+                                        <input type="email" placeholder="Your email..." required>
+                                    </div>
+                                    <button type="submit" class="subscribe-btn">Subscribe Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile menu area start -->
+            <div class="mobile-menu d-block d-lg-none">
+                <nav class="nav-main mainmenu-nav mt--30">
+                    <ul class="mainmenu" id="mobile-menu-active">
+                        <li class="has-droupdown">
+                            <a href="#" class="main">Home</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a class="mobile-menu-link" href="index-2.html">Home 01 - Main</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-two.html">Home 02 - Fashion</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-three.html">Home 03 - Technology</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-four.html">Home 04 - Gamming</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-five.html">Home 05 - Sports</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-six.html">Home 06 - Travel</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-seven.html">Home 07 - AI</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-eight.html">Home 08 - Politics</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-nine.html">Home 09 - Food</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="index-ten.html">Home 10 - Photography</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a class="main mobile-menu-link" href="about.html">About</a>
+                        </li>
+                        <li class="has-droupdown">
+                            <a href="#" class="main">Category</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a class="mobile-menu-link" href="category-style-1.html">Category Style 1</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="category-style-2.html">Category Style 2</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="category-style-3.html">Category Style 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-droupdown">
+                            <a href="#" class="main">Features</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a class="mobile-menu-link" href="author.html">Author</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="team.html">Team</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="404.html">Error Page</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-droupdown">
+                            <a href="#" class="main">Post</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a class="mobile-menu-link" href="post-style-1.html">Post Style 1</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="post-style-2.html">Post Style 2</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="post-style-3.html">Post Style 3</a>
+                                </li>
+                                <li>
+                                    <a class="mobile-menu-link" href="post-details.html">Post Details</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a class="main mobile-menu-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="social-wrapper-one">
+                    <ul>
+                        <li>
+                            <a href="#"> <i class="fa-brands fa-facebook-f"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-brands fa-twitter"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-brands fa-youtube"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-brands fa-linkedin-in"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- mobile menu area end -->
+        </div>
+        <!-- header style two End -->
+        <!-- Start Subscribe Popup Box -->
+        <div class="echo-popup-model" id="id01">
+            <div class="echo-popup-transition">
+                <div class="model-content animate-subscribe-popup">
+                    <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='none'"><i class="fa-regular fa-xmark"></i></a>
+                    <div class="echo-p-flexing">
+                        <div class="echo-p-img">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="Echo">
+                        </div>
+                        <div class="form">
+                            <div class="echo-p-sub-heading">
+                                <p>Weekly Updates</p>
+                            </div>
+                            <div class="echo-p-sub-heading">
+                                <h3>Let's join our newsletter!</h3>
+                            </div>
+                            <form method="POST">
+                                <input type="email" required placeholder="Enter Your Email..">
+                                <button type="submit">Submit</button>
+                            </form>
+                            <div class="echo-bottom-popup">
+                                <p>Do not worry we don't spam!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Subscribe Popup Box -->
+        <!-- End Top Header Area -->
+        <!-- Top To Scroll -->
+        <!-- End Top scroll -->
     </header>
     <!-- End Top Header Area -->
