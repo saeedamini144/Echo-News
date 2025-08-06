@@ -1,4 +1,19 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+//make force to install the plugins and not worked themes
+// add_action('after_setup_theme', 'check_required_plugins');
+// function check_required_plugins()
+// {
+//     if (!is_plugin_active('elementor/elementor.php') || !is_plugin_active('woocommerce/woocommerce.php')) {
+//         wp_die('برای استفاده از این قالب، افزونه‌های ضروری باید نصب و فعال شوند.');
+//     }
+// }
+
+
 function theme_support_EchoNews()
 {
     //add the support for title tag
