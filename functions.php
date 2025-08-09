@@ -14,6 +14,14 @@ if (!defined('ABSPATH')) {
 // }
 
 
+//add TGM
+function register_TGM()
+{
+    require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+    require_once get_template_directory() . '/inc/plugins.php';
+}
+add_action('after_setup_theme', 'register_TGM'); //note load the correct style in dashboard at least fix it up
+
 function theme_support_EchoNews()
 {
     //add the support for title tag
@@ -29,6 +37,7 @@ function theme_support_EchoNews()
         'flex-height' => true,
         'flex-width' => true,
     ));
+
 
     //add theme support for the custom background
     // add_theme_support('custon-backlground', array(
@@ -55,12 +64,15 @@ function register_style_EchoNews()
 
     $version = wp_get_theme()->get('version');
 
-    wp_enqueue_style('EchoNews-style', get_template_directory_uri() . '/style.css', array(), $version, 'all');
     wp_enqueue_style('Fontawesome-EchoNews', get_template_directory_uri() . '/assets/css/plugins/fontawesome-5.css', array(), '6.1.1', 'all');
     wp_enqueue_style('Bootstrap-EchoNews', get_template_directory_uri() . '/assets/css/vendor/bootstrap.min.css', array(), '5.0.2', 'all');
     wp_enqueue_style('Swiper-EchoNews', get_template_directory_uri() . '/assets/css/vendor/swiper.css', array(), '9.3.2', 'all');
     wp_enqueue_style('Metismenu-EchoNews',  get_template_directory_uri() . '/assets/css/vendor/metismenu.css', array(), $version, 'all');
     wp_enqueue_style('magnificpopup-EchoNews', get_template_directory_uri() . '/assets/css/vendor/magnific-popup.css', array(), $version, 'all');
+    // Only enqueue the main theme stylesheet on the frontend, not in the admin dashboard
+    if (!is_admin()) {
+        wp_enqueue_style('EchoNews-style', get_template_directory_uri() . '/style.css', array(), $version, 'all'); //not load in dashboard
+    }
 }
 add_action('wp_enqueue_scripts', 'register_style_EchoNews');
 
