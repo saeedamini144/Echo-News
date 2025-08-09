@@ -101,3 +101,13 @@ function register_scripts_EchoNews()
     // ));
 }
 add_action('wp_enqueue_scripts', 'register_scripts_EchoNews');
+
+//limited post title
+function Limited_title_characters($limited)
+{
+    $title =  get_the_title();
+    if (strlen($title) > $limited) {
+        $title = substr($title, 0, $limited) . '...'; //substr(string,start,length)
+    }
+    return $title;
+}
