@@ -24,15 +24,9 @@
                                 <div class="echo-meta-jobs-text">
                                     <div class="swiper rt-treding-slider10">
                                         <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <span>Meta to cut 10,000 jobs in second...</span>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <span>Elevating Your Office Attire...</span>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <span>Beauty and Wellness Secrets...</span>
-                                            </div>
+
+                                            <?php echo get_template_part('template-parts/vertical-slider-post'); ?>
+
                                         </div>
                                     </div>
                                 </div>

@@ -346,7 +346,7 @@
     }
   });
 
-  // Day 
+  // Day , javascript code to show the date on the top menu
   var rts_date = $('#echo-date');
   if (rts_date.length) {
     const weekday = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
