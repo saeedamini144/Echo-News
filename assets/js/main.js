@@ -347,17 +347,17 @@
   });
 
   // Day , javascript code to show the date on the top menu
-  var rts_date = $('#echo-date');
-  if (rts_date.length) {
-    const weekday = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-    const month = ["Jan", "Feb", "March", "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"];
-    const d = new Date();
-    let day = weekday[d.getUTCDay()];
-    let mdate = d.getDate();
-    const year = d.getFullYear().toString().substr(2, 2);
-    let mname = month[d.getMonth()];
-    document.getElementById("echo-date").innerHTML = '<strong>' + day + '</strong>' + ', ' + mdate + ' ' + mname + '  ' + year;
-  }
+  // var rts_date = $('#echo-date');
+  // if (rts_date.length) {
+  //   const weekday = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  //   const month = ["Jan", "Feb", "March", "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"];
+  //   const d = new Date();
+  //   let day = weekday[d.getUTCDay()];
+  //   let mdate = d.getDate();
+  //   const year = d.getFullYear().toString().substr(2, 2);
+  //   let mname = month[d.getMonth()];
+  //   document.getElementById("echo-date").innerHTML = '<strong>' + day + '</strong>' + ', ' + mdate + ' ' + mname + '  ' + year;
+  // }
 
   // stickySidebar
   if (typeof $.fn.theiaStickySidebar !== "undefined") {
