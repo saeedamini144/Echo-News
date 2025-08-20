@@ -7,51 +7,17 @@
             <div class="echo-full-hero-content">
                 <div class="row gx-5">
                     <div class="col-xl-8 col-lg-7 col-md-12">
-                        <div class="echo-hero-baner">
-                            <div class="echo-hero-banner-main-img  img-transition-scale">
-                                <a href="post-details.html">
-                                    <img class="banner-image-one img-hover" src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/hero-benar.png" alt="Echo">
-                                </a>
-                            </div>
-                            <h1 class="echo-hero-title text-capitalize font-weight-bold"><a href="post-details.html" class="title-hover">This banking crisis won't <br> wreck the economy</a></h1>
-                            <hr>
-                            <p class="echo-hero-discription">Continually plagiarize superior users for extensible
-                                services. Seamlessly streamline progressive processes vis-a-vis functionalized
-                                technology. Rapidiously drive standards compliant interfaces with cost effective
-                                internal or "organic" sources. Continually reintermediate optimal.</p>
-                            <div class="echo-hero-area-titlepost-post-like-comment-share">
-                                <div class="echo-hero-area-like-read-comment-share">
-                                    <a href="#"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                </div>
-                                <div class="echo-hero-area-like-read-comment-share">
-                                    <a href="#"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                                <div class="echo-hero-area-like-read-comment-share">
-                                    <a href="#"><i class="fa-light fa-comment-dots"></i> 05 Comment</a>
-                                </div>
-                                <div class="echo-hero-area-like-read-comment-share">
-                                    <a href="#"><i class="fa-light fa-arrow-up-from-bracket"></i> 1.5k Share</a>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- CALL BACK THE NORMAL META EXCERPT POST CARD -->
+                        <?php echo get_template_part('/template-parts/normal-meta-excerpt', 'post'); ?>
                     </div>
                     <div class="col-xl-4 col-lg-5 col-md-12">
                         <div class="echo-home-1-hero-area-top-story">
                             <h6>Top Story</h6>
-                            <div class="echo-top-story first">
-                                <div class="echo-story-picture img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story11.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-story-text">
-                                    <h4><a href="#" class="title-hover">Clandestine Ukrainian claims successes against Russian</a></h4>
-                                    <div class="echo-trending-post-bottom-icons">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- CALL BACK THE VERTICAL NORMAL POST CARD -->
+                            <?php echo get_template_part('/template-parts/vertical-normal', 'post') ?>
+
+                            <!-- CALL BACK THE HORIZONTAL NORMAL POST CARD -->
+                            <!-- <?php echo get_template_part('/template-parts/horizontal-normal', 'post'); ?> -->
                             <div class="echo-top-story">
                                 <div class="echo-story-picture img-transition-scale">
                                     <a href="post-details.html">
@@ -109,6 +75,8 @@
             <div class="echo-latest-news-full-content">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
+                        <!-- CALL THE SWIPER POST SLIDER -->
+                        <!-- <?php echo get_template_part('/template-parts/swiper-post-slider'); ?> -->
                         <div class="swiper-slide">
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
