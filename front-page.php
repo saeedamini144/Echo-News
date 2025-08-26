@@ -227,7 +227,12 @@
             <h6>Trending</h6>
             <div class="echo-trending-full-content">
                 <div class="row gx-6">
+
                     <div class="col-xl-6 col-lg-6 col-md-12">
+
+                        <!-- CALL THE HORIZONTAL BIG THUMBNAIL POST CARD -->
+                        <!-- <?php get_template_part('/template-parts/horizontal-big-thumbnail', 'post'); ?> -->
+
                         <div class="echo-trending-left-site-post">
                             <div class="echo-trending-left-site-post-img img-transition-scale">
                                 <a href="post-details.html">
@@ -290,6 +295,9 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12">
+
+                        <!-- CAALL BACK THE NORMAL MSIZE META EXCERPT POST CARD  -->
+                        <?php get_template_part("template-parts/normal-msize-meta-excerpt", " post"); ?>
                         <div class="echo-trending-right-site-post">
                             <div class="echo-trending-right-site-post-img img-transition-scale">
                                 <a href="post-details.html">
@@ -362,29 +370,15 @@
             <div class="echo-full-video-content">
                 <div class="row gx-6">
                     <div class="col-xl-8 col-lg-8 col-md-12">
-                        <div class="echo-video-left-site">
-                            <a href="post-details.html">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-left/item.png" alt="Echo">
-                            </a>
-                            <div class="vedio-icone">
-                                <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=sfmaJTwFP24"> <span></span> </a>
-                                <div class="video-overlay">
-                                    <a class="video-overlay-close">×</a>
-                                </div>
-                            </div>
-                            <div class="echo-video-left-site-text-box">
-                                <h5><a href="post-details.html" class="title-hover">Turkey earthquake: How to
-                                        prepare Istanbul</a></h5>
-                                <hr>
-                                <div class="echo-video-left-site-read-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- CALL BACK THE META ON THUMBNAIL POST -->
+                        <?php get_template_part("/template-parts/meta-on-thumbnail", "post") ?>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-12">
                         <div class="echo-video-area-home-1-right-content-responsive">
+
+                            <!-- CALL BACK THE HORIZONTAL WHITE TITLE POST -->
+                            <!-- <?php get_template_part("/template-parts/horizontal-white-title", "post"); ?> -->
+
                             <div class="echo-video-right-site-content">
                                 <div class="echo-video-right-site-content-text">
                                     <h5 class="text-capitalize"><a href="post-details.html" class="title-hover text-white">Baidu shares drop to 8-week lows after...</a> </h5>
@@ -396,12 +390,7 @@
                                     <a href="post-details.html">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-1.png" alt="Echo">
                                     </a>
-                                    <div class="vedio-icone">
-                                        <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=Jf1BB4EN36g"> <span></span> </a>
-                                        <div class="video-overlay">
-                                            <a class="video-overlay-close">×</a>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="echo-video-right-site-content">
@@ -415,12 +404,7 @@
                                     <a href="post-details.html">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-2.png" alt="Echo">
                                     </a>
-                                    <div class="vedio-icone">
-                                        <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=Jf1BB4EN36g"> <span></span> </a>
-                                        <div class="video-overlay">
-                                            <a class="video-overlay-close">×</a>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="echo-video-right-site-content">
@@ -434,12 +418,7 @@
                                     <a href="post-details.html">
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-3.png" alt="Echo">
                                     </a>
-                                    <div class="vedio-icone">
-                                        <a class="play-video popup-youtube video-play-button" href="https://www.youtube.com/watch?v=Jf1BB4EN36g"> <span></span> </a>
-                                        <div class="video-overlay">
-                                            <a class="video-overlay-close">×</a>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -638,6 +617,10 @@
                             <h4>Featured Post</h4>
                             <div class="row gx-5">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+
+                                    <!-- CALL BACK THE NORMAL HRLINE POST CARD -->
+                                    <!-- <?php echo get_template_part("/template-parts/noraml-hrline", "post"); ?> -->
+
                                     <div class="echo-feature-area-post">
                                         <div class="echo-feature-area-post-img img-transition-scale">
                                             <a href="post-details.html">
@@ -681,6 +664,10 @@
                             <div class="echo-feature-area-option">
                                 <div class="row gx-5 gy-5">
                                     <div class="col-xl-6 col-lg-6 col-md-6">
+
+                                        <!-- CALL BACK THE HORIZONTAL NUMCOUNTER POST -->
+                                        <!-- <?php get_template_part("/template-parts/horizontal-numcounter", "post") ?> -->
+
                                         <div class="echo-feature-area-option-content">
                                             <div class="echo-feature-area-option-number">
                                                 <h3>01</h3>
@@ -920,6 +907,10 @@
                 </div>
                 <div class="row gx-5">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+
+                        <!-- CALL BACK THE NORMAL TEXTCENTER POST CARD -->
+                        <!-- <?php echo get_template_part("/template-parts/normal-textcenter", "post"); ?> -->
+
                         <div class="echo-popular-area-single-item">
                             <div class="echo-popular-area-img img-transition-scale">
                                 <a href="post-details.html">

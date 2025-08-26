@@ -1,10 +1,10 @@
  <div class="echo-hero-baner">
      <div class="echo-hero-banner-main-img  img-transition-scale">
-         <a href="post-details.html">
+         <a href="<?php the_permalink(); ?>">
              <img class="banner-image-one img-hover" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Echo">
          </a>
      </div>
-     <h1 class="echo-hero-title text-capitalize font-weight-bold"><a href="post-details.html" class="title-hover"><?php the_title(); ?></a></h1>
+     <h1 class="echo-hero-title text-capitalize font-weight-bold"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h1>
      <hr>
      <p class="echo-hero-discription"><?php echo the_excerpt(); ?></p>
      <div class="echo-hero-area-titlepost-post-like-comment-share">
