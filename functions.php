@@ -19,6 +19,7 @@ function register_TGM()
 {
     require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
     require_once get_template_directory() . '/inc/plugins.php';
+    require_once get_template_directory() . '/inc/class-custom-menu-walker.php';
 }
 add_action('after_setup_theme', 'register_TGM'); //note load the correct style in dashboard at least fix it up
 
@@ -56,6 +57,16 @@ function theme_support_EchoNews()
 }
 add_action('after_setup_theme', 'theme_support_EchoNews');
 
+//register menu
+function eco_register_nav_menu()
+{
+    register_nav_menus(array(
+        'Desktop_Menu' => __('Primary Menu', 'echo'),
+        'mobile_Menu'  => __('Mobile Menu', 'echo'),
+        'footer_Menu' => __('Footer Menu', 'echo'),
+    ));
+}
+add_action('init', 'eco_register_nav_menu');
 
 // enqueue styles and scripts
 function register_style_EchoNews()
