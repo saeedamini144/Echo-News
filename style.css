@@ -18321,7 +18321,7 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
     color: #fff;
 }
 
-.mobile-menu nav ul li a.main::after {
+/* .mobile-menu nav ul li a.main::after {
     position: absolute;
     content: "\f078";
     font-family: "Font Awesome 6 pro" !important;
@@ -18340,10 +18340,32 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
     pointer-events: none;
     cursor: pointer;
     border-radius: 3px;
+} */
+
+/* .mobile-menu nav ul li a.mobile-menu-link::after {
+    display: none;
+} */
+
+/* اول همه لینک‌ها بدون فلش */
+.mobile-menu nav ul li>a.main::after {
+    content: none;
 }
 
-.mobile-menu nav ul li a.mobile-menu-link::after {
-    display: none;
+/* فقط آیتم‌های دارای زیرمنو فلش داشته باشن */
+.mobile-menu nav ul li.has-droupdown>a.main::after {
+    content: "▼";
+    /* فلش ساده */
+    font-size: 12px;
+    margin-left: 60%;
+    background: var(--color-primary) !important;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    transform: translateY(0%);
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
 }
 
 .mobile-menu nav ul li.has-droupdown {
@@ -28423,5 +28445,3 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
     background-color: transparent;
     color: #5E5E5E;
 }
-
-/*# sourceMappingURL=../maps/style.css.map */

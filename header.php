@@ -223,7 +223,21 @@
             </div>
             <!-- mobile menu area start -->
             <div class="mobile-menu d-block d-lg-none">
+
+                <!-- Dynamic Mobile menu -->
                 <nav class="nav-main mainmenu-nav mt--30">
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'mobile_Menu',
+                        'menu_class'     => 'mainmenu',
+                        'menu_id'        => 'mobile-menu-active',
+                        'container'      => false,
+                        'depth'          => 3,
+                        'walker'         => new Echo_Mobile_Navwalker(),
+                    ));
+                    ?>
+                </nav>
+                <!-- <nav class="nav-main mainmenu-nav mt--30">
                     <ul class="mainmenu" id="mobile-menu-active">
                         <li class="has-droupdown">
                             <a href="#" class="main">Home</a>
@@ -312,7 +326,7 @@
                             <a class="main mobile-menu-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> -->
                 <div class="social-wrapper-one">
                     <ul>
                         <li>
