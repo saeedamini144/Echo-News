@@ -14,14 +14,15 @@ if (!defined('ABSPATH')) {
 // }
 
 
-//add TGM
-function register_TGM()
+//add include files
+function register_incFile()
 {
     require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
     require_once get_template_directory() . '/inc/plugins.php';
     require_once get_template_directory() . '/inc/class-custom-menu-walker.php';
+    require_once get_template_directory() . '/inc/customizer.php';
 }
-add_action('after_setup_theme', 'register_TGM'); //note load the correct style in dashboard at least fix it up
+add_action('after_setup_theme', 'register_incFile'); //note load the correct style in dashboard at least fix it up
 
 function theme_support_EchoNews()
 {
