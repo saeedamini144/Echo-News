@@ -1,6 +1,6 @@
 <?php
 
-
+//call back the all post taxonomies to choose
 function EchoNews_get_all_category()
 {
     $categories = get_categories();
