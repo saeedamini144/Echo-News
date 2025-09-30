@@ -1,5 +1,5 @@
 <?php
-$select_category = get_theme_mod('vertical_header_post_slider');
+$select_category = get_theme_mod('vertical_header_post_slider_settings');
 $args = new WP_Query(
     array(
         'post_type' => 'post',

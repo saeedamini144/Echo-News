@@ -24,14 +24,15 @@
                                 <div class="echo-meta-jobs-text">
                                     <div class="swiper rt-treding-slider10">
                                         <div class="swiper-wrapper">
-
+                                            <!-- call back the vertical slider post -->
                                             <?php echo get_template_part('template-parts/vertical-slider-post'); ?>
-
+                                            <!-- call back the vertical slider post -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- show date in header -->
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-7 col-8">
                             <div class="echo-header-top-date">
                                 <div class="echo-day-name">
@@ -41,13 +42,17 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- //desktop offcanvas -->
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-5 col-4 position-relative">
                             <div class="echo-header-top-subs-social-menu">
                                 <div class="echo-header-top-subs-social">
-                                    <div class="echo-header-top-subscribe-btn">
+                                    <!-- <div class="echo-header-top-subscribe-btn">
                                         <a href="#" class="echo-py-btn" onclick="document.getElementById('id01').style.display='inline'"><i class="fa-regular fa-envelope"></i> Subscribe</a>
+                                    </div> -->
+                                    <!-- call and contact us header button -->
+                                    <div class="echo-header-top-subscribe-btn">
+                                        <a href="<?php echo esc_html(get_theme_mod('header_button_link_settings')) ?>" class="echo-py-btn"><i class="fa-solid <?php echo esc_attr(get_theme_mod('header_button_icon_settings')) ?>"></i><?php echo esc_attr__(get_theme_mod('header_contact_button_settings')) ?></a>
                                     </div>
+                                    <!-- call and contact us header button -->
                                     <div class="echo-header-top-social-media">
                                         <div class="rts-darkmode">
                                             <a id="rts-data-toggle" class="rts-dark-light"> <i class="rts-go-dark fal fa-moon"></i> <i class="rts-go-light far fa-sun"></i> </a>
