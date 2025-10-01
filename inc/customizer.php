@@ -36,6 +36,7 @@ if (class_exists('Kirki')) {
         'settings' => 'vertical_header_post_slider_settings',
         'choices' =>  EchoNews_get_all_category(),
     ]);
+
     //contact header button name
     kirki::add_field('Header_Contact_button', [
         'label' => esc_html__('Name of the Header button', 'Echo News'),
@@ -46,6 +47,7 @@ if (class_exists('Kirki')) {
         'type' => 'text',
         'default' => 'Contact',
     ]);
+
     //header button icon
     kirki::add_field('header_button_icon', [
         'label' => esc_html__('Choose the button icon', 'Echo News'),
@@ -56,6 +58,7 @@ if (class_exists('Kirki')) {
         'type' => 'text',
         'default' => 'fa-phone',
     ]);
+
     // header button link
     kirki::add_field('header_button_link', [
         'label' => esc_html__('Header button link', 'Echo News'),
