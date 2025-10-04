@@ -69,6 +69,95 @@ if (class_exists('Kirki')) {
         'type' => 'url',
         'default' => '#',
     ]);
+
+    //light mode header logo
+    kirki::add_field('light_mode_logo', [
+        'label' => esc_html__('Light Mode Header Logo', 'Echo News'),
+        'description' => esc_html__('Upload the logo for light mode header. Recommended size is 160x40px', 'Echo News'),
+        'section' => 'header_options',
+        'settings' => 'light_mode_logo_settings',
+        'transport' => 'auto',
+        'type' => 'image',
+        // 'default'=> get_template_directory_uri().'/assets/images/logo.png',
+    ]);
+
+    //light mode header logo Dimensions
+    kirki::add_field('light_header_logo_dimensions', [
+        'label' => esc_html__('Light Mode Header Logo Dimensions', 'Echo News'),
+        'description' => esc_html__('Set the dimensions of the light mode header logo', 'Echo News'),
+        'section' => 'header_options',
+        'settings' => 'light_header_logo_dimensions_settings',
+        'transport' => 'auto',
+        'type' => 'dimensions',
+        'default' => [
+            'width'  => '160px',
+            'height' => '40px',
+        ],
+        'choices' => [
+            'label' => [
+                'width' => esc_html__('Width', 'Echo News'),
+                'height' => esc_html__('height', 'Echo News'),
+            ],
+            'units' => ['px', '%', 'em'],
+        ],
+        'unitless'   => false,
+        'output' => [
+            [
+                'element'  => '.light-mode-logo',
+                'property' => 'width',
+                'choice'   => 'width',
+            ],
+            [
+                'element'  => '.light-mode-logo',
+                'property' => 'height',
+                'choices' => 'height',
+            ],
+        ],
+    ]);
+
+    //dark mode header logo
+    kirki::add_field('dark_mode_logo', [
+        'label' => esc_html__('dark Mode Header Logo', 'Echo News'),
+        'description' => esc_html__('Upload the logo for dark mode header. Recommended size is 160x40px', 'Echo News'),
+        'section' => 'header_options',
+        'settings' => 'dark_mode_logo_settings',
+        'transport' => 'auto',
+        'type' => 'image',
+        // 'default'=> get_template_directory_uri().'/assets/images/logo.png',
+    ]);
+
+    //dark mode header logo Dimensions
+    Kirki::add_field('EchoNews_Theme_Options_Config', [
+        'type'        => 'dimensions',
+        'settings'    => 'dark_header_logo_dimensions_settings',
+        'label'       => esc_html__('Dark Mode Header Logo Dimensions', 'Echo News'),
+        'description' => esc_html__('Set the dimensions of the dark mode header logo', 'Echo News'),
+        'section'     => 'header_options',
+        'default'     => [
+            'width'  => '160px',
+            'height' => '40px',
+        ],
+        'transport'   => 'auto',
+        'choices'     => [
+            'labels' => [
+                'width'  => esc_html__('Width', 'Echo News'),
+                'height' => esc_html__('Height', 'Echo News'),
+            ],
+            'units' => ['px', '%', 'em'],
+        ],
+        'output' => [
+            [
+                'element'  => '.dark-mode-logo',
+                'property' => 'width',
+                'choice'   => 'width',
+            ],
+            [
+                'element'  => '.dark-mode-logo',
+                'property' => 'height',
+                'choice'   => 'height',
+            ],
+        ],
+    ]);;
 } else {
     function EchoNews_notice_kirki_missing()
     {

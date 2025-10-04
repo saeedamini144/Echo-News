@@ -100,10 +100,10 @@
                         <div class="col-xl-2 col-lg-2 col-md-7 col-sm-7 col-7">
                             <div class="echo-site-logo">
                                 <a class="logo-light" href="index-2.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/site-logo/site-logo.svg" alt="Echo">
+                                    <img class="light-mode-logo" src="<?php echo get_theme_mod('light_mode_logo_settings'); ?>" alt="Echo">
                                 </a>
                                 <a class="logo-dark" href="index-2.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/site-logo/site-logo-dark.svg" alt="Echo">
+                                    <img class="dark-mode-logo" src="<?php echo get_theme_mod('dark_mode_logo_settings'); ?>" alt="Echo">
                                 </a>
                             </div>
                         </div>
