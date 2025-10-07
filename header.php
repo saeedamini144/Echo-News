@@ -45,9 +45,6 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-5 col-4 position-relative">
                             <div class="echo-header-top-subs-social-menu">
                                 <div class="echo-header-top-subs-social">
-                                    <!-- <div class="echo-header-top-subscribe-btn">
-                                        <a href="#" class="echo-py-btn" onclick="document.getElementById('id01').style.display='inline'"><i class="fa-regular fa-envelope"></i> Subscribe</a>
-                                    </div> -->
                                     <!-- call and contact us header button -->
                                     <div class="echo-header-top-subscribe-btn">
                                         <a href="<?php echo esc_html(get_theme_mod('header_button_link_settings')) ?>" class="echo-py-btn"><i class="fa-solid <?php echo esc_attr(get_theme_mod('header_button_icon_settings')) ?>"></i><?php echo esc_attr__(get_theme_mod('header_contact_button_settings')) ?></a>
@@ -78,13 +75,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="echo-header-top-menu-bar menu-btn">
-                                        <a href="javascript:void(0)">
-                                            <svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0.526001 0.953461H20V3.11724H0.526001V0.953461ZM7.01733 8.52668H20V10.6905H7.01733V8.52668ZM0.526001 16.0999H20V18.2637H0.526001V16.0999Z" fill="#5E5E5E" />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -99,11 +89,11 @@
                     <div class="row align-items-center plr_md--30 plr_sm--30 plr--10">
                         <div class="col-xl-2 col-lg-2 col-md-7 col-sm-7 col-7">
                             <div class="echo-site-logo">
-                                <a class="logo-light" href="index-2.html">
-                                    <img class="light-mode-logo" src="<?php echo get_theme_mod('light_mode_logo_settings'); ?>" alt="Echo">
+                                <a class="logo-light" href="<?php echo esc_html(home_url('/')); ?>">
+                                    <img class="light-mode-logo" src="<?php echo get_theme_mod('light_mode_logo_settings'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                                 </a>
-                                <a class="logo-dark" href="index-2.html">
-                                    <img class="dark-mode-logo" src="<?php echo get_theme_mod('dark_mode_logo_settings'); ?>" alt="Echo">
+                                <a class="logo-dark" href="<?php echo esc_html(home_url('/')); ?>">
+                                    <img class="dark-mode-logo" src="<?php echo get_theme_mod('dark_mode_logo_settings'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                                 </a>
                             </div>
                         </div>
@@ -128,24 +118,16 @@
                         <div class="col-xl-3 col-lg-3 col-md-5 col-sm-5 col-5">
                             <div class="echo-home-1-social-media-icons">
                                 <ul class="list-unstyled social-area">
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                    </li>
+
+                                    <!-- call back the social icon -->
+                                    <?php
+                                    $social_media = get_theme_mod('add_social_media_icon_settings');
+                                    foreach ($social_media as $key => $values) {
+                                        echo '<li>';
+                                        echo '<a aria-label="' . esc_attr($values['social_media_icon']) . '" href="' . $values['social_media_link'] . '"><i class="fa-brands ' . esc_attr($values['social_media_icon']) . '"></i></a>';
+                                        echo '</li>';
+                                    }
+                                    ?>
                                 </ul>
                                 <div class="echo-header-top-menu-bar menu-btn">
                                     <a href="javascript:void(0)">
@@ -168,61 +150,6 @@
                 <button class="close-icon-menu">
                     <i class="far fa-times"></i>
                 </button>
-                <!-- inner menu area desktop start -->
-                <div class="inner-main-wrapper-desk d-none d-lg-block">
-                    <div class="thumbnail">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sidemenu-logo.svg" alt="echo">
-                    </div>
-                    <div class="inner-content">
-                        <div class="category-menu-area">
-                            <ul class="category-area">
-                                <li class="item">
-                                    <div class="image-area">
-                                        <a href="#">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/category-style-1/1.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <div class="recent-post-title">
-                                            <a href="#">The incident began as an argument among.</a>
-                                        </div>
-                                        <p class="desc"><a href="#"><i class="fa-light fa-user"></i>Asley Graham</a></p>
-                                    </div>
-                                </li>
-                                <li class="item">
-                                    <div class="image-area">
-                                        <a href="#">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/category-style-1/2.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <div class="recent-post-title">
-                                            <a href="#">The incident began as an argument among.</a>
-                                        </div>
-                                        <p class="desc"><a href="#"><i class="fa-light fa-user"></i>Emily Dicingson</a></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="newsletter-form">
-                            <div class="form-inner">
-                                <div class="content">
-                                    <div class="newsletter-image">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="">
-                                    </div>
-                                    <h3 class="title">Get Newsletter</h3>
-                                    <p class="desc">Notification products, updates</p>
-                                </div>
-                                <form action="#">
-                                    <div class="input-div">
-                                        <input type="email" placeholder="Your email..." required>
-                                    </div>
-                                    <button type="submit" class="subscribe-btn">Subscribe Now</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- mobile menu area start -->
             <div class="mobile-menu d-block d-lg-none">
@@ -243,58 +170,20 @@
 
                 <div class="social-wrapper-one">
                     <ul>
-                        <li>
-                            <a href="#"> <i class="fa-brands fa-facebook-f"></i> </a>
-                        </li>
-                        <li>
-                            <a href="#"> <i class="fa-brands fa-twitter"></i> </a>
-                        </li>
-                        <li>
-                            <a href="#"> <i class="fa-brands fa-youtube"></i> </a>
-                        </li>
-                        <li>
-                            <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
-                        </li>
-                        <li>
-                            <a href="#"> <i class="fa-brands fa-linkedin-in"></i> </a>
-                        </li>
+                        <!-- call back the social icon for offcanvas mobile -->
+                        <?php
+                        $social_media = get_theme_mod('add_social_media_icon_settings');
+                        foreach ($social_media as $key => $values) {
+                            echo '<li>';
+                            echo '<a aria-label="' . esc_attr($values['social_media_icon']) . '" href="' . $values['social_media_link'] . '"><i class="fa-brands ' . esc_attr($values['social_media_icon']) . '"></i></a>';
+                            echo '</li>';
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
             <!-- mobile menu area end -->
         </div>
         <!-- header style two End -->
-        <!-- Start Subscribe Popup Box -->
-        <div class="echo-popup-model" id="id01">
-            <div class="echo-popup-transition">
-                <div class="model-content animate-subscribe-popup">
-                    <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='none'"><i class="fa-regular fa-xmark"></i></a>
-                    <div class="echo-p-flexing">
-                        <div class="echo-p-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="Echo">
-                        </div>
-                        <div class="form">
-                            <div class="echo-p-sub-heading">
-                                <p>Weekly Updates</p>
-                            </div>
-                            <div class="echo-p-sub-heading">
-                                <h3>Let's join our newsletter!</h3>
-                            </div>
-                            <form method="POST">
-                                <input type="email" required placeholder="Enter Your Email..">
-                                <button type="submit">Submit</button>
-                            </form>
-                            <div class="echo-bottom-popup">
-                                <p>Do not worry we don't spam!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Subscribe Popup Box -->
-        <!-- End Top Header Area -->
-        <!-- Top To Scroll -->
-        <!-- End Top scroll -->
     </header>
     <!-- End Top Header Area -->
