@@ -136,3 +136,50 @@ function EchoNews_time_to_read()
     $total_reading_time = $reading_time . ' ' . esc_html__('min read', 'Echo News');
     return $total_reading_time;
 }
+//post view count
+/**
+ * تابع شمارش بازدید پست‌ها
+ * این تابع در صفحه‌ی تک‌پست (single) اجرا می‌شود
+ * و تعداد بازدیدها را در متادیتای پست ذخیره می‌کند.
+ */
+function EchoNews_post_views()
+{
+    // بررسی می‌کند آیا در صفحه‌ی نمایش یک پست تکی هستیم یا نه
+    if (is_single()) {
+
+        // گرفتن شناسه (ID) پست فعلی
+        $post_id = get_the_ID();
+
+        // خواندن مقدار فعلی متای 'post_views_count'
+        $views = get_post_meta($post_id, 'post_views_count', true);
+
+        // اگر هنوز هیچ مقداری برای بازدید ثبت نشده باشد
+        if ($views == '') {
+            // مقدار اولیه را صفر قرار می‌دهیم
+            $views = 0;
+
+            // حذف متای قدیمی در صورت وجود (برای اطمینان)
+            delete_post_meta($post_id, 'post_views_count');
+
+            // افزودن متای جدید با مقدار 0
+            add_post_meta($post_id, 'post_views_count', '0');
+        } else {
+            // اگر متا وجود دارد، مقدار آن را یکی افزایش می‌دهیم
+            $views++;
+
+            // مقدار جدید را در متادیتای پست ذخیره می‌کنیم
+            update_post_meta($post_id, 'post_views_count', $views);
+        }
+    }
+}
+
+// اجرای تابع بالا در زمان بارگذاری تگ <head> در صفحات سایت
+// به این ترتیب، هنگام باز شدن صفحه‌ی پست تکی، شمارنده افزایش می‌یابد.
+add_action('wp_head', 'EchoNews_post_views');
+// نمایش تعداد بازدیدها
+function EchoNews_post_views_count_display()
+{
+    $post_id = get_the_id();
+    $views = get_post_meta($post_id, 'post_views_count', true);
+    return $views . ' ' . esc_html__("Views", "Echo News");
+}
