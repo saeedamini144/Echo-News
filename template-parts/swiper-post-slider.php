@@ -2,15 +2,15 @@
      <div class="echo-latest-news-main-content">
          <div class="echo-latest-news-img img-transition-scale">
              <a href="<?php the_permalink(); ?>">
-                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Echo" class="img-hover" wp-the-post-thumbnail="thumnail">
+                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-hover" wp-the-post-thumbnail="thumnail">
              </a>
          </div>
          <div class="echo-latest-news-single-title">
-             <h5><a href="<?php the_permalink(); ?>" class="text-capitalize title-hover" wp-single-post-title><?php Limited_title_characters(15); ?></a></h5>
+             <h5><a href="<?php the_permalink(); ?>" class="text-capitalize title-hover" wp-the-post-thumbnail="thumnail"><?php Limited_title_characters(15); ?></a></h5>
          </div>
-         <div class="echo-latest-news-time-views" wp-the-post-thumbnail>
-             <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-             <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+         <div class="echo-latest-news-time-views" wp-the-post-thumbnail="thumnail">
+             <i class="fa-light fa-clock"><span><?php echo EchoNews_time_to_read(); ?></span>
+                 <i class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
          </div>
      </div>
  </div>

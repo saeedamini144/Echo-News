@@ -44,14 +44,14 @@ wp_reset_postdata(); // reset the data base
 <div class="echo-top-story first">
     <div class="echo-story-picture img-transition-scale">
         <a href="<?php the_permalink(); ?>">
-            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="Echo" class="img-hover">
+            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>" class="img-hover">
         </a>
     </div>
     <div class="echo-story-text">
         <h4><a href="#" class="title-hover"><?php the_title(); ?></a></h4>
         <div class="echo-trending-post-bottom-icons">
-            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+            <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
+            <i class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
         </div>
     </div>
 </div>

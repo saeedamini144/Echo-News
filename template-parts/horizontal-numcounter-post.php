@@ -5,8 +5,7 @@
       <div class="echo-feature-area-option-content-text">
           <h5 class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a> </h5>
           <div class="echo-feature-area-option-read-more">
-              <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                  minute read</a>
+              <i class="fa-light fa-clock"></i> <span><?php echo EchoNews_time_to_read(); ?></span>
           </div>
       </div>
   </div>
