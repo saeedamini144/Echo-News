@@ -16,11 +16,11 @@ function EchoNews_register_required_plugins()
 			'slug'      => 'wordpress-seo',
 			'required'  => true,
 		),
-		array(
-			'name'      => 'WP-PostViews',
-			'slug'      => 'wp-postviews',
-			'required'  => true,
-		),
+		// array(
+		// 	'name'      => 'WP-PostViews',
+		// 	'slug'      => 'wp-postviews',
+		// 	'required'  => true,
+		// ),
 
 
 	);
