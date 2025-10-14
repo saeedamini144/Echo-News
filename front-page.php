@@ -8,49 +8,17 @@
                 <div class="row gx-5">
                     <div class="col-xl-8 col-lg-7 col-md-12">
                         <!-- CALL BACK THE NORMAL META EXCERPT POST CARD -->
-                        <?php echo get_template_part('/template-parts/normal-meta-excerpt', 'post'); ?>
+                        <?php echo get_template_part('template-parts/normal-meta-excerpt-post'); ?>
                     </div>
                     <div class="col-xl-4 col-lg-5 col-md-12">
                         <div class="echo-home-1-hero-area-top-story">
-                            <h6>Top Story</h6>
-                            <!-- CALL BACK THE VERTICAL NORMAL POST CARD -->
-                            <?php echo get_template_part('/template-parts/vertical-normal', 'post') ?>
+                            <!-- change the title of the first section -->
+                            <<?php echo get_theme_mod('tag_heading_main_page_settings') ?> class="title-tag-style"><?php echo get_theme_mod('title_main_page_first_section_settings'); ?></<?php echo get_theme_mod('tag_heading_main_page_settings') ?>>
 
-                            <!-- CALL BACK THE HORIZONTAL NORMAL POST CARD -->
-                            <!-- <?php echo get_template_part('/template-parts/horizontal-normal', 'post'); ?> -->
-                            <div class="echo-top-story">
-                                <div class="echo-story-picture img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story1.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-story-text">
-                                    <h4><a href="#" class="title-hover">Goldman raises US recession...</a></h4>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                </div>
-                            </div>
-                            <div class="echo-top-story">
-                                <div class="echo-story-picture img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story2.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-story-text">
-                                    <h4><a href="#" class="title-hover">Renewable energy investors..</a></h4>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                </div>
-                            </div>
-                            <div class="echo-top-story">
-                                <div class="echo-story-picture img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/hero/top-story3.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-story-text">
-                                    <h4><a href="#" class="title-hover">The art of not paying attention</a></h4>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                </div>
-                            </div>
+
+                            <!-- CALL BACK THE HORIZONTAL VERTICAL NORMAL POST CARD -->
+                            <?php echo get_template_part('/template-parts/horizonal-vertical-normal', 'post'); ?>
+
                         </div>
                     </div>
                 </div>

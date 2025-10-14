@@ -25,7 +25,7 @@
         ]);
 
         //vertical header slider
-        kirki::add_field('vertical_header_post_slider', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose Category', 'Echo News'),
             'description' => esc_html__('Select the category for vertical header post slider', 'Echo News'),
             'section' => 'header_options',
@@ -38,7 +38,7 @@
         ]);
 
         //contact header button name
-        kirki::add_field('Header_Contact_button', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Name of the Header button', 'Echo News'),
             'description' => esc_html__('You can write the button name', 'Echo News'),
             'section' => 'header_options',
@@ -49,9 +49,9 @@
         ]);
 
         //header button icon
-        kirki::add_field('header_button_icon', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose the button icon', 'Echo News'),
-            'description' => esc_html__('write the name of the fontawesome icon', 'Echo News'),
+            'description' => esc_html__('write the name of the font awesome icon', 'Echo News'),
             'section' => 'header_options',
             'transport' => 'auto',
             'settings' => 'header_button_icon_settings',
@@ -60,7 +60,7 @@
         ]);
 
         // header button link
-        kirki::add_field('header_button_link', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Header button link', 'Echo News'),
             'description' => esc_html__('write the link of the button', 'Echo News'),
             'section' => 'header_options',
@@ -71,7 +71,7 @@
         ]);
 
         //light mode header logo
-        kirki::add_field('light_mode_logo', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Light Mode Header Logo', 'Echo News'),
             'description' => esc_html__('Upload the logo for light mode header. Recommended size is 160x40px', 'Echo News'),
             'section' => 'header_options',
@@ -81,7 +81,7 @@
             // 'default'=> get_template_directory_uri().'/assets/images/logo.png',
         ]);
         //light mode header logo Dimensions
-        kirki::add_field('light_header_logo_dimensions', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Light Mode Header Logo Dimensions', 'Echo News'),
             'description' => esc_html__('Set the dimensions of the light mode header logo', 'Echo News'),
             'section' => 'header_options',
@@ -93,7 +93,7 @@
                 'height' => '40px',
             ],
             'choices' => [
-                'label' => [
+                'labels' => [
                     'width' => esc_html__('Width', 'Echo News'),
                     'height' => esc_html__('height', 'Echo News'),
                 ],
@@ -109,13 +109,13 @@
                 [
                     'element'  => '.light-mode-logo',
                     'property' => 'height',
-                    'choices' => 'height',
+                    'choice' => 'height',
                 ],
             ],
         ]);
 
         //dark mode header logo
-        kirki::add_field('dark_mode_logo', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('dark Mode Header Logo', 'Echo News'),
             'description' => esc_html__('Upload the logo for dark mode header. Recommended size is 160x40px', 'Echo News'),
             'section' => 'header_options',
@@ -158,7 +158,7 @@
         ]);
 
         //Kirki social media icons and links
-        kirki::add_field('add_social_media_icon', [
+        kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('add the social media icons', 'Echo News'),
             'description' => esc_html__('you can add the social media icons and links', 'Echo News'),
             'section' => 'header_options',
@@ -198,6 +198,94 @@
             'choices' => [
                 'limit' => 6,
             ],
+        ]);
+
+        //main page section
+        kirki::add_section('main_page_options', [
+            'title' => esc_html__('Main Page Options', 'Echo News'),
+            'descriptions' => esc_html__('You can change the main page options', 'Echo News'),
+            'panel' => 'EchoNews_Theme_Options_Panel',
+        ]);
+
+        //main page first sections options
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the last posts', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'Big_post_main_page_settings',
+            'type' => 'select',
+            'multiple' => true,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+
+        //change heading tag of the main page second section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page second section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page second section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page second section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_first_section_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page second section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page second section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.title-tag-style',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+
+        //choose categories main page first sections options side part
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the last posts in the side part', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'category_first_section_side_settings',
+            'type' => 'select',
+            'multiple' => true,
+            'choices' => EchoNews_get_all_category(),
         ]);
     } else {
         function EchoNews_notice_kirki_missing()

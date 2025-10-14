@@ -1,7 +1,7 @@
 <div class="echo-top-story">
     <div class="echo-story-picture img-transition-scale">
         <a href="<?php the_permalink(); ?>">
-            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Echo" class="img-hover">
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-hover">
         </a>
     </div>
     <div class="echo-story-text">

@@ -31,7 +31,7 @@ if ($args->have_posts()) {
 <?php
     }
 } else {
-    echo 'No Posts founds';
+    echo esc_html__('No posts found', 'Echo News');
 }
 wp_reset_postdata(); // reset the data base 
 ?>
