@@ -13,9 +13,11 @@
                     <div class="col-xl-4 col-lg-5 col-md-12">
                         <div class="echo-home-1-hero-area-top-story">
                             <!-- change the title of the first section -->
-                            <<?php echo get_theme_mod('tag_heading_main_page_settings') ?> class="title-tag-style"><?php echo get_theme_mod('title_main_page_first_section_settings'); ?></<?php echo get_theme_mod('tag_heading_main_page_settings') ?>>
-
-
+                            <<?php echo esc_html(get_theme_mod('tag_heading_main_page_settings', 'h2')); ?>
+                                class="title-tag-style">
+                                <?php echo esc_html(get_theme_mod('title_main_page_first_section_settings', 'Title')); ?>
+                            </<?php echo esc_html(get_theme_mod('tag_heading_main_page_settings', 'h2')); ?>>
+                            <!-- must add the default tag to show correct style in first watch -->
                             <!-- CALL BACK THE HORIZONTAL VERTICAL NORMAL POST CARD -->
                             <?php echo get_template_part('/template-parts/horizonal-vertical-normal', 'post'); ?>
 
@@ -33,7 +35,13 @@
         <div class="container">
             <div class="echo-be-slider-btn">
                 <div class="echo-latest-nw-title">
-                    <h4>Latest News</h4>
+                    <!-- change the title of the second section -->
+                    <<?php echo esc_html(get_theme_mod('tag_heading_main_page_second_section_settings', 'h2')); ?>
+                        class="second-title-tag-style">
+                        <?php echo esc_html(get_theme_mod('title_main_page_second_section_settings', 'Title')); ?>
+                    </<?php echo esc_html(get_theme_mod('tag_heading_main_page_second_section_settings', 'h2')); ?>>
+                    <!-- must add the default tag to show correct style in first watch -->
+
                 </div>
                 <div class="echo-latest-news-next-prev-btn">
                     <div class="swiper-button-next"></div>
@@ -44,8 +52,8 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <!-- CALL THE SWIPER POST SLIDER -->
-                        <!-- <?php echo get_template_part('/template-parts/swiper-post-slider'); ?> -->
-                        <div class="swiper-slide">
+                        <?php echo get_template_part('/template-parts/swiper-post-slider'); ?>
+                        <!-- <div class="swiper-slide">
                             <div class="echo-latest-news-main-content">
                                 <div class="echo-latest-news-img img-transition-scale">
                                     <a href="post-details.html">
@@ -61,126 +69,8 @@
                                     <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Elon Musk's
-                                            global empire has made....</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Army of
-                                            lobbyists helped water down...</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Sri Lanka to
-                                            receive first tranche from...</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Xi, Putin
-                                            hail 'new era' of ties in united...</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-2.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Elon Musk's
-                                            global empire has made...</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-3.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Army of
-                                            lobbyists helped water down...</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-4.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Sri Lanka to
-                                            receive first tranche from...</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
+
                     </div>
                 </div>
             </div>

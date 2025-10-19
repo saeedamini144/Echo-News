@@ -207,6 +207,7 @@
             'panel' => 'EchoNews_Theme_Options_Panel',
         ]);
 
+        // =======================First Section=======================
         //main page first sections options
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose categories', 'Echo News'),
@@ -218,7 +219,7 @@
             'choices' => EchoNews_get_all_category(),
         ]);
 
-        //change heading tag of the main page second section
+        //change heading tag of the main page first section
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose Tag Heading', 'Echo News'),
             'description' => esc_html__('can change the heading tag in the main page second section', 'Echo News'),
@@ -237,20 +238,20 @@
             ],
         ]);
 
-        //write the title of the main page second section
+        //write the title of the main page first section
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Write the title', 'Echo News'),
-            'description' => esc_html__('You can write the title of the main page second section', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page first section', 'Echo News'),
             'section' => 'main_page_options',
             'settings' => 'title_main_page_first_section_settings',
             'type' => 'text',
             'default' => 'Title',
         ]);
 
-        //change the heading tag of the main page second section
+        //change the heading tag of the main page first section
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Tag Heading Typography', 'Echo News'),
-            'description' => esc_html__('You can change the typography of the heading tag of the main page second section', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page first section', 'Echo News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_typography_settings',
             'transport' => 'auto',
@@ -283,6 +284,77 @@
             'description' => esc_html__('Choose category to show the last posts in the side part', 'Echo News'),
             'section' => 'main_page_options',
             'settings' => 'category_first_section_side_settings',
+            'type' => 'select',
+            'multiple' => true,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+
+        // =======================Second Section=======================
+        //change heading tag of the main page second section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page second section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_second_section_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page second section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page second section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_second_section_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page second section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page first section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'second_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.second-title-tag-style',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+
+        //choose categories main page second sections
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the slider posts', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'slider_posts_settings',
             'type' => 'select',
             'multiple' => true,
             'choices' => EchoNews_get_all_category(),
