@@ -8,7 +8,7 @@
                 <div class="row gx-5">
                     <div class="col-xl-8 col-lg-7 col-md-12">
                         <!-- CALL BACK THE NORMAL META EXCERPT POST CARD -->
-                        <?php echo get_template_part('template-parts/normal-meta-excerpt-post'); ?>
+                        <?php get_template_part('template-parts/normal-meta-excerpt-post'); ?>
                     </div>
                     <div class="col-xl-4 col-lg-5 col-md-12">
                         <div class="echo-home-1-hero-area-top-story">
@@ -19,7 +19,7 @@
                             </<?php echo esc_html(get_theme_mod('tag_heading_main_page_settings', 'h2')); ?>>
                             <!-- must add the default tag to show correct style in first watch -->
                             <!-- CALL BACK THE HORIZONTAL VERTICAL NORMAL POST CARD -->
-                            <?php echo get_template_part('/template-parts/horizonal-vertical-normal', 'post'); ?>
+                            <?php get_template_part('template-parts/horizonal-vertical-normal', 'post'); ?>
 
                         </div>
                     </div>
@@ -52,24 +52,7 @@
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <!-- CALL THE SWIPER POST SLIDER -->
-                        <?php echo get_template_part('/template-parts/swiper-post-slider'); ?>
-                        <!-- <div class="swiper-slide">
-                            <div class="echo-latest-news-main-content">
-                                <div class="echo-latest-news-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/latest-news/item-1.png" alt="Echo" class="img-hover" wp-the-post-thumbnail="thumnail">
-                                    </a>
-                                </div>
-                                <div class="echo-latest-news-single-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover" wp-single-post-title>Xi, Putin
-                                            hail 'new era' of ties in united...</a></h5>
-                                </div>
-                                <div class="echo-latest-news-time-views" wp-the-post-thumbnail>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div> -->
+                        <?php get_template_part('template-parts/swiper-post-slider'); ?>
 
                     </div>
                 </div>
@@ -82,136 +65,16 @@
 <section class="echo-trending-area">
     <div class="echo-trending-content">
         <div class="container">
-            <h6>Trending</h6>
+            <!-- change the title of the Third section -->
+            <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_third_section_settings', 'h2')) ?> class="third-title-tag-style">
+                <?php echo esc_html__(get_theme_mod('title_main_page_third_section_settings', 'Title')) ?>
+            </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_third_section_settings', 'h2')) ?>>
+            <!-- must add the default tag to show correct style in first watch -->
             <div class="echo-trending-full-content">
                 <div class="row gx-6">
 
-                    <div class="col-xl-6 col-lg-6 col-md-12">
+                    <?php get_template_part('template-parts/two-design-horizontal-big-normal-msize') ?>
 
-                        <!-- CALL THE HORIZONTAL BIG THUMBNAIL POST CARD -->
-                        <!-- <?php get_template_part('/template-parts/horizontal-big-thumbnail', 'post'); ?> -->
-
-                        <div class="echo-trending-left-site-post">
-                            <div class="echo-trending-left-site-post-img img-transition-scale">
-                                <a href="post-details.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-1.png" alt="Echo" class="img-hover">
-                                </a>
-                            </div>
-                            <div class="echo-trending-right-site-post-title">
-                                <h5><a href="post-details.html" class="text-capitalize title-hover">Iran's Raisi
-                                        'welcomes' invitation by Saudi king</a></h5>
-                                <div class="echo-trending-post-bottom-icons">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="echo-trending-left-site-post">
-                            <div class="echo-trending-left-site-post-img img-transition-scale">
-                                <a href="post-details.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-2.png" alt="Echo" class="img-hover">
-                                </a>
-                            </div>
-                            <div class="echo-trending-right-site-post-title">
-                                <h5><a href="post-details.html" class="text-capitalize title-hover">What happens
-                                        when your AI chatbot stops loving you back?</a></h5>
-                                <div class="echo-trending-post-bottom-icons">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="echo-trending-left-site-post">
-                            <div class="echo-trending-left-site-post-img img-transition-scale">
-                                <a href="post-details.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-3.png" alt="Echo" class="img-hover">
-                                </a>
-                            </div>
-                            <div class="echo-trending-right-site-post-title">
-                                <h5><a href="post-details.html" class="text-capitalize title-hover">World's first
-                                        3D-printed rocket awaits debut flight</a></h5>
-                                <div class="echo-trending-post-bottom-icons">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="echo-trending-left-site-post">
-                            <div class="echo-trending-left-site-post-img img-transition-scale">
-                                <a href="post-details.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-left/item-4.png" alt="Echo" class="img-hover">
-                                </a>
-                            </div>
-                            <div class="echo-trending-right-site-post-title">
-                                <h5><a href="post-details.html" class="text-capitalize title-hover">Meta to wind
-                                        down NFTs on platforms amid crypto bust</a></h5>
-                                <div class="echo-trending-post-bottom-icons">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-12">
-
-                        <!-- CAALL BACK THE NORMAL MSIZE META EXCERPT POST CARD  -->
-                        <?php get_template_part("template-parts/normal-msize-meta-excerpt", " post"); ?>
-                        <div class="echo-trending-right-site-post">
-                            <div class="echo-trending-right-site-post-img img-transition-scale">
-                                <a href="post-details.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-right/item-1.png" alt="Echo" class="img-hover">
-                                </a>
-                            </div>
-                            <div class="echo-trending-right-site-post-title">
-                                <h4 class="text-capitalize"><a href="post-details.html" class="title-hover">World
-                                        Happiness Report 2023: What's the highway to happiness?</a></h4>
-                            </div>
-                            <div class="echo-trending-right-site-like-comment-share-icons">
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                </div>
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-comment-dots"></i> 05
-                                        Comment</a>
-                                </div>
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-arrow-up-from-bracket"></i>
-                                        1.5k Share</a>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="echo-hr-home-1-tranding">
-                        <div class="echo-trending-right-site-post">
-                            <div class="echo-trending-right-site-post-img img-transition-scale">
-                                <a href="post-details.html">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/trending-right/item-2.png" alt="Echo" class="img-hover">
-                                </a>
-                            </div>
-                            <div class="echo-trending-right-site-post-title">
-                                <h4 class="text-capitalize"><a href="post-details.html" class="title-hover">Alonso
-                                        gets his 100th F1 podium after penalty U-turn</a></h4>
-                            </div>
-                            <div class="echo-trending-right-site-like-comment-share-icons">
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                </div>
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                </div>
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-comment-dots"></i> 05
-                                        Comment</a>
-                                </div>
-                                <div class="echo-trending-right-like-comment-content">
-                                    <a href="#" class="pe-none"><i class="fa-light fa-arrow-up-from-bracket"></i>
-                                        1.5k Share</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
