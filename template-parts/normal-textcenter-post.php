@@ -8,7 +8,7 @@
          <h5 class="text-center text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h5>
      </div>
      <div class="echo-popular-area-read-view text-center">
-         <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
-         <i class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
+         <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
+         <i id="card-icon" class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
      </div>
  </div>

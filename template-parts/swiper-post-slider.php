@@ -32,8 +32,8 @@
                      <h5><a href="<?php the_permalink(); ?>" class="text-capitalize title-hover" wp-the-post-thumbnail="thumnail"><?php echo Limited_title_characters(35); ?></a></h5>
                  </div>
                  <div class="echo-latest-news-time-views" wp-the-post-thumbnail="thumnail">
-                     <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
-                     <i class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
+                     <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
+                     <i id="card-icon" class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
                  </div>
              </div>
          </div>

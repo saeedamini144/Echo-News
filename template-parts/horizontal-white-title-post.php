@@ -2,7 +2,7 @@
      <div class="echo-video-right-site-content-text">
          <h5 class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover text-white"><?php echo Limited_title_characters(15); ?></a> </h5>
          <hr>
-         <i class="fa-light fa-clock text-white"></i> <span><?php echo EchoNews_time_to_read(); ?></span>
+         <i id="card-icon" class="fa-light fa-clock text-white"></i> <span><?php echo EchoNews_time_to_read(); ?></span>
      </div>
      <div class="echo-video-right-site-content-video">
          <a href="<?php the_permalink(); ?>">

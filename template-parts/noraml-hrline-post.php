@@ -9,7 +9,7 @@
     </div>
     <hr>
     <div class="echo-feature-area-read-view">
-        <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
-        <i class="fa-light fa-eye"></i><?php echo EchoNews_post_views_count_display(); ?></span>
+        <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
+        <i id="card-icon" class="fa-light fa-eye"></i><?php echo EchoNews_post_views_count_display(); ?></span>
     </div>
 </div>

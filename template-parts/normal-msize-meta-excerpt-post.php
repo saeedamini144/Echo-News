@@ -30,13 +30,13 @@ if ($args->have_posts()) {
             </div>
             <div class="echo-trending-right-site-like-comment-share-icons">
                 <div class="echo-trending-right-like-comment-content">
-                    <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
+                    <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
                 </div>
                 <div class="echo-trending-right-like-comment-content">
-                    <i class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
+                    <i id="card-icon" class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
                 </div>
                 <div class="echo-trending-right-like-comment-content">
-                    <i class="fa-light fa-comment-dots"></i><span><?php comments_number('No Comments', 'One Comment', '% Comments') ?></span>
+                    <i id="card-icon" class="fa-light fa-comment-dots"></i><span><?php comments_number('No Comments', 'One Comment', '% Comments') ?></span>
                 </div>
             </div>
         </div>
