@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- Start Hero Area -->
+<!-- Start Hero Area First section -->
 <section class="echo-hero-section">
     <div class="echo-hero">
         <div class="container">
@@ -29,7 +29,7 @@
     </div>
 </section>
 <!-- End Hero Area -->
-<!-- Start Latest News Slider (using Slick Slider version 1.8.1) -->
+<!-- Start Latest News Slider (using Slick Slider version 1.8.1) Second section -->
 <section class="echo-latest-news-area">
     <div class="echo-latest-news-content">
         <div class="container">
@@ -61,7 +61,7 @@
     </div>
 </section>
 <!-- End Latest News Slider (using Slick Slider version 1.8.1) -->
-<!-- Start Trending News Area -->
+<!-- Start Trending News Area Third section -->
 <section class="echo-trending-area">
     <div class="echo-trending-content">
         <div class="container">
@@ -81,76 +81,30 @@
     </div>
 </section>
 <!-- End Trending News Area -->
-<!-- Start Video Area-->
+<!-- Start Video Area Fourth section-->
 <section class="echo-video-area">
     <div class="echo-video-content">
         <div class="container">
             <div class="echo-video-area-title-row text-center">
-                <h6>Videos</h6>
+                <!-- change the title of the Fourth section -->
+                <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fourth_section_settings', 'h2')) ?> class="fourth-title-tag-style">
+                    <?php echo esc_html__(get_theme_mod('title_main_page_fourth_section_settings', 'Title')) ?>
+                </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fourth_section_settings', 'h2')) ?>>
+                <!-- must add the default tag to show correct style in first watch -->
             </div>
             <div class="echo-full-video-content">
                 <div class="row gx-6">
-                    <div class="col-xl-8 col-lg-8 col-md-12">
-                        <!-- CALL BACK THE META ON THUMBNAIL POST -->
-                        <?php get_template_part("/template-parts/meta-on-thumbnail", "post") ?>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-12">
-                        <div class="echo-video-area-home-1-right-content-responsive">
 
-                            <!-- CALL BACK THE HORIZONTAL WHITE TITLE POST -->
-                            <!-- <?php get_template_part("/template-parts/horizontal-white-title", "post"); ?> -->
+                    <?php get_template_part('template-parts/two-design-meta-on-thumbnail-horizontal-white-title') ?>
 
-                            <div class="echo-video-right-site-content">
-                                <div class="echo-video-right-site-content-text">
-                                    <h5 class="text-capitalize"><a href="post-details.html" class="title-hover text-white">Baidu shares drop to 8-week lows after...</a> </h5>
-                                    <hr>
-                                    <a href="#" class="pe-none text-white"><i class="fa-light fa-clock"></i> 06 minute
-                                        read</a>
-                                </div>
-                                <div class="echo-video-right-site-content-video">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-1.png" alt="Echo">
-                                    </a>
 
-                                </div>
-                            </div>
-                            <div class="echo-video-right-site-content">
-                                <div class="echo-video-right-site-content-text">
-                                    <h5 class="text-capitalize"><a href="post-details.html" class="title-hover text-white">Christchurch mosque attacks: Keeping...</a> </h5>
-                                    <hr>
-                                    <a href="#" class="pe-none text-white"><i class="fa-light fa-clock"></i> 06 minute
-                                        read</a>
-                                </div>
-                                <div class="echo-video-right-site-content-video">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-2.png" alt="Echo">
-                                    </a>
-
-                                </div>
-                            </div>
-                            <div class="echo-video-right-site-content">
-                                <div class="echo-video-right-site-content-text">
-                                    <h5 class="text-capitalize"><a href="post-details.html" class="title-hover text-white">Microsoft’s new Copilot will change</a></h5>
-                                    <hr>
-                                    <a href="#" class="pe-none text-white"><i class="fa-light fa-clock"></i> 06 minute
-                                        read</a>
-                                </div>
-                                <div class="echo-video-right-site-content-video">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/video-right/item-3.png" alt="Echo">
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End Video Area -->
-<!-- Start De-category Area -->
+<!-- Start De-category Area Fifth section -->
 <section class="echo-de-category-area">
     <div class="echo-de-category-area-content">
         <div class="container">

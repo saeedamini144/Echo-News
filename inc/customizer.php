@@ -418,7 +418,7 @@
                 ],
             ],
         ]);
-        //choose categories main page second sections
+        //choose categories main page Third sections
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose categories', 'Echo News'),
             'description' => esc_html__('Choose category to show the third section posts', 'Echo News'),
@@ -427,6 +427,98 @@
             'type' => 'select',
             'multiple' => true,
             'choices' => EchoNews_get_all_category(),
+        ]);
+
+        // ======================= Fourth Section =======================
+        //change heading tag of the main page Fourth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page fourth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_fourth_section_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page fourth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page fourth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_fourth_section_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page fourth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page fourth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fourth_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.fourth-title-tag-style',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+
+        //choose categories main page Fourth sections
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the fourth section posts', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fourth_section_posts_settings',
+            'type' => 'select',
+            'multiple' => true,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+        //background color of the fourth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fourth sectionBackground Color', 'Echo News'),
+            'description' => esc_html__('You can change the background color of the fourth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fourth_section_background_color_settings',
+            'transport' => 'auto',
+            'type' => 'color',
+            'default' => '#537FE7',
+            'choices'     => [
+                'alpha'        => true,   // ✅ امکان انتخاب شفافیت (اختیاری)
+                'allow_reset'  => true,   // ✅ دکمه "بازگرداندن به رنگ پیش‌فرض"
+            ],
+            'output' => [
+                [
+                    'element' => '.home-one .echo-video-area',
+                    'property' => 'background-color',
+                ]
+            ]
+
         ]);
     } else {
         function EchoNews_notice_kirki_missing()
