@@ -520,6 +520,284 @@
             ]
 
         ]);
+
+        // ======================= Fifth Section =======================
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page fifth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_fifth_section_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page fifth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page fifth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_fifth_section_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page fifth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page fifth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.fifth-title-tag-style',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+
+        //choose categories main page Fifth sections col one
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the fifth section posts', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_posts_settings_one',
+            'type' => 'select',
+            'multiple' => false,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+        //write the title of the main page fifth section col one
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page fifth section col one', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_fifth_section_col1_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page fifth section col one
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page fifth section col one', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_fifth_section_col1_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page fifth section col one
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page fifth section col one', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_tag_heading_typography_col1_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.fifth-title-tag-style-col1',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+
+
+        //choose categories main page Fifth sections col two
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the fifth section posts', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_posts_settings_two',
+            'type' => 'select',
+            'multiple' => false,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+
+        //choose categories main page Fifth sections col two
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the fifth section posts col two', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_posts_settings_two',
+            'type' => 'select',
+            'multiple' => false,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+        //write the title of the main page fifth section col two
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page fifth section col two', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_fifth_section_col2_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page fifth section col two
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page fifth section col two', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_fifth_section_col2_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page fifth section col two
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page fifth section col two', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_tag_heading_typography_col2_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.fifth-title-tag-style-col2',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+
+        //choose categories main page Fifth sections col three
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the fifth section posts col three', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_posts_settings_three',
+            'type' => 'select',
+            'multiple' => false,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+        //write the title of the main page fifth section col three
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page fifth section col three', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_fifth_section_col3_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page fifth section col three
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page fifth section col three', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_fifth_section_col3_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page fifth section col three
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page fifth section col three', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_tag_heading_typography_col3_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.fifth-title-tag-style-col3',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
     } else {
         function EchoNews_notice_kirki_missing()
         {

@@ -110,59 +110,24 @@
         <div class="container">
             <div class="echo-de-category-full-content">
                 <div class="echo-de-category-title-btn">
-                    <h4 class="text-capitalize">Discover Categories</h4>
+                    <!-- change the title of the Fifth section -->
+                    <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_settings', 'h2')) ?> class="fifth-title-tag-style">
+                        <?php echo esc_html__(get_theme_mod('title_main_page_fifth_section_settings', 'Title')) ?>
+                    </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_settings', 'h2')) ?>>
+                    <!-- must add the default tag to show correct style in first watch -->
                     <a href="#" class="text-capitalize echo-py-btn">View all categories</a>
                 </div>
                 <div class="row gx-5">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="echo-de-category-content echo-responsive-wd">
-                            <h5 class="text-capitalize">Business</h5>
+                            <!-- change the title of the Fifth section col one -->
+                            <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_col1_settings', 'h2')) ?> class="fifth-title-tag-style-col1">
+                                <?php echo esc_html__(get_theme_mod('title_main_page_fifth_section_col1_settings', 'Title')) ?>
+                            </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_col1_settings', 'h2')) ?>>
                             <hr>
-                            <div class="echo-de-category-content-img-title" wp-no-export cms-post cms-post-type="blog" cms-post-type-count="3">
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html" cms-post-link="not_singular">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-1.png" alt="Echo" class="img-hover" wp-featured-bck="thumnail">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover" cms-post-title cms-post-link="not_singular">Everyone’s talking about
-                                            Credit Sui...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-de-category-content-img-title" wp-no-export>
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-2.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">Treasury yields rise on
-                                            Monday...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-de-category-content-img-title" wp-no-export>
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-3.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">Treasury yields climb as
-                                            bank...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- call back the horizontal normal post card first column -->
+                            <?php get_template_part('template-parts/horizontal-normal-posts-callback-col1') ?>
+
                             <div class="echo-de-category-show-more-btn" wp-no-export>
                                 <a href="post-details.html" class="text-capitalize echo-py-btn">Show more</a>
                             </div>
@@ -170,53 +135,13 @@
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="echo-de-category-content">
-                            <h5 class="text-capitalize">Entertainment</h5>
+                            <!-- change the title of the Fifth section col two -->
+                            <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_col2_settings', 'h2')) ?> class="fifth-title-tag-style-col2">
+                                <?php echo esc_html__(get_theme_mod('title_main_page_fifth_section_col2_settings', 'Title')) ?>
+                            </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_col2_settings', 'h2')) ?>>
                             <hr>
-                            <div class="echo-de-category-content-img-title">
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-4.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">From Miss Malaysia to
-                                            first...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-de-category-content-img-title">
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-5.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">Three men guilty of US
-                                            rapper's...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-de-category-content-img-title">
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-6.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">The Wire star's wife
-                                            shares...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- call back the horizontal normal post card first column -->
+                            <?php get_template_part('template-parts/horizontal-normal-posts-callback-col2') ?>
                             <div class="echo-de-category-show-more-btn">
                                 <a href="post-details.html" class="text-capitalize echo-py-btn">Show more</a>
                             </div>
@@ -224,53 +149,13 @@
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="echo-de-category-content">
-                            <h5 class="text-capitalize">Travel</h5>
+                            <!-- change the title of the Fifth section col three -->
+                            <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_col3_settings', 'h2')) ?> class="fifth-title-tag-style-col3">
+                                <?php echo esc_html__(get_theme_mod('title_main_page_fifth_section_col3_settings', 'Title')) ?>
+                            </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_col3_settings', 'h2')) ?>>
                             <hr>
-                            <div class="echo-de-category-content-img-title">
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-7.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">New Zealand-bound
-                                            plane...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-de-category-content-img-title">
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-8.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">Travellers arriving in
-                                            England...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-de-category-content-img-title">
-                                <div class="echo-de-category-content-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/de-category/item-9.png" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-de-category-content-title">
-                                    <h6><a href="post-details.html" class="title-hover">Airport security rules on
-                                            liquids...</a></h6>
-                                    <div class="echo-de-category-read">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                            read</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- call back the horizontal normal post card first column -->
+                            <?php get_template_part('template-parts/horizontal-normal-posts-callback-col3') ?>
                             <div class="echo-de-category-show-more-btn">
                                 <a href="post-details.html" class="text-capitalize echo-py-btn">Show more</a>
                             </div>

@@ -19809,16 +19809,16 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     margin-left: 10px;
 }
 
-.echo-de-category-area .echo-de-category-title-btn h4 {
+.echo-de-category-area .echo-de-category-title-btn .fifth-title-tag-style {
     position: relative;
     font-size: 30px;
     margin-bottom: 0;
 }
 
-.echo-de-category-area .echo-de-category-title-btn h4::after {
+.echo-de-category-area .echo-de-category-title-btn .fifth-title-tag-style::after {
     content: "";
     position: absolute;
-    width: 220%;
+    width: 100%;
     background: #5E5E5E;
     height: 1px;
     left: 110%;
@@ -19843,7 +19843,9 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 }
 
 .echo-de-category-area .echo-de-category-content .echo-de-category-content-img-title .echo-de-category-content-img a img {
-    width: 100%;
+    width: 120px;
+    height: 113px;
+    object-fit: cover;
 }
 
 .echo-de-category-area .echo-de-category-content .echo-de-category-content-img-title .echo-de-category-content-title {
@@ -26249,7 +26251,7 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         padding: 30px 0;
     }
 
-    .echo-de-category-area .echo-de-category-title-btn h4::after {
+    .echo-de-category-area .echo-de-category-title-btn .fifth-title-tag-style::after {
         width: 160%;
     }
 
@@ -26761,7 +26763,7 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         padding: 30px 0;
     }
 
-    .echo-de-category-area .echo-de-category-title-btn h4::after {
+    .echo-de-category-area .echo-de-category-title-btn .fifth-title-tag-style::after {
         display: none;
     }
 
@@ -27444,7 +27446,7 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         padding: 30px 0;
     }
 
-    .echo-de-category-area .echo-de-category-title-btn h4::after {
+    .echo-de-category-area .echo-de-category-title-btn .fifth-title-tag-style::after {
         display: none;
     }
 
@@ -27833,7 +27835,7 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         padding: 30px 15px;
     }
 
-    .echo-de-category-area .echo-de-category-title-btn h4::after {
+    .echo-de-category-area .echo-de-category-title-btn .fifth-title-tag-style::after {
         display: none;
     }
 
