@@ -580,6 +580,29 @@
             ],
         ]);
 
+        // button content of the fifth section title
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Button Content', 'Echo News'),
+            'description' => esc_html__('You can write the button content of the fifth section title', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_button_content_settings',
+            'transport' => 'auto',
+            'type' => 'text',
+            'default' => 'Load More',
+
+        ]);
+        // button content of the fifth section link
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Button Link', 'Echo News'),
+            'description' => esc_html__('You can write the button link of the fifth section title', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_button_link_settings',
+            'transport' => 'auto',
+            'type' => 'url',
+            'default' => '#',
+
+        ]);
+
         //choose categories main page Fifth sections col one
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose categories', 'Echo News'),
@@ -649,6 +672,28 @@
             ],
         ]);
 
+        //fifth section button col one content
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Col One Button Content', 'Echo News'),
+            'description' => esc_html__('You can write the button content of the fifth section col one', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_col_one_button_content_settings',
+            'transport' => 'auto',
+            'type' => 'text',
+            'default' => 'Load More',
+
+        ]);
+        //fifth section button col one link
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Col One Button Link', 'Echo News'),
+            'description' => esc_html__('You can write the button link of the fifth section col one', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_col_one_button_link_settings',
+            'transport' => 'auto',
+            'type' => 'url',
+            'default' => '#',
+
+        ]);
 
         //choose categories main page Fifth sections col two
         kirki::add_field('EchoNews_Theme_Options_Config', [
@@ -730,6 +775,29 @@
             ],
         ]);
 
+        //fifth section button col two content
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Col two Button Content', 'Echo News'),
+            'description' => esc_html__('You can write the button content of the fifth section col two', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_col_two_button_content_settings',
+            'transport' => 'auto',
+            'type' => 'text',
+            'default' => 'Load More',
+
+        ]);
+        //fifth section button col two link
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Col two Button Link', 'Echo News'),
+            'description' => esc_html__('You can write the button link of the fifth section col two', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_col_two_button_link_settings',
+            'transport' => 'auto',
+            'type' => 'url',
+            'default' => '#',
+
+        ]);
+
         //choose categories main page Fifth sections col three
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose categories', 'Echo News'),
@@ -797,6 +865,28 @@
                     'suffix'   => '!important', // ✅ اضافه کردن important
                 ],
             ],
+        ]);
+        //fifth section button col Three content
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Col Three Button Content', 'Echo News'),
+            'description' => esc_html__('You can write the button content of the fifth section col Three', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_col_Three_button_content_settings',
+            'transport' => 'auto',
+            'type' => 'text',
+            'default' => 'Load More',
+
+        ]);
+        //fifth section button col Three link
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Fifth Section Col Three Button Link', 'Echo News'),
+            'description' => esc_html__('You can write the button link of the fifth section col Three', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'fifth_section_col_Three_button_link_settings',
+            'transport' => 'auto',
+            'type' => 'url',
+            'default' => '#',
+
         ]);
     } else {
         function EchoNews_notice_kirki_missing()

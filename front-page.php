@@ -115,7 +115,7 @@
                         <?php echo esc_html__(get_theme_mod('title_main_page_fifth_section_settings', 'Title')) ?>
                     </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_fifth_section_settings', 'h2')) ?>>
                     <!-- must add the default tag to show correct style in first watch -->
-                    <a href="#" class="text-capitalize echo-py-btn">View all categories</a>
+                    <a href="<?php echo esc_html__(get_theme_mod('fifth_section_button_link_settings')) ?>" class="text-capitalize echo-py-btn"><?php echo esc_html__(get_theme_mod('fifth_section_button_content_settings')) ?></a>
                 </div>
                 <div class="row gx-5">
                     <div class="col-xl-4 col-lg-4 col-md-6">
@@ -129,7 +129,7 @@
                             <?php get_template_part('template-parts/horizontal-normal-posts-callback-col1') ?>
 
                             <div class="echo-de-category-show-more-btn" wp-no-export>
-                                <a href="post-details.html" class="text-capitalize echo-py-btn">Show more</a>
+                                <a href="<?php echo esc_html__(get_theme_mod('fifth_section_col_one_button_link_settings')) ?>" class="text-capitalize echo-py-btn"><?php echo esc_html__(get_theme_mod('fifth_section_col_one_button_content_settings')) ?></a>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                             <!-- call back the horizontal normal post card first column -->
                             <?php get_template_part('template-parts/horizontal-normal-posts-callback-col2') ?>
                             <div class="echo-de-category-show-more-btn">
-                                <a href="post-details.html" class="text-capitalize echo-py-btn">Show more</a>
+                                <a href="<?php echo esc_html__(get_theme_mod('fifth_section_col_two_button_link_settings')) ?>" class="text-capitalize echo-py-btn"><?php echo esc_html__(get_theme_mod('fifth_section_col_two_button_content_settings')) ?></a>
                             </div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                             <!-- call back the horizontal normal post card first column -->
                             <?php get_template_part('template-parts/horizontal-normal-posts-callback-col3') ?>
                             <div class="echo-de-category-show-more-btn">
-                                <a href="post-details.html" class="text-capitalize echo-py-btn">Show more</a>
+                                <a href="<?php echo esc_html__(get_theme_mod('fifth_section_col_Three_button_link_settings')) ?>" class="text-capitalize echo-py-btn"><?php echo esc_html__(get_theme_mod('fifth_section_col_Three_button_content_settings')) ?></a>
                             </div>
                         </div>
                     </div>
