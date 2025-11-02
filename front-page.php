@@ -166,7 +166,7 @@
         </div>
     </div>
 </section>
-<!-- Start Feature Area -->
+<!-- Start Feature Area sixth -->
 <section class="echo-feature-area">
     <div class="echo-feature-area-content">
         <div class="container">
@@ -174,7 +174,11 @@
                 <div class="row gx-6">
                     <div class="col-xl-8 col-lg-7 col-md-12">
                         <div class="echo-feature-area-site-title">
-                            <h4>Featured Post</h4>
+                            <!-- change the title of the sixth section -->
+                            <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_settings', 'h2')) ?> class="sixth-title-tag-style">
+                                <?php echo esc_html__(get_theme_mod('title_main_page_sixth_section_settings', 'Title')) ?>
+                            </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_settings', 'h2')) ?>>
+                            <!-- must add the default tag to show correct style in first watch -->
                             <div class="row gx-5">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 
@@ -337,92 +341,22 @@
                             <div class="echo-feature-area-right-site-follower">
                                 <h5>Follow Us</h5>
                                 <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-facebook"></i>20K Fans</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-twitter"></i>10K Followers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-instagram"></i>50K Followers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-linkedin"></i>30K Followers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-pinterest"></i>30K Followers</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-youtube"></i>04K Subscriber</a>
-                                    </li>
+                                    <!-- call back the social icon -->
+                                    <?php
+                                    $social_media = get_theme_mod('add_social_media_icon_settings');
+                                    foreach ($social_media as $key => $values) {
+                                        echo '<li>';
+                                        echo '<a aria-label="' . esc_attr($values['social_media_icon']) . '" href="' . $values['social_media_link'] . '"><i class="fa-brands ' . esc_attr($values['social_media_icon']) . '"></i></a>';
+                                        echo '</li>';
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                             <div class="echo-feature-area-right-site-full-content">
                                 <div class="echo-feature-area-right-site-audio-title">
                                     <h5>New Podcasts</h5>
                                 </div>
-                                <div class="echo-audio-news-home-1-flexing">
-                                    <div class="echo-feature-area-right-site-audio-news">
-                                        <div class="echo-feature-area-right-img">
-                                            <a href="post-details.html">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/item-1.png" alt="Echo">
-                                            </a>
-                                        </div>
-                                        <div class="echo-feature-area-right-audio-text">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">UN
-                                                    chief warns a 'climate time bomb...</a></h5>
-                                            <div class="echo-feature-area-right-site-audio-main-contetn">
-                                                <!-- Start Audio Player -->
-                                                <div class="wrappers">
-                                                    <audio preload="auto" controls>
-                                                        <source src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
-                                                    </audio>
-                                                </div>
-                                                <!-- End Audio Player -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="echo-feature-area-right-site-audio-news">
-                                        <div class="echo-feature-area-right-img">
-                                            <a href="post-details.html">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/item-2.png" alt="Echo">
-                                            </a>
-                                        </div>
-                                        <div class="echo-feature-area-right-audio-text">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">UBS agrees 'emergency rescue'...</a></h5>
-                                            <div class="echo-feature-area-right-site-audio-main-contetn">
-                                                <!-- Start Audio Player -->
-                                                <div class="wrappers">
-                                                    <audio preload="auto" controls>
-                                                        <source src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
-                                                    </audio>
-                                                </div>
-                                                <!-- End Audio Player -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="echo-feature-area-right-site-audio-news">
-                                        <div class="echo-feature-area-right-img">
-                                            <a href="post-details.html">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/item-3.png" alt="Echo">
-                                            </a>
-                                        </div>
-                                        <div class="echo-feature-area-right-audio-text">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">The Morning World happyness</a></h5>
-                                            <div class="echo-feature-area-right-site-audio-main-contetn">
-                                                <!-- Start Audio Player -->
-                                                <div class="wrappers">
-                                                    <audio preload="auto" controls>
-                                                        <source src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/my-audio.mp3" type="audio/mpeg">
-                                                    </audio>
-                                                </div>
-                                                <!-- End Audio Player -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="echo-feature-area-right-site-newsletter">
                                 <div class="echo-feature-area-rigth-site-newsletter-title">
@@ -452,7 +386,7 @@
         </div>
     </div>
 </section>
-<!-- End Feature Area -->
+<!-- End Feature Area sixth -->
 <!-- Start popular News Area -->
 <section class="echo-popular-news-area">
     <div class="echo-popular-news-area-content">
@@ -524,8 +458,8 @@
         </div>
     </div>
 </section>
-<!-- End Popular News Area -->
-<!-- Start Our Software Download -->
+<!-- End Popular News Area  -->
+<!-- Start Our Software Download  seventh-->
 <section class="echo-software-download-area">
     <div class="container">
         <div class="echo-software-download-full-content-bg">
@@ -562,5 +496,5 @@
         </div>
     </div>
 </section>
-<!-- End Our Software Download -->
+<!-- End Our Software Download seventh -->
 <?php get_footer(); ?>

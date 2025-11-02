@@ -888,6 +888,64 @@
             'default' => '#',
 
         ]);
+        // ======================= Sixth Section =======================
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the main page sixth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'tag_heading_main_page_sixth_section_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the main page sixth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the main page sixth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'title_main_page_sixth_section_settings',
+            'type' => 'text',
+            'default' => 'Title',
+        ]);
+
+        //change the heading tag of the main page sixth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the main page sixth section', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'sixth_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.sixth-title-tag-style',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
     } else {
         function EchoNews_notice_kirki_missing()
         {
