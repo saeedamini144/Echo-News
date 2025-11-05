@@ -180,50 +180,9 @@
                             </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_settings', 'h2')) ?>>
                             <!-- must add the default tag to show correct style in first watch -->
                             <div class="row gx-5">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <!-- CALL BACK THE NORMAL HRLINE POST CARD -->
+                                <?php get_template_part('template-parts/noraml-hrline-post'); ?>
 
-                                    <!-- CALL BACK THE NORMAL HRLINE POST CARD -->
-                                    <!-- <?php echo get_template_part("/template-parts/noraml-hrline", "post"); ?> -->
-
-                                    <div class="echo-feature-area-post">
-                                        <div class="echo-feature-area-post-img img-transition-scale">
-                                            <a href="post-details.html">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-1.png" alt="Echo" class="img-hover">
-                                            </a>
-                                        </div>
-                                        <div class="echo-feature-area-post-hins">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">Most drivers fear MOT rules relaxation will
-                                                    risk lives</a></h5>
-                                        </div>
-                                        <hr>
-                                        <div class="echo-feature-area-read-view">
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                                read</a>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k
-                                                Views</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                    <div class="echo-feature-area-post">
-                                        <div class="echo-feature-area-post-img img-transition-scale">
-                                            <a href="post-details.html">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-2.png" alt="Echo" class="img-hover">
-                                            </a>
-                                        </div>
-                                        <div class="echo-feature-area-post-hins">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">26% of world lacks clean drinking water
-                                                    46%</a></h5>
-                                        </div>
-                                        <hr>
-                                        <div class="echo-feature-area-read-view">
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute
-                                                read</a>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k
-                                                Views</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

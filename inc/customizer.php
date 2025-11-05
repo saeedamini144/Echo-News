@@ -946,6 +946,17 @@
                 ],
             ],
         ]);
+
+        //choose the category of the main page sixth section
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the sixth section main posts', 'Echo News'),
+            'section' => 'main_page_options',
+            'settings' => 'sixth_section_main_posts_settings',
+            'type' => 'select',
+            'multiple' => true,
+            'choices' => EchoNews_get_all_category(),
+        ]);
     } else {
         function EchoNews_notice_kirki_missing()
         {
