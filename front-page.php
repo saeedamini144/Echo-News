@@ -225,115 +225,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="echo-feature-area-option">
-                                <div class="row gx-5 gy-5">
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-
-                                        <!-- CALL BACK THE HORIZONTAL NUMCOUNTER POST -->
-                                        <!-- <?php get_template_part("/template-parts/horizontal-numcounter", "post") ?> -->
-
-                                        <div class="echo-feature-area-option-content">
-                                            <div class="echo-feature-area-option-number">
-                                                <h3>01</h3>
-                                            </div>
-                                            <div class="echo-feature-area-option-content-text">
-                                                <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">UK bans TikTok on government devices</a> </h5>
-                                                <div class="echo-feature-area-option-read-more">
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                        minute read</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="echo-feature-area-option-content">
-                                            <div class="echo-feature-area-option-number">
-                                                <h3>02</h3>
-                                            </div>
-                                            <div class="echo-feature-area-option-content-text">
-                                                <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">100m-high wall of sand towers above
-                                                        China</a></h5>
-                                                <div class="echo-feature-area-option-read-more">
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                        minute read</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="echo-feature-area-option-content">
-                                            <div class="echo-feature-area-option-number">
-                                                <h3>03</h3>
-                                            </div>
-                                            <div class="echo-feature-area-option-content-text">
-                                                <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">Ed Sheeran reveals struggles with
-                                                        drugs</a></h5>
-                                                <div class="echo-feature-area-option-read-more">
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                        minute read</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="echo-feature-area-option-content">
-                                            <div class="echo-feature-area-option-number">
-                                                <h3>04</h3>
-                                            </div>
-                                            <div class="echo-feature-area-option-content-text">
-                                                <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">Give peanut butter to babies to cut
-                                                        allergy</a></h5>
-                                                <div class="echo-feature-area-option-read-more">
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                        minute read</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-feature-area-last-news">
-                                <div class="row gy-5">
-                                    <div class="col-xl-12">
-                                        <div class="echo-feature-area-last-content">
-                                            <div class="echo-feature-area-last-content-img img-transition-scale">
-                                                <a href="post-details.html">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-3.png" alt="Echo" class="img-hover">
-                                                </a>
-                                            </div>
-                                            <div class="echo-feature-area-last-content-text">
-                                                <h3 class="text-capitalize"><a href="post-details.html" class="title-hover">Avatar: The Way Of Water - how gaming
-                                                        tech...</a></h3>
-                                                <div class="echo-feature-area-last-content-read-view">
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                        minute read</a>
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k
-                                                        Views</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <div class="echo-feature-area-last-content">
-                                            <div class="echo-feature-area-last-content-img img-transition-scale">
-                                                <a href="post-details.html">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-left/item-4.png" alt="Echo" class="img-hover">
-                                                </a>
-                                            </div>
-                                            <div class="echo-feature-area-last-content-text">
-                                                <h3 class="text-capitalize"><a href="post-details.html" class="title-hover">Spotify's redesign isn't going down well
-                                                        - why are...</a></h3>
-                                                <div class="echo-feature-area-last-content-read-view">
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                        minute read</a>
-                                                    <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k
-                                                        Views</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-5 col-md-12">
@@ -356,28 +247,75 @@
                                 <div class="echo-feature-area-right-site-audio-title">
                                     <h5>New Podcasts</h5>
                                 </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12">
 
+                                    <!-- CALL BACK THE HORIZONTAL NUMCOUNTER POST -->
+                                    <!-- <?php get_template_part("/template-parts/horizontal-numcounter", "post") ?> -->
+
+                                    <div class="echo-feature-area-option-content">
+                                        <div class="echo-feature-area-option-number">
+                                            <h3>01</h3>
+                                        </div>
+                                        <div class="echo-feature-area-option-content-text">
+                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">UK bans TikTok on government devices</a> </h5>
+                                            <div class="echo-feature-area-option-read-more">
+                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
+                                                    minute read</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <div class="echo-feature-area-option-content">
+                                        <div class="echo-feature-area-option-number">
+                                            <h3>02</h3>
+                                        </div>
+                                        <div class="echo-feature-area-option-content-text">
+                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">100m-high wall of sand towers above
+                                                    China</a></h5>
+                                            <div class="echo-feature-area-option-read-more">
+                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
+                                                    minute read</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <div class="echo-feature-area-option-content">
+                                        <div class="echo-feature-area-option-number">
+                                            <h3>03</h3>
+                                        </div>
+                                        <div class="echo-feature-area-option-content-text">
+                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">Ed Sheeran reveals struggles with
+                                                    drugs</a></h5>
+                                            <div class="echo-feature-area-option-read-more">
+                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
+                                                    minute read</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <div class="echo-feature-area-option-content">
+                                        <div class="echo-feature-area-option-number">
+                                            <h3>04</h3>
+                                        </div>
+                                        <div class="echo-feature-area-option-content-text">
+                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">Give peanut butter to babies to cut
+                                                    allergy</a></h5>
+                                            <div class="echo-feature-area-option-read-more">
+                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
+                                                    minute read</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="echo-feature-area-right-site-newsletter">
                                 <div class="echo-feature-area-rigth-site-newsletter-title">
                                     <h5>Newsletter</h5>
                                 </div>
-                                <div class="echo-feature-area-right-site-newsletter-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/feature-right/news-item-1.png" alt="Echo">
-                                </div>
-                                <div class="echo-feature-area-right-site-sub-title">
-                                    <p>Stay Tuned With Updates</p>
-                                </div>
-                                <div class="echo-feature-area-right-site-news-subscribe">
-                                    <form action="https://html.themewant.com/echo/POST">
-                                        <div class="echo-feature-area-right-site-input-box">
-                                            <input type="email" placeholder="Email Addresss.." required>
-                                            <button type="submit">
-                                                <i class="fa-regular fa-arrow-right"></i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+
                             </div>
                         </div>
                     </div>
