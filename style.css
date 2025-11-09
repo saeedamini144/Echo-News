@@ -19926,7 +19926,7 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 .echo-feature-area .echo-feature-area-site-title .echo-feature-area-read-view {
     margin-top: 15px;
     display: flex;
-    gap: 15px;
+    gap: 5px;
 }
 
 .echo-feature-area .echo-feature-area-site-title .echo-feature-area-read-view a {
@@ -19951,7 +19951,7 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     flex-basis: 28%;
 }
 
-.echo-feature-area .echo-feature-area-option-content .echo-feature-area-option-number h3 {
+.echo-feature-area .echo-feature-area-option-content .echo-feature-area-option-number p {
     font-size: 60px;
     line-height: 70px;
     color: var(--body-color);
@@ -25913,7 +25913,7 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         font-size: 19px;
     }
 
-    .echo-feature-area .echo-feature-area-option-content .echo-feature-area-option-number h3 {
+    .echo-feature-area .echo-feature-area-option-content .echo-feature-area-option-number p {
         font-size: 52px;
         line-height: 62px;
     }

@@ -189,7 +189,10 @@
                     <div class="col-xl-4 col-lg-5 col-md-12">
                         <div class="echo-feature-area-right-site-flexing">
                             <div class="echo-feature-area-right-site-follower">
-                                <h5>Follow Us</h5>
+                                <!-- change the title of the sixth section col1 -->
+                                <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_col1_settings', 'h2')) ?> class="sixth-title-tag-style-col1">
+                                    <?php echo esc_html__(get_theme_mod('title_main_page_sixth_col1_section_settings', 'Follow Us')) ?>
+                                </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_col1_settings', 'h2')) ?>>
                                 <ul class="list-unstyled">
                                     <!-- call back the social icon -->
                                     <?php
@@ -204,71 +207,14 @@
                             </div>
                             <div class="echo-feature-area-right-site-full-content">
                                 <div class="echo-feature-area-right-site-audio-title">
-                                    <h5>New Podcasts</h5>
+                                    <!-- change the title of the sixth section col2 -->
+                                    <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_col2_settings', 'h2')) ?> class="sixth-title-tag-style-col2">
+                                        <?php echo esc_html__(get_theme_mod('title_main_page_sixth_col2_section_settings', 'title')) ?>
+                                    </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_col2_settings', 'h2')) ?>>
                                 </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                <!-- CALL BACK THE horizontal numcounter post -->
+                                <?php get_template_part('template-parts/horizontal-numcounter-post'); ?>
 
-                                    <!-- CALL BACK THE HORIZONTAL NUMCOUNTER POST -->
-                                    <!-- <?php get_template_part("/template-parts/horizontal-numcounter", "post") ?> -->
-
-                                    <div class="echo-feature-area-option-content">
-                                        <div class="echo-feature-area-option-number">
-                                            <h3>01</h3>
-                                        </div>
-                                        <div class="echo-feature-area-option-content-text">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">UK bans TikTok on government devices</a> </h5>
-                                            <div class="echo-feature-area-option-read-more">
-                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                    minute read</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12">
-                                    <div class="echo-feature-area-option-content">
-                                        <div class="echo-feature-area-option-number">
-                                            <h3>02</h3>
-                                        </div>
-                                        <div class="echo-feature-area-option-content-text">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">100m-high wall of sand towers above
-                                                    China</a></h5>
-                                            <div class="echo-feature-area-option-read-more">
-                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                    minute read</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12">
-                                    <div class="echo-feature-area-option-content">
-                                        <div class="echo-feature-area-option-number">
-                                            <h3>03</h3>
-                                        </div>
-                                        <div class="echo-feature-area-option-content-text">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">Ed Sheeran reveals struggles with
-                                                    drugs</a></h5>
-                                            <div class="echo-feature-area-option-read-more">
-                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                    minute read</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12 col-md-12">
-                                    <div class="echo-feature-area-option-content">
-                                        <div class="echo-feature-area-option-number">
-                                            <h3>04</h3>
-                                        </div>
-                                        <div class="echo-feature-area-option-content-text">
-                                            <h5 class="text-capitalize"><a href="post-details.html" class="title-hover">Give peanut butter to babies to cut
-                                                    allergy</a></h5>
-                                            <div class="echo-feature-area-option-read-more">
-                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06
-                                                    minute read</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="echo-feature-area-right-site-newsletter">
                                 <div class="echo-feature-area-rigth-site-newsletter-title">
