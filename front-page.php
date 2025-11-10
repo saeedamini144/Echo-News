@@ -218,9 +218,13 @@
                             </div>
                             <div class="echo-feature-area-right-site-newsletter">
                                 <div class="echo-feature-area-rigth-site-newsletter-title">
-                                    <h5>Newsletter</h5>
+                                    <!-- change the title of the sixth section col3 -->
+                                    <<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_col3_settings', 'h2')) ?> class="sixth-title-tag-style-col3">
+                                        <?php echo esc_html__(get_theme_mod('title_main_page_sixth_col3_section_settings', 'title')) ?>
+                                    </<?php echo esc_html__(get_theme_mod('tag_heading_main_page_sixth_section_col3_settings', 'h2')) ?>>
                                 </div>
-
+                                <!-- horizontal-normal-posts-callback-col3 -->
+                                <?php get_template_part('template-parts/horizontal-normal-posts-callback-sixth-section-col3'); ?>
                             </div>
                         </div>
                     </div>

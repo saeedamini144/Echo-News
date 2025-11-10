@@ -40,7 +40,7 @@
  <?php
         }
     } else {
-        echo esc_html__('No content found', 'EchoNews');
+        echo esc_html__('No content found', 'Echo News');
     }
     wp_reset_postdata();
     ?>
