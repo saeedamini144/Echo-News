@@ -20116,12 +20116,12 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     margin-bottom: 38px;
 }
 
-.echo-popular-news-area .echo-popular-area-title h4 {
+.seventh-title-tag-style {
     font-size: 30px;
     position: relative;
 }
 
-.echo-popular-news-area .echo-popular-area-title h4::after {
+.seventh-title-tag-style::after {
     content: "";
     position: absolute;
     background-color: #5E5E5E;
@@ -20133,7 +20133,7 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     transform: translateY(-50%);
 }
 
-.echo-popular-news-area .echo-popular-area-title h4::before {
+.seventh-title-tag-style::before {
     content: "";
     position: absolute;
     background-color: #5E5E5E;
@@ -20147,6 +20147,7 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 
 .echo-popular-news-area .echo-popular-area-img a img {
     width: 100%;
+    height: 277px;
 }
 
 .echo-popular-news-area .echo-popular-area-item-title {
@@ -20161,7 +20162,7 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 
 .echo-popular-news-area .echo-popular-area-read-view {
     display: flex;
-    gap: 20px;
+    gap: 5px;
     align-items: center;
     justify-content: center;
 }
@@ -22774,86 +22775,6 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 
 
 /* Benar area style */
-.echo-software-download-area {
-    padding-bottom: 90px;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg {
-    background-color: #537FE7;
-    padding: 80px 150px;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.4s;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg:hover .echo-software-download-img-content {
-    transform: scale(110%);
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #181823;
-    opacity: 0;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-img-content {
-    position: absolute;
-    top: -1px;
-    right: 50px;
-    transition: all 0.4s;
-    transform: scale(100%);
-    transition: all 0.4s;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content {
-    display: flex;
-    position: relative;
-    z-index: 1;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-title h2 {
-    font-size: 40px;
-    line-height: 50px;
-    color: #fff;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-sub-title p {
-    color: #fff;
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place {
-    display: flex;
-    gap: 25px;
-    margin-top: 32px;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place a {
-    border: 1px solid #fff;
-    padding: 20px 55px;
-    color: #fff;
-    position: relative;
-    font-family: "Bona Nova", serif;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place a svg {
-    margin-right: 8px;
-}
-
-
-.echo-software-download-area.inner {
-    padding-bottom: 100px;
-}
-
 
 .echo-home-1-hero-area-top-story .echo-top-story.first {
     display: block;
@@ -23377,23 +23298,6 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     padding: 200px 0;
 }
 
-
-
-.echo-software-download-area.sports {
-    padding-top: 90px;
-    padding-bottom: 90px;
-}
-
-.echo-software-download-area.sports .echo-software-download-full-content-bg {
-    background: url(../images/home-1/our-android-app-download/bg5.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.echo-software-download-area.sports .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place a {
-    border-radius: 15px;
-}
 
 .echo-about-area {
     padding: 100px 0;
@@ -26360,10 +26264,6 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         line-height: 30px;
     }
 
-    .echo-software-download-area {
-        padding: 30px 10px;
-    }
-
     .echo-popular-news-area {
         padding: 30px 0;
     }
@@ -26377,8 +26277,8 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         margin: 10px 0;
     }
 
-    .echo-popular-news-area .echo-popular-area-title h4::before,
-    .echo-popular-news-area .echo-popular-area-title h4::after {
+    .seventh-title-tag-style::before,
+    .seventh-title-tag-style::after {
         display: none;
     }
 
@@ -27061,24 +26961,6 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         margin-top: 5px;
     }
 
-    .echo-software-download-area {
-        padding: 30px 5px;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place {
-        display: block;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place>a {
-        display: block;
-        margin-top: 15px;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-title h2 {
-        font-size: 25px;
-        line-height: 35px;
-    }
-
     .echo-banner .echo-banner-right-itme .echo-banner-right-heading h5 {
         font-size: 20px;
         line-height: 30px;
@@ -27097,8 +26979,8 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         margin: 10px 0;
     }
 
-    .echo-popular-news-area .echo-popular-area-title h4::before,
-    .echo-popular-news-area .echo-popular-area-title h4::after {
+    .sixth-title-tag-style::before,
+    .sixth-title-tag-style::after {
         display: none;
     }
 
@@ -27688,9 +27570,7 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         padding: 30px 15px;
     }
 
-    .echo-software-download-area {
-        padding: 30px 15px;
-    }
+
 }
 
 @media (max-width: 1172px) {
@@ -27854,9 +27734,7 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
 
 
 
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place a {
-        padding: 20px 40px;
-    }
+
 
 
     .echo-footer-area4 .footer-top .footer-top-inner {
@@ -27869,20 +27747,6 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
         width: 100%;
         margin: 15px 0;
     }
-
-    .echo-software-download-area .echo-software-download-full-content-bg {
-        padding: 80px 50px;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content {
-        justify-content: center;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content {
-        text-align: center;
-    }
-
-
 
     .echo-team-area.about .echo-team-area-inner .team-wrapper .content-area ul.social-icon li:nth-child(1) {
         top: -5px;
@@ -27936,19 +27800,6 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
     }
 
 
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place a {
-        padding: 20px 40px;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content {
-        justify-content: center;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content {
-        text-align: center;
-    }
-
     .echo-feature-area .echo-feature-area-right-site-follower ul li,
     .echo-footer-area4 .footer-top .footer-top-inner {
         text-align: center;
@@ -27988,9 +27839,6 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
 
-    .echo-software-download-area .echo-software-download-full-content-bg {
-        padding: 80px 30px;
-    }
 
     .echo-footer-area4 .footer-top .footer-top-inner .footer-top-right {
         width: 100%;
@@ -28030,18 +27878,6 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
 
     .echo-feature-area.area-2 .echo-feature-area-content .echo-feature-full-content .echo-feature-area-site-title .echo-feature-area-last-content .echo-feature-area-last-content-text .content-catagory-tag {
         margin: 30px 0 0 0;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg {
-        padding: 80px 20px;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content h2 br {
-        display: none;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place a {
-        padding: 15px 30px;
     }
 
     .echo-footer-area4 .footer-top .footer-top-inner .footer-top-right {
@@ -28106,21 +27942,6 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
     .echo-feature-area.area-2 .echo-feature-area-content .echo-feature-full-content .echo-feature-area-site-title .echo-feature-area-last-content .echo-feature-area-last-content-text .content-catagory-tag {
         margin: 30px auto 0 auto;
     }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content {
-        text-align: center;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-place {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .echo-software-download-area .echo-software-download-full-content-bg .echo-software-download-full-content .echo-software-download-text-content .echo-software-download-sub-title p br {
-        display: none;
-    }
-
-
 
     .echo-catagories-area .echo-catagories-area-content .title-area .section-title {
         font-size: 20px;
