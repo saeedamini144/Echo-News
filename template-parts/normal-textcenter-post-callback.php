@@ -17,6 +17,7 @@ $args = new WP_Query(
         )
     )
 );
+//footer
 
 if ($args->have_posts()) {
     while ($args->have_posts()) {
