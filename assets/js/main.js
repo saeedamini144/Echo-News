@@ -14,8 +14,8 @@
     },
     methods: function (e) {
       imJs.swiperActivation();
-      imJs.vedioActivation();
-      imJs.myAudio();
+      // imJs.vedioActivation();
+      // imJs.myAudio();
       imJs.metismenu();
       imJs.sideMenu();
       imJs.stickySidebar();
@@ -226,30 +226,30 @@
       });
 
     },
-    vedioActivation: function (e) {
-      $(document).ready(function () {
-        $('.popup-youtube, .popup-vimeo').magnificPopup({
-          disableOn: 700,
-          type: 'iframe',
-          mainClass: 'mfp-fade',
-          removalDelay: 160,
-          preloader: false,
-          fixedContentPos: false
-        });
-      });
-    },
-    myAudio: function (e) {
-      $(document).ready(function () {
-        function myFunction() {
-          var x = document.getElementById("myAudio").duration;
+    // vedioActivation: function (e) {
+    //   $(document).ready(function () {
+    //     $('.popup-youtube, .popup-vimeo').magnificPopup({
+    //       disableOn: 700,
+    //       type: 'iframe',
+    //       mainClass: 'mfp-fade',
+    //       removalDelay: 160,
+    //       preloader: false,
+    //       fixedContentPos: false
+    //     });
+    //   });
+    // },
+    // myAudio: function (e) {
+    //   $(document).ready(function () {
+    //     function myFunction() {
+    //       var x = document.getElementById("myAudio").duration;
 
-        };
-        $(function () {
-          $('audio').audioPlayer();
-        });
+    //     };
+    //     $(function () {
+    //       $('audio').audioPlayer();
+    //     });
 
-      });
-    },
+    //   });
+    // },
     // metismenu
     metismenu: function () {
       $('#mobile-menu-active').metisMenu();
