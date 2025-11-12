@@ -96,12 +96,10 @@ function register_scripts_EchoNews()
     $version = wp_get_theme()->get('version');
 
     wp_enqueue_script('jquery');
-    wp_enqueue_script('audio-EchoNews', get_template_directory_uri() . '/assets/js/plugins/audio.js', array('jquery'), $version, true);
     wp_enqueue_script('bootstrap-EchoNews', get_template_directory_uri() . '/assets/js/vendor/bootstrap.min.js', array('jquery'), '5.0.2', true);
     wp_enqueue_script('swiper-EchoNews', get_template_directory_uri() . '/assets/js/vendor/swiper.js', array('jquery'), '9.3.2', true);
     wp_enqueue_script('metismenu-EchoNews', get_template_directory_uri() . '/assets/js/vendor/metisMenu.min.js', array('jquery'), $version, true);
     wp_enqueue_script('magnificpopup-EchoNews', get_template_directory_uri() . '/assets/js/plugins/magnific-popup.js', array('jquery'), $version, true);
-    wp_enqueue_script('contactform-EchoNews', get_template_directory_uri() . '/assets/js/plugins/contact-form.js', array('jquery'), $version, true);
     wp_enqueue_script('resize-sensor-EchoNews', get_template_directory_uri() . '/assets/js/plugins/resize-sensor.min.js', array('jquery'), $version, true);
     wp_enqueue_script('theia-sticky-sidebar-EchoNews', get_template_directory_uri() . '/assets/js/plugins/theia-sticky-sidebar.min.js', array('jquery'), $version, true);
     wp_enqueue_script('mainjs-EchoNews', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $version, true);
@@ -112,6 +110,9 @@ function register_scripts_EchoNews()
     //     'ajaxUrl' => admin_url('admin-ajax.php'),
     //     'nonce' => wp_create_nonce('echo_news_nonce'),
     // ));
+    if (is_single()) {
+        wp_enqueue_script('single-post-EchoNews', get_template_directory_uri() . '/assets/js/post-scripts.js', array('jquery'), $version, true);
+    }
 }
 add_action('wp_enqueue_scripts', 'register_scripts_EchoNews');
 
