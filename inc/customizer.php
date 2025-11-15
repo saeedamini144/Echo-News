@@ -24,6 +24,13 @@
             'panel' => 'EchoNews_Theme_Options_Panel',
         ]);
 
+        //footer options
+        kirki::add_section('footer_options', [
+            'title' => esc_html__('Footer Options', 'Echo News'),
+            'description' => esc_html__('You can change the footer options', 'Echo News'),
+            'panel' => 'EchoNews_Theme_Options_Panel',
+        ]);
+
         //vertical header slider
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose Category', 'Echo News'),
@@ -273,7 +280,7 @@
             'output' => [
                 [
                     'element' => '.title-tag-style',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -344,7 +351,7 @@
             'output' => [
                 [
                     'element' => '.second-title-tag-style',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -414,7 +421,7 @@
             'output' => [
                 [
                     'element' => '.third-title-tag-style',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -484,7 +491,7 @@
             'output' => [
                 [
                     'element' => '.fourth-title-tag-style',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -575,7 +582,7 @@
             'output' => [
                 [
                     'element' => '.fifth-title-tag-style',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -667,7 +674,7 @@
             'output' => [
                 [
                     'element' => '.fifth-title-tag-style-col1',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -770,7 +777,7 @@
             'output' => [
                 [
                     'element' => '.fifth-title-tag-style-col2',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -862,7 +869,7 @@
             'output' => [
                 [
                     'element' => '.fifth-title-tag-style-col3',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -942,7 +949,7 @@
             'output' => [
                 [
                     'element' => '.sixth-title-tag-style',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -1011,7 +1018,7 @@
             'output' => [
                 [
                     'element' => '.sixth-title-tag-style-col1',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -1069,7 +1076,7 @@
             'output' => [
                 [
                     'element' => '.sixth-title-tag-style-col2',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -1155,7 +1162,7 @@
             'output' => [
                 [
                     'element' => '.sixth-title-tag-style-col2',
-                    'suffix'   => '!important', // ✅ اضافه کردن important
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
                 ],
             ],
         ]);
@@ -1286,6 +1293,377 @@
             'type' => 'select',
             'multiple' => true,
             'choices' => EchoNews_get_all_category(),
+        ]);
+
+        //footer option settings
+        //first footer column
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the footer first col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'tag_heading_footer_first_col_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the footer first col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the footer first col', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'title_footer_first_col_settings',
+            'type' => 'text',
+            'default' => 'Footer Title',
+        ]);
+
+        //change the heading tag of the footer first col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the footer first col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_first_col_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.footer-first-col',
+                    'suffix'   => '!important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+        //repeatable content of the footer col1
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Footer First Column Repeatable Content', 'Echo News'),
+            'description' => esc_html__('You can add repeatable content in the footer first column', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_first_col_repeatable_content_settings',
+            'type' => 'repeater',
+            'button_label' => esc_html__('Add New Content', 'Echo News'),
+            'fields' => [
+                'footer_first_col_icon' => [
+                    'type' => 'text',
+                    'label' => esc_html__('Font Awesome Icon Class', 'Echo News'),
+                    'description' => esc_html__('You can enter font awesome icon version 5 class. Example: fas fa-check-circle', 'Echo News'),
+                    'default' => 'fas fa-check-circle',
+                ],
+                'footer_first_col_text' => [
+                    'type' => 'text',
+                    'label' => esc_html__('Content Text', 'Echo News'),
+                    'default' => 'This is a footer first column content.',
+                ],
+                'footer_first_col_link' => [
+                    'type' => 'url',
+                    'label' => esc_html__('Content Link', 'Echo News'),
+                    'default' => '#',
+                ],
+            ],
+            'default' => [
+                [
+                    'footer_first_col_icon' => 'fas fa-check-circle',
+                    'footer_first_col_text' => 'This is a footer first column content.',
+                    'footer_first_col_link' => '#',
+                ],
+            ],
+            'choices' => [
+                'limit' => 10,
+            ],
+        ]);
+
+        //second footer column
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the footer second col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'tag_heading_footer_second_col_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the footer second col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the footer second col', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'title_footer_second_col_settings',
+            'type' => 'text',
+            'default' => 'Footer Title 2',
+        ]);
+
+        //change the heading tag of the footer second col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the footer second col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_second_col_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.footer-second-col',
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+        //repeatable content of the footer col2
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Footer second Column Repeatable Content', 'Echo News'),
+            'description' => esc_html__('You can add repeatable content in the footer second column', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_second_col_repeatable_content_settings',
+            'type' => 'repeater',
+            'button_label' => esc_html__('Add New Content', 'Echo News'),
+            'fields' => [
+                'footer_second_col_icon' => [
+                    'type' => 'text',
+                    'label' => esc_html__('Font Awesome Icon Class', 'Echo News'),
+                    'description' => esc_html__('You can enter font awesome icon version 5 class. Example: fas fa-check-circle', 'Echo News'),
+                    'default' => 'fas fa-check-circle',
+                ],
+                'footer_second_col_text' => [
+                    'type' => 'text',
+                    'label' => esc_html__('Content Text', 'Echo News'),
+                    'default' => 'This is a footer second column content.',
+                ],
+                'footer_second_col_link' => [
+                    'type' => 'url',
+                    'label' => esc_html__('Content Link', 'Echo News'),
+                    'default' => '#',
+                ],
+            ],
+            'default' => [
+                [
+                    'footer_second_col_icon' => 'fas fa-check-circle',
+                    'footer_second_col_text' => 'This is content',
+                    'footer_second_col_link' => '#',
+                ],
+            ],
+            'choices' => [
+                'limit' => 10,
+            ],
+        ]);
+
+        //third footer column
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the footer third col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'tag_heading_footer_third_col_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the footer third col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the footer third col', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'title_footer_third_col_settings',
+            'type' => 'text',
+            'default' => 'Footer Title 3',
+        ]);
+
+        //change the heading tag of the footer third col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the footer third col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_third_col_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.footer-third-col',
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+        //repeatable content of the footer col3
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Footer third Column Repeatable Content', 'Echo News'),
+            'description' => esc_html__('You can add repeatable content in the footer third column', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_third_col_repeatable_content_settings',
+            'type' => 'repeater',
+            'button_label' => esc_html__('Add New Content', 'Echo News'),
+            'fields' => [
+                'footer_third_col_icon' => [
+                    'type' => 'text',
+                    'label' => esc_html__('Font Awesome Icon Class', 'Echo News'),
+                    'description' => esc_html__('You can enter font awesome icon version 5 class. Example: fas fa-check-circle', 'Echo News'),
+                    'default' => 'fas fa-check-circle',
+                ],
+                'footer_third_col_text' => [
+                    'type' => 'text',
+                    'label' => esc_html__('Content Text', 'Echo News'),
+                    'default' => 'footer third column',
+                ],
+                'footer_third_col_link' => [
+                    'type' => 'url',
+                    'label' => esc_html__('Content Link', 'Echo News'),
+                    'default' => '#',
+                ],
+            ],
+            'default' => [
+                [
+                    'footer_third_col_icon' => 'fas fa-check-circle',
+                    'footer_third_col_text' => 'This is content',
+                    'footer_third_col_link' => '#',
+                ],
+            ],
+            'choices' => [
+                'limit' => 10,
+            ],
+        ]);
+
+        //fourth footer column
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the footer fourth col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'tag_heading_footer_fourth_col_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the footer fourth col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of the footer fourth col', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'title_footer_fourth_col_settings',
+            'type' => 'text',
+            'default' => 'Footer Title 4',
+        ]);
+
+        //change the heading tag of the footer fourth col 
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the footer fourth col ', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_fourth_col_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.footer-fourth-col',
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+        //textarea footer fourth col
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('write the text', 'Echo News'),
+            'description' => esc_html__('You can write the text of the footer fourth col', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'textarea_footer_fourth_col_settings',
+            'type' => 'editor',
+            'default' => 'This is footer fourth column text.',
+        ]);
+
+        //footer copyright
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Footer Copyright Text', 'Echo News'),
+            'description' => esc_html__('You can change the footer copyright text', 'Echo News'),
+            'section' => 'footer_options',
+            'settings' => 'footer_copyright_text_settings',
+            'type' => 'editor',
+            'default' => '© Copyright 2025 by Websemicolon',
+            'output' => [
+                'element' => '.copyright',
+
+            ],
         ]);
     } else {
         function EchoNews_notice_kirki_missing()
