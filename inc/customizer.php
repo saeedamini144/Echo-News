@@ -31,6 +31,13 @@
             'panel' => 'EchoNews_Theme_Options_Panel',
         ]);
 
+        //blog sidebar options
+        kirki::add_section('blog_sidebar_option', [
+            'title' => esc_html__('Blog Sidebar Options', 'Echo News'),
+            'description' => esc_html__('You can change the blog sidebar options', 'Echo News'),
+            'panel' => 'EchoNews_Theme_Options_Panel',
+        ]);
+
         //vertical header slider
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('Choose Category', 'Echo News'),

@@ -11,11 +11,11 @@ function EchoNews_register_required_plugins()
 			'slug'      => 'kirki',
 			'required'  => true,
 		),
-		array(
-			'name'      => 'Yoast SEO',
-			'slug'      => 'wordpress-seo',
-			'required'  => true,
-		),
+		// array(
+		// 	'name'      => 'Yoast SEO',
+		// 	'slug'      => 'wordpress-seo',
+		// 	'required'  => true,
+		// ),
 		// array(
 		// 	'name'      => 'WP-PostViews',
 		// 	'slug'      => 'wp-postviews',

@@ -101,7 +101,6 @@ function register_scripts_EchoNews()
     wp_enqueue_script('metismenu-EchoNews', get_template_directory_uri() . '/assets/js/vendor/metisMenu.min.js', array('jquery'), $version, true);
     wp_enqueue_script('magnificpopup-EchoNews', get_template_directory_uri() . '/assets/js/plugins/magnific-popup.js', array('jquery'), $version, true);
     wp_enqueue_script('resize-sensor-EchoNews', get_template_directory_uri() . '/assets/js/plugins/resize-sensor.min.js', array('jquery'), $version, true);
-    wp_enqueue_script('theia-sticky-sidebar-EchoNews', get_template_directory_uri() . '/assets/js/plugins/theia-sticky-sidebar.min.js', array('jquery'), $version, true);
     wp_enqueue_script('mainjs-EchoNews', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $version, true);
     // wp_enqueue_script('anywhere-home-EchoNews', get_template_directory_uri() . '/assets/js/anywhere-home.js', array('jquery'), $version, true);
 
@@ -184,4 +183,59 @@ function EchoNews_post_views_count_display()
     $post_id = get_the_id();
     $views = get_post_meta($post_id, 'post_views_count', true);
     return $views . ' ' . esc_html__("Views", "Echo News");
+}
+
+// comments rating save in data base
+add_action('comment_post', function ($comment_id) {
+    if (isset($_POST['rating']) && $_POST['rating'] !== '') {
+        add_comment_meta($comment_id, 'rating', intval($_POST['rating']));
+    }
+});
+function display_average_rating($post_id)
+{
+    $comments = get_comments(array('post_id' => $post_id, 'status' => 'approve'));
+    $total_rating = 0;
+    $total_comments = 0;
+
+    foreach ($comments as $comment) {
+        $rating = get_comment_meta($comment->comment_ID, 'rating', true);
+        if ($rating) {
+            $total_rating += $rating;
+            $total_comments++;
+        }
+    }
+
+    $average_rating = $total_comments > 0 ? round($total_rating / $total_comments, 1) : 0;
+
+    // تولید HTML برای نمایش ستاره‌ها
+    echo '<div class="average-rating">';
+    for ($i = 1; $i <= 5; $i++) {
+        if ($i <= $average_rating) {
+            echo '<span class="star text-warning">★</span>'; // ستاره طلایی
+        } else {
+            echo '<span class="star text-muted">★</span>'; // ستاره توسی
+        }
+    }
+    echo '</div>';
+
+    // اضافه کردن JSON-LD Schema
+    if ($total_comments > 0) {
+        $item_reviewed = array(
+            '@type' => 'WebPage', // تغییر نوع داده به WebPage یا Article
+            'name' => get_the_title($post_id),
+            'url' => get_permalink($post_id),
+        );
+
+        $schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'AggregateRating',
+            'itemReviewed' => $item_reviewed,
+            'ratingValue' => $average_rating,
+            'reviewCount' => $total_comments,
+            'bestRating' => 5,
+            'worstRating' => 1,
+        );
+
+        echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+    }
 }

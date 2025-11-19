@@ -18,7 +18,7 @@
       // imJs.myAudio();
       imJs.metismenu();
       imJs.sideMenu();
-      imJs.stickySidebar();
+      // imJs.stickySidebar();
       imJs.searchOpton();
     },
     swiperActivation: function () {
@@ -360,11 +360,11 @@
   // }
 
   // stickySidebar
-  if (typeof $.fn.theiaStickySidebar !== "undefined") {
-    $(".sticky-coloum-wrap .sticky-coloum-item").theiaStickySidebar({
-      additionalMarginTop: 130,
-    });
-  }
+  // if (typeof $.fn.theiaStickySidebar !== "undefined") {
+  //   $(".sticky-coloum-wrap .sticky-coloum-item").theiaStickySidebar({
+  //     additionalMarginTop: 130,
+  //   });
+  // }
 
 
   var rts_light = $('.rts-dark-light');
