@@ -125,43 +125,15 @@ get_header();
                         <div class="col-xl-4 col-lg-4 sticky-coloum-item">
                             <div class="echo-right-ct-1">
                                 <div class="echo-home-1-hero-area-top-story">
-                                    <h5 class="text-center">Our Picks</h5>
-                                    <div class="echo-top-story">
-                                        <div class="echo-story-picture img-transition-scale">
-                                            <a href="post-details.html"><img src="assets/images/category-style-1/item-6.png" alt="Echo" class="img-hover"></a>
-                                        </div>
-                                        <div class="echo-story-text">
-                                            <h6><a href="#" class="title-hover">The Google Pixel Fold looks...</a></h6>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        </div>
-                                    </div>
-                                    <div class="echo-top-story">
-                                        <div class="echo-story-picture img-transition-scale">
-                                            <a href="post-details.html"><img src="assets/images/category-style-1/item-7.png" alt="Echo" class="img-hover"></a>
-                                        </div>
-                                        <div class="echo-story-text">
-                                            <h6><a href="#" class="title-hover">ChatGPT returns to Italy after ban</a></h6>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        </div>
-                                    </div>
-                                    <div class="echo-top-story">
-                                        <div class="echo-story-picture img-transition-scale">
-                                            <a href="post-details.html"><img src="assets/images/category-style-1/item-8.png" alt="Echo" class="img-hover"></a>
-                                        </div>
-                                        <div class="echo-story-text">
-                                            <h6><a href="#" class="title-hover">Avatar: The Way Of Water - how...</a></h6>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        </div>
-                                    </div>
-                                    <div class="echo-top-story">
-                                        <div class="echo-story-picture img-transition-scale">
-                                            <a href="post-details.html"><img src="assets/images/category-style-1/item-9.png" alt="Echo" class="img-hover"></a>
-                                        </div>
-                                        <div class="echo-story-text">
-                                            <h6><a href="#" class="title-hover">14 Tight Samurai Games You...</a></h6>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        </div>
-                                    </div>
+                                    <!-- change the title of the blog sidebar first part -->
+                                    <<?php echo esc_html(get_theme_mod('tag_heading_blogsidebar1_settings', 'h2')); ?>
+                                        class="blog_sidebar_first_part">
+                                        <?php echo esc_html(get_theme_mod('title_blogsidebar1_settings', 'Title')); ?>
+                                    </<?php echo esc_html(get_theme_mod('tag_heading_blogsidebar1_settings', 'h2')); ?>>
+                                    <!-- call back the blog sidebar first part posts -->
+                                    <?php
+                                    get_template_part('template-parts/horizontal-posts-blog-sidebar');
+                                    ?>
                                 </div>
                                 <div class="echo-home-1-hero-area-top-story story-review">
                                     <h5 class="text-center">Top Reviews</h5>

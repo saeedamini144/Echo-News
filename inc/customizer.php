@@ -1672,6 +1672,76 @@
 
             ],
         ]);
+
+        //blog sidebar 
+        //blogsidebar first part title
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the blog sidebar first part ', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'tag_heading_blogsidebar1_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the blog sidebar first part
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of theblog sidebar first part', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'title_blogsidebar1_settings',
+            'type' => 'text',
+            'default' => 'Blog sidebar part 1',
+        ]);
+
+        //change the heading tag of the blog sidebar first part
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the blog sidebar first part ', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blogsidebar1_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.blog_sidebar_first_part',
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+        //choose the category of the blog sidebar first part
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the blog sidebar first part', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blog_sidebar_first_cats_settings',
+            'type' => 'select',
+            'multiple' => true,
+            'choices' => EchoNews_get_all_category(),
+        ]);
     } else {
         function EchoNews_notice_kirki_missing()
         {
