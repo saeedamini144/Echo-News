@@ -40,16 +40,16 @@ get_header();
                                 <!-- post meta -->
                                 <div class="echo-hero-area-titlepost-post-like-comment-share">
                                     <div class="echo-hero-area-like-read-comment-share">
-                                        <span><i class="fa-light fa-clock"></i><?php echo EchoNews_time_to_read(); ?></span>
+                                        <span><i id="card-icon" class="fa-light fa-clock"></i><?php echo EchoNews_time_to_read(); ?></span>
                                     </div>
                                     <div class="echo-hero-area-like-read-comment-share">
-                                        <span><i class="fa-light fa-eye"></i><?php echo EchoNews_post_views_count_display(); ?></span>
+                                        <span><i id="card-icon" class="fa-light fa-eye"></i><?php echo EchoNews_post_views_count_display(); ?></span>
                                     </div>
                                     <div class="echo-hero-area-like-read-comment-share">
-                                        <span><i class="fa-light fa-comment-dots"></i><?php comments_number(' No Comments', ' One Comment', ' % Comments') ?></span>
+                                        <span><i id="card-icon" class="fa-light fa-comment-dots"></i><?php comments_number(' No Comments', ' One Comment', ' % Comments') ?></span>
                                     </div>
                                     <div class="echo-hero-area-like-read-comment-share">
-                                        <span><i><?php display_average_rating(get_the_ID()); ?></i></span>
+                                        <span><i id="card-icon"><?php display_average_rating(get_the_ID()); ?></i></span>
                                     </div>
 
                                 </div>
@@ -106,28 +106,9 @@ get_header();
                                     <p class="title"><?php echo esc_html__('You Might Also Like', 'Echo News'); ?></p>
                                     <div class="inner">
                                         <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="echo-top-story">
-                                                    <div class="echo-story-picture img-transition-scale">
-                                                        <a href="post-details.html"><img src="assets/images/home-1/trending-left/item-9.png" alt="Echo" class="img-hover"></a>
-                                                    </div>
-                                                    <div class="echo-story-text">
-                                                        <h6><a href="#" class="title-hover">ChatGPT returns to Italy after ban</a></h6>
-                                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="echo-top-story">
-                                                    <div class="echo-story-picture img-transition-scale">
-                                                        <a href="post-details.html"><img src="assets/images/home-1/trending-left/item-10.png" alt="Echo" class="img-hover"></a>
-                                                    </div>
-                                                    <div class="echo-story-text">
-                                                        <h6><a href="#" class="title-hover">Meta to wind down NFTs on platforms...</a></h6>
-                                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php
+                                            get_related_posts_by_category();
+                                            ?>
                                         </div>
                                     </div>
                                 </div>

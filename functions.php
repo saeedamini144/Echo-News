@@ -239,3 +239,31 @@ function display_average_rating($post_id)
         echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
     }
 }
+
+//related posts by category
+function get_related_posts_by_category()
+{
+    $categories = wp_get_post_categories(get_post_field('ID'));
+    // var_dump($categories);
+    $args = new WP_Query(
+        array(
+            'category__in' => $categories,
+            'post__not_in' => array(get_post_field('ID')),
+            'posts_per_page' => 4,
+            'orderby' => 'date',
+            'order' => 'DESC',
+        )
+    );
+
+    if ($args->have_posts()) {
+        while ($args->have_posts()) {
+            $args->the_post();
+            echo '<div class="col-lg-6 col-md-6">';
+            get_template_part('template-parts/horizontal-posts-html');
+            echo '</div>';
+        }
+    } else {
+        echo esc_html__('No related posts found', 'Echo News');
+    }
+    return;
+}
