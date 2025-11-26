@@ -11,8 +11,19 @@ get_header();
                     <!-- bread crumb inner wrapper -->
                     <div class="breadcrumb-inner text-center">
                         <div class="meta">
-                            <a href="#" class="prev">ECHO /</a>
-                            <a href="#" class="next">Single News</a>
+                            <?php
+
+                            if (is_plugin_active('Yoast SEO')) {
+                                yoast_breadcrumb('<p id="breadcrumbs" class="mt-2">', '</p>');
+                            } else if (is_plugin_active('rank-math/rank-math.php')) {
+                                if (function_exists('rank_math_the_breadcrumbs')) {
+                                    rank_math_the_breadcrumbs();
+                                }
+                            } else {
+                                echo '<p id="breadcrumbs" class="mt-2"><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'Echo News') . '</a> » ' . get_the_title() . '</p>';
+                            }
+
+                            ?>
                         </div>
                     </div>
                     <!-- bread crumb inner wrapper end -->
