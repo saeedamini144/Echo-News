@@ -21557,7 +21557,7 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 
 .echo-hero-section.inner .echo-right-ct-1 .echo-home-1-hero-area-top-story .echo-top-story .echo-story-picture a img {
     width: 100%;
-    height: 100%;
+    height: 240px;
 }
 
 .echo-hero-section.inner .echo-right-ct-1 .echo-home-1-hero-area-top-story .echo-top-story .echo-story-text {
@@ -22782,37 +22782,11 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     z-index: 1;
 }
 
-.echo-home-1-hero-area-top-story.story-review .echo-top-story .echo-story-picture::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #181823;
-    opacity: 0.4;
-    z-index: 1;
-}
-
-.echo-home-1-hero-area-top-story.story-review .echo-top-story .echo-story-picture::after {
-    content: "7.5";
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: #FFFFFF;
-    z-index: 1;
-    width: 50px;
-    height: 50px;
-    line-height: 43px;
-    text-align: center;
-    border-radius: 50%;
-    border-color: #FFFFFF;
-    border-width: 5px 5px 5px 5px;
-    border-style: solid;
-}
-
 .echo-home-1-hero-area-top-story.story-review .echo-top-story .echo-story-text {
     display: flex;
     align-items: center;
     margin-top: 15px;
+    gap: 10px;
 }
 
 .echo-home-1-hero-area-top-story.story-review .echo-top-story .echo-story-text .number {

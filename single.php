@@ -136,48 +136,37 @@ get_header();
                                     ?>
                                 </div>
                                 <div class="echo-home-1-hero-area-top-story story-review">
-                                    <h5 class="text-center">Top Reviews</h5>
-                                    <div class="echo-top-story">
-                                        <div class="echo-story-picture img-transition-scale">
-                                            <a href="post-details.html"><img src="assets/images/category-style-1/item-15.png" alt="Echo" class="img-hover"></a>
-                                        </div>
-                                        <div class="echo-story-text">
-                                            <h3 class="number">01</h3>
-                                            <div class="content">
-                                                <h6><a href="#" class="title-hover">Top Rated Products in Wireless...</a></h6>
-                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="echo-top-story">
-                                        <div class="echo-story-picture img-transition-scale">
-                                            <a href="post-details.html"><img src="assets/images/category-style-1/item-16.png" alt="Echo" class="img-hover"></a>
-                                        </div>
-                                        <div class="echo-story-text">
-                                            <h3 class="number">02</h3>
-                                            <div class="content">
-                                                <h6><a href="#" class="title-hover">ChatGPT returns to Italy after ban</a></h6>
-                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="echo-top-story">
-                                        <div class="echo-story-picture img-transition-scale">
-                                            <a href="post-details.html"><img src="assets/images/category-style-1/item-17.png" alt="Echo" class="img-hover"></a>
-                                        </div>
-                                        <div class="echo-story-text">
-                                            <h3 class="number">03</h3>
-                                            <div class="content">
-                                                <h6><a href="#" class="title-hover">Top 10 Best Portable Bluetooth Speakers..</a></h6>
-                                                <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                                    <!-- change the title of the blog sidebar first part -->
+                                    <<?php echo esc_html(get_theme_mod('tag_heading_blogsidebar2_settings', 'h2')); ?>
+                                        class="blog_sidebar_second_part">
+                                        <?php echo esc_html(get_theme_mod('title_blogsidebar2_settings', 'Title')); ?>
+                                    </<?php echo esc_html(get_theme_mod('tag_heading_blogsidebar2_settings', 'h2')); ?>>
+                                    <!-- call back the blog sidebar first part posts -->
+
+                                    <!-- call back the normal post card num counter -->
+                                    <?php
+                                    get_template_part('template-parts/noraml-post-card-numcounter');
+                                    ?>
+                                    <!-- call back the normal post card num counter -->
+
                                 </div>
                                 <!-- advertisement banner -->
                                 <div class="echo-ct-1-add">
                                     <div class="echo-ct-add-img">
-                                        <a rel="nofollow" href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/category-style-1/item-10.png" alt="Echo"></a>
+
+                                        <?php
+                                        function no_follow_add_banner()
+                                        {
+                                            $follow = get_theme_mod('blog_sidebar_advertisement_banner_nofollow_settings', true);
+                                            if ($follow) {
+                                                return 'follow';
+                                            } else {
+                                                return 'nofollow';
+                                            }
+                                        }
+                                        ?>
+                                        <a class="blog-sidebar-advertisement-banner" rel="<?php echo no_follow_add_banner(); ?>" href="<?php echo get_theme_mod('blog_sidebar_advertisement_banner_link_settings') ?>"><img src="<?php echo get_theme_mod('blog_sidebar_advertisement_banner_settings')  ?>" alt="<?php echo esc_attr(get_theme_mod('blog_sidebar_advertisement_banner_alt_title_settings')) ?>"></a>
                                     </div>
                                 </div>
                                 <!-- advertisement banner -->

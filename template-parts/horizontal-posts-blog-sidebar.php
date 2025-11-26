@@ -1,5 +1,6 @@
 <?php
 $select_category = get_theme_mod('blog_sidebar_first_cats_settings');
+
 $args = new WP_Query(
     array(
         'post_type' => 'post',

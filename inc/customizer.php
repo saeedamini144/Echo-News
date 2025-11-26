@@ -1742,6 +1742,144 @@
             'multiple' => true,
             'choices' => EchoNews_get_all_category(),
         ]);
+        //blogsidebar second part title
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose Tag Heading', 'Echo News'),
+            'description' => esc_html__('can change the heading tag in the blog sidebar second part ', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'tag_heading_blogsidebar2_settings',
+            'type' => 'select',
+            'default' => 'h2',
+            'choices' => [
+                'p' => 'p',
+                'h1' => 'h1',
+                'h2' => 'h2',
+                'h3' => 'h3',
+                'h4' => 'h4',
+                'h5' => 'h5',
+                'h6' => 'h6',
+            ],
+        ]);
+
+        //write the title of the blog sidebar second part
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Write the title', 'Echo News'),
+            'description' => esc_html__('You can write the title of theblog sidebar second part', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'title_blogsidebar2_settings',
+            'type' => 'text',
+            'default' => 'Blog sidebar part 2',
+        ]);
+
+        //change the heading tag of the blog sidebar second part
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Tag Heading Typography', 'Echo News'),
+            'description' => esc_html__('You can change the typography of the heading tag of the blog sidebar second part ', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blogsidebar2_tag_heading_typography_settings',
+            'transport' => 'auto',
+            'type' => 'typography',
+            'default' => [
+                'font-family'    => 'Roboto',
+                'variant'        => '700',
+                'font-size'      => '20px',
+                'line-height'    => '1.5',
+                'letter-spacing' => '0',
+                'text-transform' => 'none',
+                'color'          => '#333333',
+            ],
+            'choices'     => [
+                'fonts' => [
+                    'google' => ['popularity', 30], // لود کردن فونت‌های گوگل (پیش‌فرض)
+                ],
+            ],
+            'output' => [
+                [
+                    'element' => '.blog_sidebar_second_part',
+                    'suffix'   => ' !important', // ✅ اضافه کردن important
+                ],
+            ],
+        ]);
+        //choose the category of the blog sidebar second part
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Choose categories', 'Echo News'),
+            'description' => esc_html__('Choose category to show the blog sidebar second part', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blog_sidebar_second_cats_settings',
+            'type' => 'select',
+            'multiple' => true,
+            'choices' => EchoNews_get_all_category(),
+        ]);
+
+        //add avertisment banner in the blog sidebar
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Blog Sidebar Advertisment Banner', 'Echo News'),
+            'description' => esc_html__('You can add an advertisement banner in the blog sidebar', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blog_sidebar_advertisement_banner_settings',
+            'type' => 'image',
+            'default' => ' ',
+        ]);
+        //add linke for advertisement banner
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Blog Sidebar Advertisement Banner Link', 'Echo News'),
+            'description' => esc_html__('You can add link for advertisement banner in the blog sidebar', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blog_sidebar_advertisement_banner_link_settings',
+            'type' => 'url',
+            'default' => '#',
+        ]);
+        //add the field for the alt title of the advertisement banner
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Blog Sidebar Advertisement Banner Alt Title', 'Echo News'),
+            'description' => esc_html__('You can add alt title for advertisement banner in the blog sidebar', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blog_sidebar_advertisement_banner_alt_title_settings',
+            'type' => 'text',
+            'default' => 'advertisement Banner',
+        ]);
+        //add the no follow attribute to the advertisement banner link
+        kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label' => esc_html__('Blog Sidebar Advertisement Banner Link Nofollow', 'Echo News'),
+            'description' => esc_html__('if is on you have follow add banner', 'Echo News'),
+            'section' => 'blog_sidebar_option',
+            'settings' => 'blog_sidebar_advertisement_banner_nofollow_settings',
+            'type' => 'toggle',
+            'default' => false,
+        ]);
+
+        //add the Dimensions for the blog banner adds
+        Kirki::add_field('EchoNews_Theme_Options_Config', [
+            'label'       => esc_html__('Blog Sidebar Advertisement Banner Dimensions', 'Echo News'),
+            'description' => esc_html__('You can set the dimensions of the advertisement banner in the blog sidebar', 'Echo News'),
+            'section'     => 'blog_sidebar_option',
+            'settings'    => 'blog_sidebar_advertisement_banner_dimensions_settings',
+            'type'        => 'dimensions',
+            'default'     => [
+                'width'  => '300px',
+                'height' => '250px',
+            ],
+            'transport' => 'auto',
+            'choices' => [
+                'labels' => [
+                    'width'  => esc_html__('Width', 'Echo News'),
+                    'height' => esc_html__('Height', 'Echo News'),
+                ],
+                'units' => ['px', '%', 'em'],
+            ],
+            'output' => [
+                [
+                    'element'  => '.blog-sidebar-advertisement-banner img',
+                    'property' => 'width',
+                    'choice'   => 'width',
+                ],
+                [
+                    'element'  => '.blog-sidebar-advertisement-banner img',
+                    'property' => 'height',
+                    'choice'   => 'height',
+                ],
+            ],
+        ]);
     } else {
         function EchoNews_notice_kirki_missing()
         {
