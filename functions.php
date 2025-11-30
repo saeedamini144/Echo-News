@@ -22,6 +22,7 @@ function register_incFile()
     require_once get_template_directory() . '/inc/class-custom-menu-walker.php';
     require_once get_template_directory() . '/inc/customizer.php';
     require_once get_template_directory() . '/inc/post-callback-functions.php';
+    require_once get_template_directory() . '/inc/class-breadcrumb.php';
 }
 add_action('after_setup_theme', 'register_incFile'); //note load the correct style in dashboard at least fix it up
 
@@ -69,6 +70,13 @@ function eco_register_nav_menu()
     ));
 }
 add_action('init', 'eco_register_nav_menu');
+
+//call back the breadcrumb class
+function breadcrumb()
+{
+    $breadcrumb = new Breadcrumb();
+    $breadcrumb->render();
+}
 
 // enqueue styles and scripts
 function register_style_EchoNews()

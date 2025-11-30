@@ -11662,14 +11662,48 @@ a.pe-none {
     padding: 40px 0;
 }
 
-.echo-breadcrumb-area .breadcrumb-inner .meta .next {
-    text-transform: uppercase;
+.breadcrumbs {
+    margin: 0;
+    padding: 0;
 }
 
-.echo-breadcrumb-area .breadcrumb-inner .title {
-    margin-bottom: 0;
-    font-size: 56px;
-    line-height: 76px;
+.breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.breadcrumbs ul li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #777;
+}
+
+.breadcrumbs ul li a {
+    color: #555;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.breadcrumbs ul li a:hover {
+    color: #000;
+}
+
+/* فاصله + جداکننده بین آیتم‌ها */
+.breadcrumbs ul li:not(:last-child)::after {
+    content: "›";
+    margin: 0 8px;
+    color: #aaa;
+}
+
+/* آیتم آخر (current page) */
+.breadcrumbs ul li.current {
+    color: #000;
+    font-weight: 600;
 }
 
 

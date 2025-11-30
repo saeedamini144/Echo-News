@@ -12,17 +12,16 @@ get_header();
                     <div class="breadcrumb-inner text-center">
                         <div class="meta">
                             <?php
-
-                            if (is_plugin_active('Yoast SEO')) {
-                                yoast_breadcrumb('<p id="breadcrumbs" class="mt-2">', '</p>');
-                            } else if (is_plugin_active('rank-math/rank-math.php')) {
-                                if (function_exists('rank_math_the_breadcrumbs')) {
-                                    rank_math_the_breadcrumbs();
-                                }
-                            } else {
-                                echo '<p id="breadcrumbs" class="mt-2"><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'Echo News') . '</a> » ' . get_the_title() . '</p>';
-                            }
-
+                            // if (is_plugin_active('Yoast SEO')) {
+                            //     yoast_breadcrumb('<p id="breadcrumbs" class="mt-2">', '</p>');
+                            // } else if (is_plugin_active('rank-math/rank-math.php')) {
+                            //     if (function_exists('rank_math_the_breadcrumbs')) {
+                            //         rank_math_the_breadcrumbs();
+                            //     }
+                            // } else {
+                            //     echo '<p id="breadcrumbs" class="mt-2"><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'Echo News') . '</a> » <a href="' . wp_get_post_categories(get_post_field('ID'))[0]->name . '">' . get_the_category($post)[0]->name . '</a></p>';
+                            // }   
+                            breadcrumb();
                             ?>
                         </div>
                     </div>
