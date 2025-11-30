@@ -190,7 +190,7 @@ get_header();
             </div>
     </section>
 </body>
-<?php
 
+<?php
 get_footer();
 ?>
