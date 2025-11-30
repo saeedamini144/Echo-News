@@ -2,7 +2,7 @@
     <div class="echo-inner-img-ct-1  img-transition-scale">
         <a href="<?php the_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"></a>
         <div class="echo-ct-style-3-shep">
-            <p>Life Style</p>
+            <p><?php echo get_the_category()[0]->name; ?></p>
         </div>
     </div>
     <div class="echo-banner-texting">
