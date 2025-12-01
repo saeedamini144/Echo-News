@@ -59,6 +59,9 @@ get_header();
                                         <span><i id="card-icon" class="fa-light fa-comment-dots"></i><?php comments_number(' No Comments', ' One Comment', ' % Comments') ?></span>
                                     </div>
                                     <div class="echo-hero-area-like-read-comment-share">
+                                        <span><i id="card-icon" class="fa-light fa-calendar"></i><?php echo date('Y-m-d'); ?></span>
+                                    </div>
+                                    <div class="echo-hero-area-like-read-comment-share">
                                         <span><i id="card-icon"><?php display_average_rating(get_the_ID()); ?></i></span>
                                     </div>
 
