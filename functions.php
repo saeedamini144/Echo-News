@@ -23,6 +23,7 @@ function register_incFile()
     require_once get_template_directory() . '/inc/customizer.php';
     require_once get_template_directory() . '/inc/post-callback-functions.php';
     require_once get_template_directory() . '/inc/class-breadcrumb.php';
+    require_once get_template_directory() . '/inc/pagination.php';
 }
 add_action('after_setup_theme', 'register_incFile'); //note load the correct style in dashboard at least fix it up
 

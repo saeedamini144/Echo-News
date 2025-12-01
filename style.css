@@ -11712,7 +11712,7 @@ a.pe-none {
     display: inline-block;
     position: absolute;
     left: 50%;
-    bottom: -45px;
+    bottom: 50%;
     transform: translate(-50%);
 }
 
@@ -21448,6 +21448,11 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     position: relative;
 }
 
+.echo-hero-section.inner-3 .echo-hero-baner .echo-inner-img-ct-1 a>img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+}
 
 
 .echo-hero-section.inner .echo-hero-baner:nth-child(4) .echo-inner-img-ct-1 {
@@ -21771,8 +21776,8 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 
 .echo-hero-section.inner-2 .echo-hero-baner {
     display: flex;
-    gap: 30px;
     align-items: center;
+    flex-direction: column;
 }
 
 .echo-hero-section.inner-2 .echo-hero-baner .echo-inner-img-ct-1 {
@@ -21844,7 +21849,11 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
     overflow: hidden;
 }
 
-.echo-hero-section.inner-3 .echo-ct-style-bg-color .echo-griding-ct-style-3 .echo-hero-baner .echo-banner-texting {
+.echo-banner-texting {
+    padding: 10px;
+}
+
+/* .echo-hero-section.inner-3 .echo-ct-style-bg-color .echo-griding-ct-style-3 .echo-hero-baner .echo-banner-texting {
     padding: 10px 25px 30px 25px;
 }
 
@@ -21859,7 +21868,7 @@ html[data-theme=dark] .echo-photography-area .hm8-btn-1:hover {
 
 .echo-hero-section.inner-3 .echo-ct-style-bg-color .echo-griding-ct-style-3 .echo-hero-baner .echo-banner-texting p {
     margin-bottom: 0;
-}
+} */
 
 .echo-hero-section.inner-3 .echo-ct-style-bg-color .echo-popular-item-category {
     padding-top: 30px;
@@ -27852,4 +27861,46 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
     border: 1px solid #5E5E5E;
     background-color: transparent;
     color: #5E5E5E;
+}
+
+/* pagination style */
+.pagination {
+    text-align: center;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+    gap: 8px;
+}
+
+.pagination ul li {
+    display: flex;
+}
+
+.pagination ul li a,
+.pagination ul li span {
+    display: block;
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #555;
+    transition: all .2s ease;
+}
+
+.pagination ul li a:hover {
+    border-color: #000;
+    color: #000;
+}
+
+.pagination ul li .current {
+    background: #000;
+    color: #fff;
+    border-color: #000;
 }
