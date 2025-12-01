@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Pagination Function - Saeed Style
+ * Pagination Function - Echo News Style
  * ایجاد پیجینیشن استاندارد و قابل استایل‌دهی
  *
  * @param WP_Query|null $query اگر کوئری سفارشی باشد از آن استفاده می‌کند
