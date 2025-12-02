@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<body class="innerpage">
+<div class="innerpage">
     <!-- rts breadcrumba area start -->
     <div class="echo-breadcrumb-area">
         <div class="container">
@@ -78,5 +78,5 @@
             </div>
         </div>
     </section>
-</body>
+</div>
 <?php get_footer(); ?>

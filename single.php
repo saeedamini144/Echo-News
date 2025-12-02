@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<body class="innerpage">
+<div class="innerpage">
     <!-- rts breadcrumba area start -->
     <div class="echo-breadcrumb-area">
         <div class="container">
@@ -108,7 +108,7 @@ get_header();
                                         <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>">
                                     </div>
                                     <div class="content">
-                                        <p class="title"><?php the_author(); ?></p>
+                                        <p class="title"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author(); ?></a></p>
                                         <p class="desc"><?php the_author_meta('description'); ?></p>
                                     </div>
                                 </div>
@@ -191,8 +191,7 @@ get_header();
                 </div>
             </div>
     </section>
-</body>
-
+</div>
 <?php
 get_footer();
 ?>
