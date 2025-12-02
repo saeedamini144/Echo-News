@@ -18754,6 +18754,7 @@ html[data-theme=dark] body .echo-breadcrumb-area-2 {
 .echo-author-picture img {
     width: 200px;
     object-fit: cover;
+    border-radius: 100%;
 }
 
 html[data-theme=dark] body .title-hover {

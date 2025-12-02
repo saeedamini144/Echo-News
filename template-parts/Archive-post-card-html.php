@@ -9,9 +9,6 @@
         <div class="echo-banner-texting">
             <div class="echo-hero-area-titlepost-post-like-comment-share text-center justify-content-center">
                 <div class="echo-hero-area-like-read-comment-share">
-                    <i id="card-icon" class="fa-light fa-clock"></span></i><span><?php echo EchoNews_time_to_read(); ?>
-                </div>
-                <div class="echo-hero-area-like-read-comment-share">
                     <span><i id="card-icon" class="fa-light fa-calendar"></i><?php echo date('Y-m-d'); ?></span>
                 </div>
                 <div class="echo-hero-area-like-read-comment-share">
