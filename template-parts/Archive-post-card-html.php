@@ -12,6 +12,9 @@
                     <i id="card-icon" class="fa-light fa-clock"></span></i><span><?php echo EchoNews_time_to_read(); ?>
                 </div>
                 <div class="echo-hero-area-like-read-comment-share">
+                    <span><i id="card-icon" class="fa-light fa-calendar"></i><?php echo date('Y-m-d'); ?></span>
+                </div>
+                <div class="echo-hero-area-like-read-comment-share">
                     <span id="card-icon" class="fa-light fa-eye"></span></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
                 </div>
             </div>
