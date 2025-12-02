@@ -11706,6 +11706,10 @@ a.pe-none {
     font-weight: 600;
 }
 
+html[data-theme=dark] .breadcrumbs ul li.current {
+    color: #ffffff;
+    font-weight: 600;
+}
 
 /* Category 3 Style blog Shep */
 .echo-ct-style-3-shep {
@@ -18732,6 +18736,24 @@ html[data-theme=dark] body .echo-hero-section.inner-post-3 .echo-ps-2-subscribe-
 html[data-theme=dark] body .echo-breadcrumb-area-2 {
     background-color: #181823;
     background-blend-mode: multiply;
+}
+
+.echo-breadcrumb-area-2 {
+    background-image: url(assets/images/breadcrumb/breadcrumb.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 65px 0;
+}
+
+.echo-breadcrumb-area-2 .echo-author-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.echo-author-picture img {
+    width: 200px;
+    object-fit: cover;
 }
 
 html[data-theme=dark] body .title-hover {
@@ -27903,4 +27925,10 @@ html[data-theme=dark] body.home-two .echo-footer-area.footer-2 .echo-get-in-tuch
     background: #000;
     color: #fff;
     border-color: #000;
+}
+
+/* TABLE OF THE CONTENT */
+html[data-theme=dark] #table-of-contents {
+    background-color: #000 !important;
+    color: white;
 }
