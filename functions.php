@@ -98,6 +98,15 @@ function register_style_EchoNews()
 }
 add_action('wp_enqueue_scripts', 'register_style_EchoNews');
 
+function add_rtl_files()
+{
+    if (is_rtl()) {
+        $version = wp_get_theme()->get('version');
+        wp_enqueue_style('EchoNews-rtl-style', get_template_directory_uri() . '/assets/css/rtl.css', array(), $version, 'all');
+    }
+}
+add_action('wp_enqueue_scripts', 'add_rtl_files', 11);
+
 function register_scripts_EchoNews()
 {
     // wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
@@ -140,7 +149,7 @@ function EchoNews_time_to_read()
     $content = get_post_field('post_content', get_the_id());
     $word_count = str_word_count(strip_tags($content)); //str_word_count counts the number of words in a string and strip_tags removes HTML tags
     if (empty($word_count)) {
-        return esc_html__('no content', 'textdomain');
+        return esc_html__('no content', 'Echo News');
     }
     $reading_time = ceil($word_count / 200); //assuming average reading speed is 200 words per minute
     $total_reading_time = $reading_time . ' ' . esc_html__('min read', 'Echo News');
@@ -191,7 +200,7 @@ function EchoNews_post_views_count_display()
 {
     $post_id = get_the_id();
     $views = get_post_meta($post_id, 'post_views_count', true);
-    return $views . ' ' . esc_html__("Views", "Echo News");
+    return $views . ' ' . esc_html__('Views', 'Echo News');
 }
 
 // comments rating save in data base
