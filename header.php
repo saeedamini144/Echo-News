@@ -38,7 +38,7 @@
                                 <div class="echo-day-name">
                                     <span><i class="fa-regular fa-calendar"></i></span>
                                     <span id="echo-day" class="echo-home-day"></span>
-                                    <span id="echo-date"><?php echo date('j F , Y'); ?></span>
+                                    <span id="echo-date"><?php show_date(); ?></span>
                                 </div>
                             </div>
                         </div>

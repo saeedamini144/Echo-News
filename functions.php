@@ -24,8 +24,30 @@ function register_incFile()
     require_once get_template_directory() . '/inc/post-callback-functions.php';
     require_once get_template_directory() . '/inc/class-breadcrumb.php';
     require_once get_template_directory() . '/inc/pagination.php';
+    require_once get_template_directory() . '/inc/jdatetime.class.php';
 }
 add_action('after_setup_theme', 'register_incFile'); //note load the correct style in dashboard at least fix it up
+
+//jalali date support
+function display_jalali_date($format, $timestamp = null)
+{
+    if (is_null($timestamp)) {
+        $timestamp = current_time('timestamp');
+    }
+    return jDateTime::date($format, $timestamp);
+}
+
+function show_date()
+{
+    if (is_rtl()) {
+        echo display_jalali_date('Y/m/d', get_the_time('U'));
+    } else {
+        echo date('Y/m/d', get_the_time('U'));
+    }
+    return;
+}
+
+//jalali date support end
 
 function theme_support_EchoNews()
 {
@@ -58,6 +80,9 @@ function theme_support_EchoNews()
 
     //add theme support for selective refresh widgets(This feature enables Selective Refresh for Widgets being managed within the Customizer.)
     add_theme_support('customize-selective-refresh-widgets');
+    add_theme_support('editor-styles'); // پشتیبانی از استایل‌های گوتنبرگ
+    add_theme_support('wp-block-styles'); // پشتیبانی از استایل پیش‌فرض بلوک‌ها
+    add_theme_support('responsive-embeds'); // پشتیبانی از جاسازی‌های ریسپانسیو
 }
 add_action('after_setup_theme', 'theme_support_EchoNews');
 
