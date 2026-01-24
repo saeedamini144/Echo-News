@@ -1,6 +1,6 @@
 <div class="echo-video-left-site">
     <a href="<?php the_permalink(); ?>">
-        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+        <?php the_post_thumbnail('full'); ?>
     </a>
     <div class="echo-video-left-site-text-box">
         <h5><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h5>

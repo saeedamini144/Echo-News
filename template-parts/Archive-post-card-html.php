@@ -1,7 +1,7 @@
 <div class="col-lg-4 col-md-6">
     <div class="echo-hero-baner m-3">
         <div class="echo-inner-img-ct-1  img-transition-scale">
-            <a href="<?php the_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>"></a>
+            <a href="<?php the_permalink(); ?>"> <?php the_post_thumbnail('full'); ?></a>
             <!-- <div class="echo-ct-style-3-shep">
                 <p><?php echo get_the_category()[0]->name; ?></p>
             </div> -->

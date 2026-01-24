@@ -37,7 +37,8 @@
          <div class="echo-hero-baner">
              <div class="echo-hero-banner-main-img  img-transition-scale">
                  <a href="<?php the_permalink(); ?>">
-                     <img class="banner-image-one img-hover" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                     <?php the_post_thumbnail('full', array('class' => 'img-hover banner-image-one')); ?>
+
                  </a>
              </div>
              <h1 class="echo-hero-title text-capitalize font-weight-bold"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h1>

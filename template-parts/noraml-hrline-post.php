@@ -24,7 +24,7 @@ if ($args->have_posts()) {
             <div class="echo-feature-area-post">
                 <div class="echo-feature-area-post-img img-transition-scale">
                     <a href="<?php the_permalink(); ?>">
-                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-hover">
+                        <?php the_post_thumbnail('full', array('class' => 'img-hover')); ?>
                     </a>
                 </div>
                 <div class="echo-feature-area-post-hins">

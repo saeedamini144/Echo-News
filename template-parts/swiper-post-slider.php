@@ -25,8 +25,7 @@
              <div class="echo-latest-news-main-content">
                  <div class="echo-latest-news-img img-transition-scale">
                      <a href="<?php the_permalink(); ?>">
-                         <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-hover" wp-the-post-thumbnail="thumnail">
-                     </a>
+                         <?php the_post_thumbnail('full', array('class' => 'img-hover')); ?>
                  </div>
                  <div class="echo-latest-news-single-title">
                      <h5><a href="<?php the_permalink(); ?>" class="text-capitalize title-hover" wp-the-post-thumbnail="thumnail"><?php echo Limited_title_characters(35); ?></a></h5>
