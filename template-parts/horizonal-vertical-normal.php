@@ -26,7 +26,7 @@ if ($args->have_posts()) {
             <div class="echo-top-story first">
                 <div class="echo-story-picture img-transition-scale">
                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail('full', array('class' => 'img-hover')); ?>
+                        <?php the_post_thumbnail('full', array('class' => 'img-hover', 'alt' => get_the_title())); ?>
                     </a>
                 </div>
                 <div class="echo-story-text">

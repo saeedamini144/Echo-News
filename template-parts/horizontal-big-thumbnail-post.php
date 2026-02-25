@@ -23,7 +23,7 @@
          <div class="echo-trending-left-site-post">
              <div class="echo-trending-left-site-post-img img-transition-scale">
                  <a href="<?php the_permalink(); ?>">
-                     <?php the_post_thumbnail('full', array('class' => 'img-hover')); ?>
+                     <?php the_post_thumbnail('full', array('class' => 'img-hover', 'alt' => get_the_title())); ?>
                  </a>
              </div>
              <div class="echo-trending-right-site-post-title">

@@ -1,7 +1,7 @@
        <div class="echo-trending-right-site-post">
            <div class="echo-trending-right-site-post-img img-transition-scale">
                <a href="<?php the_permalink(); ?>">
-                   <?php the_post_thumbnail('full', array('class' => 'img-hover echo-trending-right-image')); ?>
+                   <?php the_post_thumbnail('full', array('class' => 'img-hover echo-trending-right-image', 'alt' => get_the_title())); ?>
                </a>
            </div>
            <div class="echo-trending-right-site-post-title">

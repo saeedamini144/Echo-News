@@ -6,7 +6,7 @@
     </div>
     <div class="echo-video-right-site-content-video">
         <a href="<?php the_permalink(); ?>">
-            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+            <?php the_post_thumbnail( 'full' , array( 'alt' => get_the_title() ) ) ?>
         </a>
 
     </div>

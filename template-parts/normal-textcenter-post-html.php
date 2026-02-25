@@ -2,7 +2,7 @@
     <div class="echo-popular-area-single-item">
         <div class="echo-popular-area-img img-transition-scale">
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('full', array('class' => 'img-hover')); ?>
+                <?php the_post_thumbnail('full', array('class' => 'img-hover', 'alt' => get_the_title())); ?>
             </a>
         </div>
         <div class="echo-popular-area-item-title">

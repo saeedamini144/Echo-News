@@ -37,13 +37,13 @@
          <div class="echo-hero-baner">
              <div class="echo-hero-banner-main-img  img-transition-scale">
                  <a href="<?php the_permalink(); ?>">
-                     <?php the_post_thumbnail('full', array('class' => 'img-hover banner-image-one')); ?>
+                     <?php the_post_thumbnail('full', array('class' => 'img-hover banner-image-one', 'alt' => get_the_title())); ?>
 
                  </a>
              </div>
              <h1 class="echo-hero-title text-capitalize font-weight-bold"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h1>
              <hr>
-             <p class="echo-hero-discription"><?php echo the_excerpt(); ?></p>
+             <p class="echo-hero-discription"><?php the_excerpt(); ?></p>
              <div class="echo-hero-area-titlepost-post-like-comment-share">
                  <div class="echo-hero-area-like-read-comment-share">
                      <li id="card-icon" class="fa-light fa-clock"></li> <span><?php echo EchoNews_time_to_read(); ?></span>

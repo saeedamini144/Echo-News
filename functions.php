@@ -162,8 +162,8 @@ add_action('wp_enqueue_scripts', 'register_scripts_EchoNews');
 function Limited_title_characters($limited)
 {
     $title =  get_the_title();
-    if (strlen($title) > $limited) {
-        $title = substr($title, 0, $limited) . '...'; //substr(string,start,length)
+    if (mb_strlen($title, 'UTF-8') > $limited) {
+        $title = mb_substr($title, 0, $limited, 'UTF-8') . '...'; //substr(string,start,length)
     }
     return $title;
 }

@@ -44,7 +44,7 @@ wp_reset_postdata(); // reset the data base
 <div class="echo-top-story first">
     <div class="echo-story-picture img-transition-scale">
         <a href="<?php the_permalink(); ?>">
-            <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>" class="img-hover">
+           <?php the_post_thumbnail( 'full', array( 'class' => 'img-hover', 'alt' => get_the_title() ) )?>
         </a>
     </div>
     <div class="echo-story-text">
