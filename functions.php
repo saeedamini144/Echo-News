@@ -174,10 +174,10 @@ function EchoNews_time_to_read()
     $content = get_post_field('post_content', get_the_id());
     $word_count = str_word_count(strip_tags($content)); //str_word_count counts the number of words in a string and strip_tags removes HTML tags
     if (empty($word_count)) {
-        return esc_html__('no content', 'Echo News');
+        return esc_html__('no content', 'Echo-News');
     }
     $reading_time = ceil($word_count / 200); //assuming average reading speed is 200 words per minute
-    $total_reading_time = $reading_time . ' ' . esc_html__('min read', 'Echo News');
+    $total_reading_time = $reading_time . ' ' . esc_html__('min read', 'Echo-News');
     return $total_reading_time;
 }
 //post view count
@@ -225,7 +225,7 @@ function EchoNews_post_views_count_display()
 {
     $post_id = get_the_id();
     $views = get_post_meta($post_id, 'post_views_count', true);
-    return $views . ' ' . esc_html__('Views', 'Echo News');
+    return $views . ' ' . esc_html__('Views', 'Echo-News');
 }
 
 // comments rating save in data base
@@ -306,7 +306,7 @@ function get_related_posts_by_category()
             echo '</div>';
         }
     } else {
-        echo esc_html__('No related posts found', 'Echo News');
+        echo esc_html__('No related posts found', 'Echo-News');
     }
     return;
 }

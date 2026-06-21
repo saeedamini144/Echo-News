@@ -37,7 +37,7 @@
  <?php
         }
     } else {
-        echo esc_html__('No posts found', 'Echo News');
+        echo esc_html__('No posts found', 'Echo-News');
     }
     wp_reset_postdata(); // reset the data base
     ?>

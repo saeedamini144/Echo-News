@@ -32,6 +32,6 @@ if ($args->have_posts()) {
     echo ' </div>';
     echo '</div>';
 } else {
-    echo esc_html__('No post found', 'Echo News');
+    echo esc_html__('No post found', 'Echo-News');
 }
 wp_reset_postdata();

@@ -14,7 +14,7 @@
     <div class="comment-box-inner">
         <?php
         comment_form([
-            'title_reply' => __('<p class="title">Leave a Comment</p>', 'Echo News'),
+            'title_reply' => __('<p class="title">Leave a Comment</p>', 'Echo-News'),
             'fields' => [
                 'author' =>
                 '<p class="comment-form-author">
@@ -42,7 +42,7 @@
             <p class="comment-form-comment">
                 <textarea name="comment" placeholder="Write Your Comment Here" required></textarea>
             </p>',
-            'submit_button' => __('<button type="submit" class="submit-btn">Submit Now</button>', 'Echo News'),
+            'submit_button' => __('<button type="submit" class="submit-btn">Submit Now</button>', 'Echo-News'),
         ]);
         ?>
     </div>

@@ -25,6 +25,6 @@ if ($args->have_posts()) {
         get_template_part('template-parts/normal-textcenter-post-html');
     }
 } else {
-    echo esc_html__('No posts found', 'Echo News');
+    echo esc_html__('No posts found', 'Echo-News');
 }
 wp_reset_postdata();
