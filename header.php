@@ -19,7 +19,7 @@
                         <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                             <div class="echo-meta-total-jobs">
                                 <div class="echo-meta-jobs-icons">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home-1/header-top/home-1-header-top.png" alt="Echo">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-top/home-1-header-top.png" alt="Echo">
                                 </div>
                                 <div class="echo-meta-jobs-text">
                                     <div class="swiper rt-treding-slider10">
