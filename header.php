@@ -16,7 +16,7 @@
             <div class="container">
                 <div class="echo-full-header-top">
                     <div class="row align-items-center plr_md--30">
-                        <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                        <div class="col-xl-6 col-lg-6 d-none d-lg-block">
                             <div class="echo-meta-total-jobs">
                                 <div class="echo-meta-jobs-icons">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-top/home-1-header-top.png" alt="Echo">
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <!-- show date in header -->
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-7 col-8">
+                        <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-7 col-8">
                             <div class="echo-header-top-date">
                                 <div class="echo-day-name">
                                     <span><i class="fa-regular fa-calendar"></i></span>
@@ -41,8 +41,8 @@
                                     <span id="echo-date"><?php show_date(); ?></span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-5 col-4 position-relative">
+                        </div> -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-5 col-4 position-relative">
                             <div class="echo-header-top-subs-social-menu">
                                 <div class="echo-header-top-subs-social">
                                     <!-- call and contact us header button -->
