@@ -23,7 +23,7 @@ if ($args->have_posts()) {
         <div class="swiper-slide">
             <a href="<?php the_permalink(); ?>">
                 <?php
-                echo Limited_title_characters(30);
+                echo Limited_title_characters(50);
                 ?>
             </a>
         </div>
