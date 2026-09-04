@@ -123,15 +123,6 @@ function register_style_EchoNews()
 }
 add_action('wp_enqueue_scripts', 'register_style_EchoNews');
 
-function add_rtl_files()
-{
-    if (is_rtl()) {
-        $version = wp_get_theme()->get('version');
-        wp_enqueue_style('EchoNews-rtl-style', get_template_directory_uri() . '/assets/css/rtl.css', array(), $version, 'all');
-    }
-}
-add_action('wp_enqueue_scripts', 'add_rtl_files', 11);
-
 function register_scripts_EchoNews()
 {
     // wp_enqueue_script($handle, $src, $deps, $ver, $in_footer);
