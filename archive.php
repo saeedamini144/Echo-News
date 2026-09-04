@@ -69,8 +69,8 @@
                     // Pagination
                     // the_posts_pagination(array(
                     //     'mid_size' => 2,
-                    //     'prev_text' => __('« Previous', 'Echo News'),
-                    //     'next_text' => __('Next »', 'Echo News'),
+                    //     'prev_text' => __('« Previous', 'Echo-News'),
+                    //     'next_text' => __('Next »', 'Echo-News'),
                     // ));
 
                     ?>

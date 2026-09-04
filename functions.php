@@ -90,9 +90,9 @@ add_action('after_setup_theme', 'theme_support_EchoNews');
 function eco_register_nav_menu()
 {
     register_nav_menus(array(
-        'Desktop_Menu' => __('Primary Menu', 'echo'),
-        'mobile_Menu'  => __('Mobile Menu', 'echo'),
-        'footer_Menu' => __('Footer Menu', 'echo'),
+        'Desktop_Menu' => __('Primary Menu', 'Echo-News'),
+        'mobile_Menu'  => __('Mobile Menu', 'Echo-News'),
+        'footer_Menu' => __('Footer Menu', 'Echo-News'),
     ));
 }
 add_action('init', 'eco_register_nav_menu');

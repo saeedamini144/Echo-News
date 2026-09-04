@@ -19,7 +19,7 @@ get_header();
                             //         rank_math_the_breadcrumbs();
                             //     }
                             // } else {
-                            //     echo '<p id="breadcrumbs" class="mt-2"><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'Echo News') . '</a> » <a href="' . wp_get_post_categories(get_post_field('ID'))[0]->name . '">' . get_the_category($post)[0]->name . '</a></p>';
+                            //     echo '<p id="breadcrumbs" class="mt-2"><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'Echo-News') . '</a> » <a href="' . wp_get_post_categories(get_post_field('ID'))[0]->name . '">' . get_the_category($post)[0]->name . '</a></p>';
                             // }   
                             breadcrumb();
                             ?>
@@ -78,7 +78,7 @@ get_header();
                                     <details>
                                         <summary class="mb-2">
                                             <?php
-                                            echo esc_html__('Table of Contents', 'Echo News');
+                                            echo esc_html__('Table of Contents', 'Echo-News');
                                             ?>
                                         </summary>
                                         <ul id="toc-list"></ul>
@@ -116,7 +116,7 @@ get_header();
 
                                 <!-- might like section -->
                                 <div class="echo-more-news-area">
-                                    <p class="title"><?php echo esc_html__('You Might Also Like', 'Echo News'); ?></p>
+                                    <p class="title"><?php echo esc_html__('You Might Also Like', 'Echo-News'); ?></p>
                                     <div class="inner">
                                         <div class="row">
                                             <?php
