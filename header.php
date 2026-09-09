@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo bloginfo('language') ?>" dir="<?php echo is_rtl() ? 'rtl' : 'ltr' ?>" data-theme="light">
+<html lang="<?php echo bloginfo('language') ?>" dir="rtl' ?>" data-theme="light">
 
 <head>
     <meta charset="UTF-8">

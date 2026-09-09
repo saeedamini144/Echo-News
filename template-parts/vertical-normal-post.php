@@ -36,7 +36,7 @@ if ($args->have_posts()) {
 <?php
     }
 
-    echo ' No category choose';
+    echo ' دسته بندی انتخاب نشد';
 }
 wp_reset_postdata(); // reset the data base
 */

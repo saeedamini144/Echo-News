@@ -56,7 +56,7 @@ get_header();
                                         <span><i id="card-icon" class="fa-light fa-eye"></i><?php echo EchoNews_post_views_count_display(); ?></span>
                                     </div>
                                     <div class="echo-hero-area-like-read-comment-share">
-                                        <span><i id="card-icon" class="fa-light fa-comment-dots"></i><?php comments_number(' No Comments', ' One Comment', ' % Comments') ?></span>
+                                        <span><i id="card-icon" class="fa-light fa-comment-dots"></i><?php comments_number(' بدون دیدگاه', ' یک دیدگاه', ' % دیدگاه') ?></span>
                                     </div>
                                     <div class="echo-hero-area-like-read-comment-share">
                                         <span><i id="card-icon" class="fa-light fa-calendar"></i><?php show_date(); ?></span>
@@ -78,7 +78,7 @@ get_header();
                                     <details>
                                         <summary class="mb-2">
                                             <?php
-                                            echo esc_html__('Table of Contents', 'Echo-News');
+                                            echo esc_html__('جدول مطالب', 'Echo-News');
                                             ?>
                                         </summary>
                                         <ul id="toc-list"></ul>
@@ -96,7 +96,7 @@ get_header();
                                                 the_content();
                                             }
                                         } else {
-                                            echo 'No content';
+                                            echo esc_html__('محتوایی یافت نشد', 'Echo-News');
                                         }
                                         ?>
 
@@ -116,7 +116,7 @@ get_header();
 
                                 <!-- might like section -->
                                 <div class="echo-more-news-area">
-                                    <p class="title"><?php echo esc_html__('You Might Also Like', 'Echo-News'); ?></p>
+                                    <p class="title"><?php echo esc_html__('شاید این مطالب را هم بپسندید', 'Echo-News'); ?></p>
                                     <div class="inner">
                                         <div class="row">
                                             <?php

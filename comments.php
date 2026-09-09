@@ -1,5 +1,5 @@
 <div class="echo-reply-area">
-    <p class="title">Comment</p>
+    <p class="title">نظرات</p>
 
     <ul class="comment-inner">
         <?php
@@ -14,23 +14,23 @@
     <div class="comment-box-inner">
         <?php
         comment_form([
-            'title_reply' => __('<p class="title">Leave a Comment</p>', 'Echo-News'),
+            'title_reply' => __('<p class="title">نظر بدهید</p>', 'Echo-News'),
             'fields' => [
                 'author' =>
                 '<p class="comment-form-author">
-                    <input type="text" name="author" placeholder="Full Name" required>
+                    <input type="text" name="author" placeholder="نام و نام خانوادگی" required>
                 </p>',
                 'email' =>
                 '<p class="comment-form-email">
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="email" name="email" placeholder="آدرس ایمیل" required>
                 </p>',
             ],
             'comment_field' =>
             '
             <p class="comment-form-rating">
-                <label>Your rating</label>
+                <label>امتیاز شما</label>
                 <select name="rating" id="rating" required>
-                    <option value="">Choose</option>
+                    <option value="">انتخاب</option>
                     <option value="1">⭐</option>
                      <option value="2">⭐⭐</option>
                      <option value="3">⭐⭐⭐</option>
@@ -40,9 +40,9 @@
                 </select>
             </p>
             <p class="comment-form-comment">
-                <textarea name="comment" placeholder="Write Your Comment Here" required></textarea>
+                <textarea name="comment" placeholder="نظر خود را بنویسید" required></textarea>
             </p>',
-            'submit_button' => __('<button type="submit" class="submit-btn">Submit Now</button>', 'Echo-News'),
+            'submit_button' => __('<button type="submit" class="submit-btn">ارسال</button>', 'Echo-News'),
         ]);
         ?>
     </div>
@@ -85,7 +85,7 @@ function echo_comment_template($comment, $args, $depth)
             comment_reply_link(array_merge($args, [
                 'depth'     => $depth,
                 'max_depth' => $args['max_depth'],
-                'reply_text' => '<i class="fa-regular fa-share"></i> Reply'
+                'reply_text' => '<i class="fa-regular fa-share"></i> پاسخ',
             ]));
             ?>
         </div>

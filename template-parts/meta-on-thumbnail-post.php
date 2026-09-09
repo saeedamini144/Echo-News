@@ -3,7 +3,7 @@
         <?php the_post_thumbnail('full'); ?>
     </a>
     <div class="echo-video-left-site-text-box">
-        <h5><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h5>
+        <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
         <hr>
         <div class="echo-video-left-site-read-views">
             <i id="card-icon" class="fa-light fa-clock"></i> <?php echo EchoNews_time_to_read(); ?></span>

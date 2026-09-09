@@ -32,7 +32,7 @@ class Breadcrumb
     {
 
         $items   = [];
-        $items[] = ['url' => home_url('/'), 'label' => 'Home'];
+        $items[] = ['url' => home_url('/'), 'label' => 'صفحه اصلی'];
 
         // --- Single Post ---
         if (is_singular('post')) {
@@ -81,12 +81,12 @@ class Breadcrumb
 
         // --- Search ---
         elseif (is_search()) {
-            $items[] = ['url' => '', 'label' => 'Searching for : ' . get_search_query()];
+            $items[] = ['url' => '', 'label' => 'جستجو برای : ' . get_search_query()];
         }
 
         // --- 404 ---
         elseif (is_404()) {
-            $items[] = ['url' => '', 'label' => 'Page Not Found'];
+            $items[] = ['url' => '', 'label' => 'صفحه مورد نظر یافت نشد'];
         }
 
         return $items;

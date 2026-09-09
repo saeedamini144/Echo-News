@@ -57,7 +57,7 @@
                             get_template_part('template-parts/Archive-post-card-html');
                         }
                     } else {
-                        echo '<h2 class="text-center">No posts found.</h2>';
+                        echo '<h2 class="text-center">هیچ پستی یافت نشد</h2>';
                     }
                     wp_reset_postdata();
                     ?>

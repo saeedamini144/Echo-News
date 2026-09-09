@@ -33,7 +33,7 @@ if ($args->have_posts()) {
             <div class="echo-story-text">
                 <p class="number ps-2">0<?php echo $counter; ?></p>
                 <div class="content">
-                    <h6><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h6>
+                    <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
                     <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
                 </div>
             </div>
@@ -42,7 +42,7 @@ if ($args->have_posts()) {
 <?php
     }
 } else {
-    echo esc_html__('No post found', 'Echo-News');
+    echo esc_html__('هیچ پستی یافت نشد', 'Echo-News');
 }
 wp_reset_postdata();
 ?>

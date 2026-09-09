@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="echo-popular-area-item-title">
-            <h5 class="text-center text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h5>
+            <p class="text-center text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
         </div>
         <div class="echo-popular-area-read-view text-center">
             <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>

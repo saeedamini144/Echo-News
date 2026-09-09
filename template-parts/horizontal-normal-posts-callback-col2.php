@@ -23,6 +23,6 @@ if ($args->have_posts()) {
         get_template_part('template-parts/horizontal-posts-html');
     }
 } else {
-    echo esc_html__('No post found', 'Echo-News');
+    echo esc_html__('هیچ پستی یافت نشد', 'Echo-News');
 }
 wp_reset_postdata();

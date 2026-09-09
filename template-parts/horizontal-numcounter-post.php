@@ -29,7 +29,7 @@ if ($args->have_posts()) {
                     <p>0<?php echo $counter; ?></p>
                 </div>
                 <div class="echo-feature-area-option-content-text">
-                    <h5 class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a> </h5>
+                    <p class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a> </p>
                     <div class="echo-feature-area-option-read-more">
                         <i id="card-icon" class="fa-light fa-clock"></i> <span><?php echo EchoNews_time_to_read(); ?></span>
                     </div>
@@ -39,7 +39,7 @@ if ($args->have_posts()) {
 <?php
     }
 } else {
-    echo esc_html__('No post found', 'Echo-News');
+    echo esc_html__('هیچ پستی یافت نشد', 'Echo-News');
 }
 wp_reset_postdata();
 ?>

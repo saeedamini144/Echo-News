@@ -28,7 +28,7 @@
                          <?php the_post_thumbnail('full', array('class' => 'img-hover', 'alt' => get_the_title())); ?>
                  </div>
                  <div class="echo-latest-news-single-title">
-                     <h5><a href="<?php the_permalink(); ?>" class="text-capitalize title-hover" wp-the-post-thumbnail="thumnail"><?php echo Limited_title_characters(35); ?></a></h5>
+                     <p><a href="<?php the_permalink(); ?>" class="text-capitalize title-hover" wp-the-post-thumbnail="thumnail"><?php echo Limited_title_characters(35); ?></a></p>
                  </div>
                  <div class="echo-latest-news-time-views" wp-the-post-thumbnail="thumnail">
                      <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
@@ -39,7 +39,7 @@
  <?php
         }
     } else {
-        echo esc_html__('No content found', 'Echo-News');
+        echo esc_html__('هیچ محتوایی یافت نشد', 'Echo-News');
     }
     wp_reset_postdata();
     ?>

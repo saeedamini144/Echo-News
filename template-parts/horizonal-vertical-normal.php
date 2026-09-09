@@ -30,7 +30,7 @@ if ($args->have_posts()) {
                     </a>
                 </div>
                 <div class="echo-story-text">
-                    <h4><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h4>
+                    <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
                     <div class="echo-trending-post-bottom-icons">
                         <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
                         <i class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
@@ -47,7 +47,7 @@ if ($args->have_posts()) {
                     </a>
                 </div>
                 <div class="echo-story-text">
-                    <h4><a href="<?php the_permalink(); ?>" class="title-hover"><?php echo Limited_title_characters(20); ?></a></h4>
+                    <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php echo Limited_title_characters(20); ?></a></p>
                     <div class="echo-trending-post-bottom-icons">
                         <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
                     </div>
@@ -58,7 +58,7 @@ if ($args->have_posts()) {
         }
     }
 } else {
-    echo esc_html__('No post found', 'Echo-News');
+    echo esc_html__('هیچ پستی یافت نشد', 'Echo-News');
 }
 
 wp_reset_postdata();

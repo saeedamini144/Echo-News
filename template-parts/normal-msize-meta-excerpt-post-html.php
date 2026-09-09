@@ -15,7 +15,7 @@
                    <i id="card-icon" class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
                </div>
                <div class="echo-trending-right-like-comment-content">
-                   <i id="card-icon" class="fa-light fa-comment-dots"></i><span><?php comments_number('No Comments', 'One Comment', '% Comments') ?></span>
+                   <i id="card-icon" class="fa-light fa-comment-dots"></i><span><?php comments_number('بدون دیدگاه', 'یک دیدگاه', '% دیدگاه') ?></span>
                </div>
            </div>
        </div>

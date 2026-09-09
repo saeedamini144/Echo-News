@@ -28,7 +28,7 @@ if ($args->have_posts()) {
                     </a>
                 </div>
                 <div class="echo-feature-area-post-hins">
-                    <h5 class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h5>
+                    <p class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
                 </div>
                 <hr>
                 <div class="echo-feature-area-read-view">
@@ -40,7 +40,7 @@ if ($args->have_posts()) {
 <?php
     }
 } else {
-    echo esc_html__('No post found', 'Echo-News');
+    echo esc_html__('هیچ پستی یافت نشد', 'Echo-News');
 }
 wp_reset_postdata();
 ?>

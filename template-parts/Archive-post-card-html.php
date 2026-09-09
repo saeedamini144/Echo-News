@@ -15,7 +15,7 @@
                     <span id="card-icon" class="fa-light fa-eye"></span></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
                 </div>
             </div>
-            <h4 class="echo-hero-title text-capitalize font-weight-bold text-center"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h4>
+            <p class="echo-hero-title text-capitalize font-weight-bold text-center"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
             <hr>
             <p class="echo-hero-discription text-center"><?php echo wp_trim_words(get_the_excerpt(), 10); ?></p>
         </div>

@@ -10,7 +10,7 @@
                         <img src="<?php echo get_avatar_url(get_the_author_meta('ID')); ?>" alt="<?php the_author(); ?>">
                     </div>
                     <div class="echo-author-info">
-                        <h5 class="text-capitalize"><?php the_author(); ?></h5>
+                        <p class="text-capitalize"><?php the_author(); ?></p>
                         <p><?php the_author_meta('description'); ?></p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         get_template_part('template-parts/Archive-post-card-html');
                     }
                 } else {
-                    echo '<h2 class="text-center">No posts found.</h2>';
+                    echo '<h2 class="text-center">هیچ پستی یافت نشد</h2>';
                 }
                 wp_reset_postdata();
                 ?>
