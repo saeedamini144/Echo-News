@@ -5,7 +5,7 @@
                </a>
            </div>
            <div class="echo-trending-right-site-post-title">
-               <h4 class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h4>
+               <p class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
            </div>
            <div class="echo-trending-right-site-like-comment-share-icons">
                <div class="echo-trending-right-like-comment-content">

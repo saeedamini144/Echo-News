@@ -26,11 +26,11 @@
                         // } elseif (is_author()) {
                         //     echo '<h1>Author: ' . get_the_author() . '</h1>';
                     } elseif (is_year()) {
-                        echo '<h1>Year: ' . get_the_date('Y') . '</h1>';
+                        echo '<h1>Year: ' . esc_html(display_jalali_date('Y', strtotime(get_query_var('year') . '-01-01'))) . '</h1>';
                     } elseif (is_month()) {
-                        echo '<h1>Month: ' . get_the_date('F Y') . '</h1>';
+                        echo '<h1>Month: ' . esc_html(display_jalali_date('F Y', strtotime(get_query_var('year') . '-' . get_query_var('monthnum') . '-01'))) . '</h1>';
                     } elseif (is_day()) {
-                        echo '<h1>Day: ' . get_the_date('F j, Y') . '</h1>';
+                        echo '<h1>Day: ' . esc_html(display_jalali_date('F j, Y', strtotime(get_query_var('year') . '-' . get_query_var('monthnum') . '-' . get_query_var('day')))) . '</h1>';
                     } elseif (is_search()) {
                         echo '<h1>Search Results for: ' . get_search_query() . '</h1>';
                     } else {

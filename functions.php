@@ -37,14 +37,20 @@ function display_jalali_date($format, $timestamp = null)
     return jDateTime::date($format, $timestamp);
 }
 
+function echo_news_post_date($format = 'Y/m/d', $post_id = 0)
+{
+    $timestamp = get_post_timestamp($post_id);
+
+    if (!$timestamp) {
+        return '';
+    }
+
+    return display_jalali_date($format, $timestamp);
+}
+
 function show_date()
 {
-    if (is_rtl()) {
-        echo display_jalali_date('Y/m/d', get_the_time('U'));
-    } else {
-        echo date('Y/m/d', get_the_time('U'));
-    }
-    return;
+    echo esc_html(echo_news_post_date());
 }
 
 //jalali date support end

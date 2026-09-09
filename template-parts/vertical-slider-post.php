@@ -21,11 +21,11 @@ if ($args->have_posts()) {
         $args->the_post();
 ?>
         <div class="swiper-slide">
-            <a href="<?php the_permalink(); ?>">
-                <?php
-                echo Limited_title_characters(50);
-                ?>
-            </a>
+            <p class="echo-meta-jobs-title">
+                <a href="<?php the_permalink(); ?>" class="title-hover">
+                    <?php echo esc_html(Limited_title_characters(50)); ?>
+                </a>
+            </p>
         </div>
 
 <?php

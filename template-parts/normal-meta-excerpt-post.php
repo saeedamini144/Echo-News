@@ -41,7 +41,7 @@
 
                  </a>
              </div>
-             <h1 class="echo-hero-title text-capitalize font-weight-bold"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></h1>
+             <p class="echo-hero-title text-capitalize font-weight-bold"><a href="<?php the_permalink(); ?>" class="title-hover"><?php the_title(); ?></a></p>
              <hr>
              <p class="echo-hero-discription"><?php the_excerpt(); ?></p>
              <div class="echo-hero-area-titlepost-post-like-comment-share">

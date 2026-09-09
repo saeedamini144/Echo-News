@@ -63,7 +63,7 @@ function echo_comment_template($comment, $args, $depth)
 
         <div class="content">
             <p class="title"><?php comment_author(); ?></p>
-            <a class="pe-none"><?php echo get_comment_date(); ?></a>
+            <a class="pe-none"><?php echo esc_html(display_jalali_date('Y/m/d', get_comment_time('U', true))); ?></a>
 
             <div class="comment-rating">
                 <?php

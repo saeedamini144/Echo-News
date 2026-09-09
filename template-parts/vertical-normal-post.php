@@ -48,7 +48,7 @@ wp_reset_postdata(); // reset the data base
         </a>
     </div>
     <div class="echo-story-text">
-        <h4><a href="#" class="title-hover"><?php the_title(); ?></a></h4>
+        <p><a href="#" class="title-hover"><?php the_title(); ?></a></p>
         <div class="echo-trending-post-bottom-icons">
             <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
             <i id="card-icon" class="fa-light fa-eye"></i><span><?php echo EchoNews_post_views_count_display(); ?></span>

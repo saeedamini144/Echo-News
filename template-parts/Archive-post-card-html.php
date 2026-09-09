@@ -9,7 +9,7 @@
         <div class="echo-banner-texting">
             <div class="echo-hero-area-titlepost-post-like-comment-share text-center justify-content-center">
                 <div class="echo-hero-area-like-read-comment-share">
-                    <span><i id="card-icon" class="fa-light fa-calendar"></i><?php echo date('Y-m-d'); ?></span>
+                    <span><i id="card-icon" class="fa-light fa-calendar"></i><?php echo esc_html(echo_news_post_date()); ?></span>
                 </div>
                 <div class="echo-hero-area-like-read-comment-share">
                     <span id="card-icon" class="fa-light fa-eye"></span></i><span><?php echo EchoNews_post_views_count_display(); ?></span>
