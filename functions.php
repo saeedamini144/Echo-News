@@ -307,3 +307,16 @@ function get_related_posts_by_category()
     }
     return;
 }
+
+//google preferrd button functions
+
+function preferred_source_script() {
+    wp_enqueue_script(
+        'google-preferred-source',
+        'https://news.google.com/swg/js/v1/publisher.js',
+        array(),
+        null,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'preferred_source_script');

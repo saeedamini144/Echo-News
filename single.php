@@ -39,7 +39,18 @@ get_header();
                     <div class="row gx-5 sticky-coloum-wrap">
                         <div class="col-xl-8 col-lg-8">
                             <div class="echo-hero-baner">
-                                <span class="content-catagory-tag"><a href="<? echo get_category_link(get_the_category()[0]->term_id) ?>"><?php echo get_the_category()[0]->name; ?></a></span>
+                               <div class="d-flex flex-column flex-lg-row align-items-center gap-3 mb-3">
+                                            <!-- Category -->
+                                            <span class="content-catagory-tag">
+                                                <a href="<?php echo get_category_link(get_the_category()[0]->term_id); ?>">
+                                                    <?php echo get_the_category()[0]->name; ?>
+                                                </a>
+                                            </span>
+                                            <!-- Google Preferred Source -->
+                                            <span class="google-preferred-source">
+                                                <div google-add-preferred-source-btn></div>
+                                            </span>
+                                        </div>
                                 <!-- post title -->
                                 <h1 class="echo-hero-title text-capitalize font-weight-bold"><?php echo get_the_title(); ?></h1>
 
