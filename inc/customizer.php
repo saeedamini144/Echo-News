@@ -65,7 +65,7 @@
         //header button icon
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب آیکن دکمه', 'Echo-News'),
-            'description' => esc_html__('نام آیکن از کتابخانه font awesome را وارد کنید', 'Echo-News'),
+            'description' => esc_html__('نام آیکن را از کتابخانه font awesome انتخاب و وارد کنید', 'Echo-News'),
             'section' => 'header_options',
             'transport' => 'auto',
             'settings' => 'header_button_icon_settings',
@@ -189,7 +189,7 @@
                 'social_media_icon' => [
                     'type'        => 'text',
                     'label'       => esc_html__('آیکن شبکه اجتماعی', 'Echo-News'),
-                    'description' => esc_html__('نام آیکن از کتابخانه font awesome را وارد کنید', 'Echo-News'),
+                    'description' => esc_html__('نام آیکن را از کتابخانه font awesome انتخاب و وارد کنید', 'Echo-News'),
                     'default'     => 'fa-facebook-f',
                 ],
                 'social_media_link' => [
@@ -306,8 +306,8 @@
         // =======================Second Section=======================
         //change heading tag of the main page second section
         kirki::add_field('EchoNews_Theme_Options_Config', [
-            'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
+            'label' => esc_html__('انتخاب تگعنوان برای بخش دوم', 'Echo-News'),
+            'description' => esc_html__('انتخاب تگ عنوان برای بخش دوم ', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_second_section_settings',
             'type' => 'select',
@@ -376,8 +376,8 @@
         // ======================= Third Section =======================
         //change heading tag of the main page third section
         kirki::add_field('EchoNews_Theme_Options_Config', [
-            'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
+            'label' => esc_html__('انتخاب تگ عنوان برای بخش سوم', 'Echo-News'),
+            'description' => esc_html__('انتخاب تگ عنوان برای بخش سوم', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_third_section_settings',
             'type' => 'select',
@@ -446,8 +446,8 @@
         // ======================= Fourth Section =======================
         //change heading tag of the main page Fourth section
         kirki::add_field('EchoNews_Theme_Options_Config', [
-            'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('انتخاب تگ عنوان برای بخش چهارم صفحه اصلی', 'Echo-News'),
+            'label' => esc_html__('انتخاب تگ عنوان برای بخش چهارم', 'Echo-News'),
+            'description' => esc_html__('انتخاب تگ عنوان برای بخش چهارم ', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_fourth_section_settings',
             'type' => 'select',
@@ -537,8 +537,8 @@
 
         // ======================= Fifth Section =======================
         kirki::add_field('EchoNews_Theme_Options_Config', [
-            'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('تگ عنوان را برای نمایش انتخاب کنید', 'Echo-News'),
+            'label' => esc_html__('انتخاب تگ عنوان برای بخش پنجم', 'Echo-News'),
+            'description' => esc_html__('انتخاب تگ عنوان برای بخش پنجم', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_fifth_section_settings',
             'type' => 'select',
@@ -620,7 +620,7 @@
         //choose categories main page Fifth sections col one
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب دسته بندی ها', 'Echo-News'),
-            'description' => esc_html__('دسته بندی را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('دسته بندی را برای نمایش بخش پنجم انتخاب کنید', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'fifth_section_posts_settings_one',
             'type' => 'select',
@@ -630,7 +630,7 @@
         //write the title of the main page fifth section col one
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('تگ عنوان را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('تگ عنوان را برای نمایش بخش پنجم انتخاب کنید', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_fifth_section_col1_settings',
             'type' => 'select',
@@ -659,7 +659,7 @@
         //change the heading tag of the main page fifth section col one
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('تایپوگرافی تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('تایپوگرافی تگ عنوان را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('تایپوگرافی تگ عنوان را برای نمایش بخش پنجم انتخاب کنید', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'fifth_tag_heading_typography_col1_settings',
             'transport' => 'auto',
@@ -712,7 +712,7 @@
         //choose categories main page Fifth sections col two
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب دسته بندی ها', 'Echo-News'),
-            'description' => esc_html__('دسته بندی را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('دسته بندی را برای نمایش بخش پنجم انتخاب کنید', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'fifth_section_posts_settings_two',
             'type' => 'select',
@@ -905,7 +905,7 @@
         // ======================= Sixth Section =======================
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('تگ عنوان را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('انتخاب تگ عنوان برای بخش ششم', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_sixth_section_settings',
             'type' => 'select',
@@ -964,7 +964,7 @@
         //choose the category of the main page sixth section
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب دسته بندی ها', 'Echo-News'),
-            'description' => esc_html__('دسته بندی را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('دسته بندی را برای نمایش بخش ششم انتخاب کنید', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'sixth_section_main_posts_settings',
             'type' => 'select',
@@ -974,7 +974,7 @@
         //sixth section sidebar column 1 title 
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('تگ عنوان را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('تگ عنوان را برای نمایش بخش ششم انتخاب کنید', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_sixth_section_col1_settings',
             'type' => 'select',
@@ -1032,7 +1032,7 @@
         //sixth section sidebar column 2 title 
         kirki::add_field('EchoNews_Theme_Options_Config', [
             'label' => esc_html__('انتخاب تگ عنوان', 'Echo-News'),
-            'description' => esc_html__('تگ عنوان را برای نمایش انتخاب کنید', 'Echo-News'),
+            'description' => esc_html__('تگ عنوان را برای نمایش بخش ششم انتخاب کنید', 'Echo-News'),
             'section' => 'main_page_options',
             'settings' => 'tag_heading_main_page_sixth_section_col2_settings',
             'type' => 'select',
@@ -1163,13 +1163,13 @@
             ],
             'choices'     => [
                 'fonts' => [
-                    'google' => ['popularity', 30], // Ù„ÙˆØ¯ Ú©Ø±Ø¯Ù† ÙÙˆÙ†Øªâ€ŒÙ‡Ø§ÛŒ Ú¯ÙˆÚ¯Ù„ (Ù¾ÛŒØ´â€ŒÙØ±Ø¶)
+                    'google' => ['popularity', 30], 
                 ],
             ],
             'output' => [
                 [
                     'element' => '.sixth-title-tag-style-col2',
-                    'suffix'   => ' !important', // âœ… Ø§Ø¶Ø§ÙÙ‡ Ú©Ø±Ø¯Ù† important
+                    'suffix'   => ' !important', 
                 ],
             ],
         ]);
