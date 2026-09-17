@@ -97,7 +97,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-7 col-lg-7 d-none d-lg-block">
+                        <div class="col-xl-10 col-lg-10 d-none d-lg-block">
 
                             <!-- dynamic desktop menu -->
                             <nav>
@@ -115,7 +115,7 @@
                             </nav>
 
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-5 col-sm-5 col-5">
+                        <!-- <div class="col-xl-3 col-lg-3 col-md-5 col-sm-5 col-5">
                             <div class="echo-home-1-social-media-icons">
                                 <ul class="list-unstyled social-area">
 
@@ -136,7 +136,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
