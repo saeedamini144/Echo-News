@@ -15948,7 +15948,7 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
     position: absolute !important;
     top: -2px;
     font-family: "Font Awesome 6 Pro" !important;
-    right: 0;
+    left: 0;
     transition: all 0.4s;
     font-size: 15px;
 }
@@ -16082,7 +16082,8 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
 
 .echo-site-main-logo-menu-social ul.echo-desktop-menu li.menu-item .echo-dropdown-main-element {
     font-weight: 500;
-    padding: 0 18px;
+    padding: 0 15px;
+	font-size: 13px;
 }
 
 .echo-site-main-logo-menu-social .echo-home-1-social-media-icons {
