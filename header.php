@@ -32,16 +32,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- show date in header -->
-                        <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-7 col-8">
-                            <div class="echo-header-top-date">
-                                <div class="echo-day-name">
-                                    <span><i class="fa-regular fa-calendar"></i></span>
-                                    <span id="echo-day" class="echo-home-day"></span>
-                                    <span id="echo-date"><?php show_date(); ?></span>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-5 col-4 position-relative">
                             <div class="echo-header-top-subs-social-menu">
                                 <div class="echo-header-top-subs-social">
@@ -113,31 +103,7 @@
                                     ?>
                                 </div>
                             </nav>
-
                         </div>
-                        <!-- <div class="col-xl-3 col-lg-3 col-md-5 col-sm-5 col-5">
-                            <div class="echo-home-1-social-media-icons">
-                                <ul class="list-unstyled social-area">
-
-                                    <!-- call back the social icon -->
-                                    <?php
-                                    $social_media = get_theme_mod('add_social_media_icon_settings');
-                                    foreach ($social_media as $key => $values) {
-                                        echo '<li>';
-                                        echo '<a aria-label="' . esc_attr($values['social_media_icon']) . '" href="' . $values['social_media_link'] . '"><i class="fa-brands ' . esc_attr($values['social_media_icon']) . '"></i></a>';
-                                        echo '</li>';
-                                    }
-                                    ?>
-                                </ul>
-                                <div class="echo-header-top-menu-bar menu-btn">
-                                    <a href="javascript:void(0)">
-                                        <svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.526001 0.953461H20V3.11724H0.526001V0.953461ZM7.01733 8.52668H20V10.6905H7.01733V8.52668ZM0.526001 16.0999H20V18.2637H0.526001V16.0999Z" fill="#5E5E5E" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
