@@ -4,7 +4,7 @@ Theme URI: https: //websemicolon.com/
 Author: Saaed.amini@gmail.com
 Author URI: Saeed Amini
 Description: اکو نیوز
-Version: 1.0
+Version: 1.0.1
 Tags: responsive, fast,Blog theme, Seo base , News
 Requires at least: 5.0
 Requires PHP: 7.0
@@ -11373,6 +11373,23 @@ html[data-theme=dark] .logo-light {
     margin-top: -4px;
 }
 
+.mobile-menu-toggle-column {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    order: -1;
+}
+
+@media (max-width: 991px) {
+    .echo-main-menu-row {
+        direction: ltr;
+    }
+
+    .echo-site-logo-column {
+        margin-left: auto;
+    }
+}
+
 
 
 input {
@@ -16083,7 +16100,7 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
 .echo-site-main-logo-menu-social ul.echo-desktop-menu li.menu-item .echo-dropdown-main-element {
     font-weight: 500;
     padding: 0 15px;
-	font-size: 13px;
+    font-size: 13px;
 }
 
 .echo-site-main-logo-menu-social .echo-home-1-social-media-icons {
@@ -17273,19 +17290,35 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
 
 /* فقط آیتم‌های دارای زیرمنو فلش داشته باشن */
 .mobile-menu nav ul li.has-droupdown>a.main::after {
-    content: "▼";
-    /* فلش ساده */
-    font-size: 12px;
-    margin-left: 60%;
-    background: var(--color-primary) !important;
-    border-radius: 3px;
-    color: white;
-    display: inline-block;
-    transform: translateY(0%);
-    height: 35px;
-    width: 35px;
-    line-height: 35px;
-    text-align: center;
+    content: "\f107";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+    font-size: 13px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    background: transparent;
+    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.mobile-menu nav ul li.has-droupdown>a.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.mobile-menu nav ul li.has-droupdown.mm-active>a.main::after {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .mobile-menu nav ul li.has-droupdown {
@@ -17293,7 +17326,7 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
 }
 
 .mobile-menu nav ul li.has-droupdown ul {
-    padding-left: 15px;
+    padding: 0 15px;
 }
 
 .mobile-menu nav ul li.has-droupdown ul a.tag {
@@ -17303,15 +17336,12 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
 }
 
 .mobile-menu nav ul li.has-droupdown ul li {
-    margin: 10px 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .mobile-menu nav ul li.has-droupdown::after {
     display: none;
-}
-
-.mobile-menu nav ul li.has-droupdown.mm-active::after {
-    content: "\f077";
 }
 
 .mobile-menu nav ul li.has-droupdown.third-lvl::after {
@@ -17345,6 +17375,7 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
 .mobile-menu nav ul li a {
     display: block;
     color: #fff;
+    padding: 12px 0;
 }
 
 .mobile-menu .social-wrapper-one {

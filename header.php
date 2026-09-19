@@ -76,8 +76,8 @@
         <div class="echo-home-1-menu">
             <div class="echo-site-main-logo-menu-social">
                 <div class="container">
-                    <div class="row align-items-center plr_md--30 plr_sm--30 plr--10">
-                        <div class="col-xl-2 col-lg-2 col-md-7 col-sm-7 col-7">
+                    <div class="row align-items-center plr_md--30 plr_sm--30 plr--10 echo-main-menu-row">
+                        <div class="col-xl-2 col-lg-2 col-md-7 col-sm-7 col-7 echo-site-logo-column">
                             <div class="echo-site-logo">
                                 <a class="logo-light" href="<?php echo esc_html(home_url('/')); ?>">
                                     <img class="light-mode-logo" src="<?php echo get_theme_mod('light_mode_logo_settings'); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
@@ -103,6 +103,16 @@
                                     ?>
                                 </div>
                             </nav>
+
+                        </div>
+                        <div class="col-auto d-lg-none mobile-menu-toggle-column">
+                            <div class="echo-header-top-menu-bar menu-btn">
+                                <a href="javascript:void(0)" aria-label="Open mobile menu">
+                                    <svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.526001 0.953461H20V3.11724H0.526001V0.953461ZM7.01733 8.52668H20V10.6905H7.01733V8.52668ZM0.526001 16.0999H20V18.2637H0.526001V16.0999Z" fill="#5E5E5E" />
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
