@@ -22,6 +22,7 @@ function register_incFile()
     require_once get_template_directory() . '/inc/class-custom-menu-walker.php';
     require_once get_template_directory() . '/inc/customizer.php';
     require_once get_template_directory() . '/inc/post-callback-functions.php';
+    require_once get_template_directory() . '/inc/prompt-metabox.php';
     require_once get_template_directory() . '/inc/class-breadcrumb.php';
     require_once get_template_directory() . '/inc/pagination.php';
     require_once get_template_directory() . '/inc/jdatetime.class.php';
@@ -155,6 +156,116 @@ function register_scripts_EchoNews()
 }
 add_action('wp_enqueue_scripts', 'register_scripts_EchoNews');
 
+//add custom post type: گالری پرامپت (ai_prompt) + taxonomies (prompt_category, prompt_model)
+function add_custom_post_type_prompts()
+{
+    $labels = array(
+        'name'                  => _x('گالری پرامپت', 'Post type general name', 'Echo-News'),
+        'singular_name'         => _x('پرامپت', 'Post type singular name', 'Echo-News'),
+        'menu_name'             => _x('گالری پرامپت', 'Admin Menu text', 'Echo-News'),
+        'name_admin_bar'        => _x('پرامپت', 'Add New on Toolbar', 'Echo-News'),
+        'add_new'               => __('افزودن پرامپت', 'Echo-News'),
+        'add_new_item'          => __('افزودن پرامپت جدید', 'Echo-News'),
+        'new_item'              => __('پرامپت جدید', 'Echo-News'),
+        'edit_item'             => __('ویرایش پرامپت', 'Echo-News'),
+        'view_item'             => __('مشاهده پرامپت', 'Echo-News'),
+        'view_items'            => __('مشاهده پرامپت‌ها', 'Echo-News'),
+        'all_items'             => __('همه پرامپت‌ها', 'Echo-News'),
+        'search_items'          => __('جست‌وجوی پرامپت', 'Echo-News'),
+        'not_found'             => __('پرامپتی یافت نشد.', 'Echo-News'),
+        'not_found_in_trash'    => __('پرامپتی در زباله‌دان یافت نشد.', 'Echo-News'),
+        'featured_image'        => _x('تصویر پرامپت', 'Overrides the "Featured Image" phrase for this post type.', 'Echo-News'),
+        'set_featured_image'    => _x('انتخاب تصویر پرامپت', 'Overrides the "Set featured image" phrase for this post type.', 'Echo-News'),
+        'remove_featured_image' => _x('حذف تصویر پرامپت', 'Overrides the "Remove featured image" phrase for this post type.', 'Echo-News'),
+        'use_featured_image'    => _x('استفاده به عنوان تصویر پرامپت', 'Overrides the "Use as featured image" phrase for this post type.', 'Echo-News'),
+        'archives'              => _x('آرشیو گالری پرامپت', 'The post type archive label used in nav menus.', 'Echo-News'),
+        'insert_into_item'      => _x('درج در پرامپت', 'Overrides the "Insert into post" phrase.', 'Echo-News'),
+        'uploaded_to_this_item' => _x('آپلود شده در این پرامپت', 'Overrides the "Uploaded to this post" phrase.', 'Echo-News'),
+        'filter_items_list'     => _x('فیلتر فهرست پرامپت‌ها', 'Screen reader text for the filter links heading.', 'Echo-News'),
+        'items_list_navigation' => _x('ناوبری فهرست پرامپت‌ها', 'Screen reader text for the pagination heading.', 'Echo-News'),
+        'items_list'            => _x('فهرست پرامپت‌ها', 'Screen reader text for the items list heading.', 'Echo-News'),
+    );
+    $args = array(
+        'labels'             => $labels,
+        'description'        => 'پرامپت‌های آماده تولید تصویر با هوش مصنوعی، همراه با تصویر نمونه.',
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'prompts', 'with_front' => false), // /prompts/post-slug/
+        'capability_type'    => 'post',
+        'has_archive'        => true, // /prompts/
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-format-image',
+        'supports'           => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments'),
+        'taxonomies'         => array('prompt_category', 'prompt_model'), // نه category و post_tag پیش‌فرض (جلوگیری از صفحات کم‌محتوا)
+    );
+    register_post_type('ai_prompt', $args);
+
+    // موضوع تصویر (سلسله‌مراتبی): پرتره، لوگو، معماری ...  => /prompts/category/portrait/
+    register_taxonomy('prompt_category', 'ai_prompt', array(
+        'labels' => array(
+            'name'          => _x('دسته‌بندی پرامپت', 'taxonomy general name', 'Echo-News'),
+            'singular_name' => _x('دسته‌بندی پرامپت', 'taxonomy singular name', 'Echo-News'),
+            'menu_name'     => __('دسته‌بندی‌ها', 'Echo-News'),
+            'all_items'     => __('همه دسته‌بندی‌ها', 'Echo-News'),
+            'edit_item'     => __('ویرایش دسته‌بندی', 'Echo-News'),
+            'view_item'     => __('مشاهده دسته‌بندی', 'Echo-News'),
+            'update_item'   => __('به‌روزرسانی دسته‌بندی', 'Echo-News'),
+            'add_new_item'  => __('افزودن دسته‌بندی جدید', 'Echo-News'),
+            'new_item_name' => __('نام دسته‌بندی جدید', 'Echo-News'),
+            'parent_item'   => __('دسته‌بندی والد', 'Echo-News'),
+            'search_items'  => __('جست‌وجوی دسته‌بندی', 'Echo-News'),
+            'not_found'     => __('دسته‌بندی یافت نشد.', 'Echo-News'),
+        ),
+        'hierarchical'      => true,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'prompts/category', 'with_front' => false, 'hierarchical' => true),
+    ));
+
+    // ابزار/مدل: Midjourney، DALL·E، Stable Diffusion، Flux ...  => /prompts/model/midjourney/
+    register_taxonomy('prompt_model', 'ai_prompt', array(
+        'labels' => array(
+            'name'                       => _x('مدل هوش مصنوعی', 'taxonomy general name', 'Echo-News'),
+            'singular_name'              => _x('مدل هوش مصنوعی', 'taxonomy singular name', 'Echo-News'),
+            'menu_name'                  => __('مدل‌ها', 'Echo-News'),
+            'all_items'                  => __('همه مدل‌ها', 'Echo-News'),
+            'edit_item'                  => __('ویرایش مدل', 'Echo-News'),
+            'view_item'                  => __('مشاهده مدل', 'Echo-News'),
+            'update_item'                => __('به‌روزرسانی مدل', 'Echo-News'),
+            'add_new_item'               => __('افزودن مدل جدید', 'Echo-News'),
+            'new_item_name'              => __('نام مدل جدید', 'Echo-News'),
+            'search_items'               => __('جست‌وجوی مدل', 'Echo-News'),
+            'popular_items'              => __('مدل‌های پرکاربرد', 'Echo-News'),
+            'separate_items_with_commas' => __('مدل‌ها را با ویرگول جدا کنید', 'Echo-News'),
+            'choose_from_most_used'      => __('انتخاب از پرکاربردترین مدل‌ها', 'Echo-News'),
+            'not_found'                  => __('مدلی یافت نشد.', 'Echo-News'),
+        ),
+        'hierarchical'      => false,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'prompts/model', 'with_front' => false),
+    ));
+}
+add_action('init', 'add_custom_post_type_prompts');
+
+// فقط هنگام فعال‌سازی قالب، آدرس‌ها (rewrite rules) بازسازی شوند
+function echo_news_prompts_flush_rewrite()
+{
+    add_custom_post_type_prompts();
+    flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'echo_news_prompts_flush_rewrite');
 //limited post title
 function Limited_title_characters($limited)
 {
