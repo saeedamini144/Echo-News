@@ -17,11 +17,8 @@ $model   = echo_news_first_term($post_id, 'prompt_model');
 $cat     = echo_news_first_term($post_id, 'prompt_category');
 $views   = (int) get_post_meta($post_id, 'post_views_count', true);
 
-// ریبون: پرطرفدار > جدید
+// ریبون: فقط «پرطرفدار» (برچسب «جدید» حذف شد)
 $flag = '';
-if (get_post_timestamp($post_id) > strtotime('-7 days')) {
-    $flag = 'جدید';
-}
 if ($views >= (int) apply_filters('echo_news_prompt_popular_threshold', 1000)) {
     $flag = 'پرطرفدار';
 }

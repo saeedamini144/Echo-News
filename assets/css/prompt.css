@@ -818,7 +818,9 @@ html[data-theme=dark] .ep-var {
 /* دکمه کپی سریع */
 .ep-card__copy {
     position: absolute;
-    inset-inline-end: 10px;
+    /* روبروی نشان مدل (که چپ است)؛ جهت فیزیکی تا هرگز روی آن نیفتد */
+    right: 10px;
+    left: auto;
     top: 10px;
     z-index: 3;
     width: 38px;
@@ -1014,7 +1016,8 @@ html[data-theme=dark] .ep-var {
 /* ---------- ریبون ---------- */
 .ep-card__flag {
     position: absolute;
-    inset-inline-start: 10px;
+    left: 10px;
+    right: auto;
     top: 48px;
     z-index: 2;
     font-size: 11px;
@@ -1095,6 +1098,7 @@ html[data-theme=dark] .ep-var {
 
 .ep-row .ep-card__copy {
     position: static;
+    right: auto;
     flex: none;
     opacity: 1;
     transform: none;
