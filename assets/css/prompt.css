@@ -1,0 +1,1331 @@
+/*
+ * گالری پرامپت (ai_prompt) — استایل صفحه سینگل، کارت و آرشیو
+ * پیشوند همه‌ی کلاس‌ها: ep-
+ * فقط روی صفحات ai_prompt بارگذاری می‌شود (inc/prompt-frontend.php)
+ */
+
+/* ==========================================================
+   گالری پرامپت — استایل‌های اختصاصی (پیشوند ep-)
+   ========================================================== */
+.ep {
+    --ep-card: #ffffff;
+    --ep-soft: #f6f7fb;
+    --ep-border: #e7e9f1;
+    --ep-text: #181823;
+    --ep-muted: #6b6f80;
+    --ep-accent: var(--color-primary, #537FE7);
+    --ep-accent-soft: rgba(83, 127, 231, .1);
+    --ep-orange: #F05600;
+    --ep-danger: #d6335a;
+    --ep-radius: 14px;
+    --ep-shadow: 0 10px 30px rgba(24, 24, 35, .06);
+}
+
+html[data-theme=dark] .ep {
+    --ep-card: #181823;
+    --ep-soft: #212130;
+    --ep-border: rgba(255, 255, 255, .1);
+    --ep-text: #ffffff;
+    --ep-muted: rgba(255, 255, 255, .62);
+    --ep-accent-soft: rgba(83, 127, 231, .22);
+    --ep-shadow: none;
+}
+
+html[data-theme=dark] body {
+    background: var(--bg-dark-three);
+}
+
+.ep a {
+    text-decoration: none;
+}
+
+.ep-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    margin: 0 0 16px;
+    color: var(--ep-text);
+}
+
+.ep-section-title i {
+    color: var(--ep-accent);
+    font-size: 17px;
+}
+
+.ep-block {
+    margin-top: 28px;
+}
+
+/* ---------- chips ---------- */
+.ep-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.ep-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    line-height: 1.5;
+    border: 1px solid var(--ep-border);
+    background: var(--ep-card);
+    color: var(--ep-text);
+    transition: .2s;
+}
+
+a.ep-chip:hover {
+    border-color: var(--ep-accent);
+    color: var(--ep-accent);
+}
+
+.ep-chip.is-model {
+    background: var(--ep-accent-soft);
+    border-color: transparent;
+    color: var(--ep-accent);
+    font-weight: 600;
+}
+
+html[data-theme=dark] .ep-chip.is-model {
+    color: #9db8ff;
+}
+
+.ep-lead {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--ep-muted);
+    margin: 12px 0 20px;
+}
+
+/* ---------- image stage ---------- */
+.ep-stage {
+    position: relative;
+    margin: 0;
+    border-radius: var(--ep-radius);
+    overflow: hidden;
+    background: #0f0f1c;
+    isolation: isolate;
+}
+
+/* پس‌زمینه بلوردار از خود تصویر؛ هر نسبتی (۱:۱، ۹:۱۶، ۱۶:۹ ...) را قشنگ پر می‌کند */
+.ep-stage__bg {
+    position: absolute;
+    inset: -40px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(38px) saturate(1.3);
+    opacity: .75;
+    z-index: -1;
+    transition: background-image .3s;
+}
+
+.ep-stage__frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 22px;
+    min-height: 260px;
+}
+
+.ep-stage__img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 560px;
+    border-radius: 8px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+    cursor: zoom-in;
+    object-fit: contain;
+}
+
+.ep-stage__badges {
+    position: absolute;
+    inset-inline-start: 14px;
+    top: 14px;
+    display: flex;
+    gap: 6px;
+}
+
+.ep-badge {
+    padding: 4px 11px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(15, 15, 28, .6);
+    backdrop-filter: blur(6px);
+    direction: ltr;
+}
+
+.ep-stage__actions {
+    position: absolute;
+    inset-inline-end: 14px;
+    top: 14px;
+    display: flex;
+    gap: 8px;
+}
+
+.ep-icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 15, 28, .6);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.ep-icon-btn:hover {
+    background: var(--ep-accent);
+}
+
+.ep-caption {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--ep-muted);
+    margin: 10px 4px 0;
+}
+
+.ep-variants {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.ep-variants button {
+    flex: 0 0 76px;
+    height: 76px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    padding: 0;
+    overflow: hidden;
+    background: var(--ep-soft);
+    cursor: pointer;
+    opacity: .65;
+    transition: .2s;
+}
+
+.ep-variants button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ep-variants button.is-active,
+.ep-variants button:hover {
+    opacity: 1;
+    border-color: var(--ep-accent);
+}
+
+/* ---------- prompt card (هسته صفحه) ---------- */
+.ep-prompt {
+    border: 1px solid var(--ep-border);
+    border-radius: var(--ep-radius);
+    background: var(--ep-card);
+    box-shadow: var(--ep-shadow);
+    overflow: hidden;
+}
+
+.ep-prompt__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--ep-border);
+}
+
+.ep-tabs {
+    display: inline-flex;
+    background: var(--ep-soft);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.ep-tabs button {
+    flex: none;
+    white-space: nowrap;
+    border: 0;
+    background: transparent;
+    padding: 6px 16px;
+    border-radius: 7px;
+    font-size: 13px;
+    color: var(--ep-muted);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.ep-tabs button.is-active {
+    background: var(--ep-card);
+    color: var(--ep-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    font-weight: 700;
+}
+
+.ep-btn {
+    width: auto;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    background: var(--ep-accent);
+    color: #fff;
+    transition: .2s;
+    line-height: 1.4;
+}
+
+.ep-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    color: #fff;
+}
+
+.ep-btn.is-ghost {
+    background: var(--ep-soft);
+    color: var(--ep-text);
+}
+
+.ep-btn.is-ghost:hover {
+    color: var(--ep-accent);
+}
+
+.ep-btn.is-done {
+    background: var(--color-success, #3EB75E);
+}
+
+.ep-btn.is-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.ep-prompt__body {
+    position: relative;
+    padding: 18px;
+}
+
+.ep-prompt__text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--ep-text);
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 190px;
+    overflow: hidden;
+    transition: max-height .35s;
+}
+
+.ep-prompt__text[dir=ltr] {
+    direction: ltr;
+    text-align: left;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.ep-prompt__text[dir=rtl] {
+    text-align: right;
+}
+
+.ep-prompt__text.is-open {
+    max-height: 1200px;
+}
+
+/* بخش‌های جایگزین‌شدنی، مثل [subject] */
+.ep-var {
+    background: var(--ep-accent-soft);
+    color: var(--ep-accent);
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+html[data-theme=dark] .ep-var {
+    color: #9db8ff;
+}
+
+.ep-fade {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 52px;
+    height: 70px;
+    background: linear-gradient(to top, var(--ep-card), transparent);
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.ep-prompt__text.is-open~.ep-fade,
+.ep-prompt__body.no-overflow .ep-fade {
+    opacity: 0;
+}
+
+.ep-expand {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.ep-prompt__body.no-overflow .ep-expand {
+    display: none;
+}
+
+.ep-expand button {
+    border: 0;
+    background: none;
+    color: var(--ep-accent);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.ep-params {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 18px;
+    border-top: 1px dashed var(--ep-border);
+    background: var(--ep-soft);
+}
+
+.ep-params__label {
+    font-size: 12px;
+    color: var(--ep-muted);
+    margin-inline-end: 4px;
+}
+
+.ep-param {
+    direction: ltr;
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12.5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--ep-card);
+    border: 1px solid var(--ep-border);
+    color: var(--ep-text);
+}
+
+.ep-params .ep-btn {
+    margin-inline-start: auto;
+}
+
+.ep-negative {
+    border-top: 1px solid var(--ep-border);
+}
+
+.ep-negative summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ep-text);
+}
+
+.ep-negative summary::-webkit-details-marker {
+    display: none;
+}
+
+.ep-negative summary i.fa-ban {
+    color: var(--ep-danger);
+}
+
+.ep-negative summary .ep-caret {
+    margin-inline-start: auto;
+    transition: .25s;
+    color: var(--ep-muted);
+}
+
+.ep-negative[open] summary .ep-caret {
+    transform: rotate(180deg);
+}
+
+.ep-negative__body {
+    padding: 0 18px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.ep-negative__body p {
+    margin: 0;
+    flex: 1;
+    direction: ltr;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ep-muted);
+}
+
+/* ---------- specs ---------- */
+.ep-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 0;
+}
+
+.ep-spec {
+    border: 1px solid var(--ep-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: var(--ep-card);
+}
+
+.ep-spec dt {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--ep-muted);
+    margin-bottom: 4px;
+}
+
+.ep-spec dt i {
+    color: var(--ep-accent);
+}
+
+.ep-spec dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ep-text);
+    line-height: 1.6;
+}
+
+.ep-spec dd.is-ltr {
+    direction: ltr;
+    text-align: right;
+}
+
+.ep-spec[hidden] {
+    display: none;
+}
+
+/* ---------- how to ---------- */
+.ep-steps {
+    counter-reset: s;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.ep-steps li {
+    counter-increment: s;
+    position: relative;
+    padding: 18px 16px 16px;
+    border-radius: 12px;
+    background: var(--ep-soft);
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ep-text);
+}
+
+.ep-steps li::before {
+    content: counter(s);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ep-accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* ---------- محتوای یکتا ---------- */
+.ep-content {
+    font-size: 16px;
+    line-height: 2.1;
+    color: var(--ep-text);
+}
+
+.ep-content h2 {
+    font-size: 21px;
+    margin: 24px 0 10px;
+    color: var(--ep-text);
+}
+
+.ep-content p {
+    color: var(--ep-muted);
+}
+
+.ep-content ul {
+    padding-inline-start: 20px;
+    color: var(--ep-muted);
+}
+
+.ep-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+/* ---------- sidebar ---------- */
+.ep-side {
+    position: sticky;
+    top: 90px;
+}
+
+.ep-widget {
+    border: 1px solid var(--ep-border);
+    border-radius: var(--ep-radius);
+    background: var(--ep-card);
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.ep-widget h3 {
+    font-size: 17px;
+    margin: 0 0 14px;
+    color: var(--ep-text);
+}
+
+.ep-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ep-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--ep-text);
+    border-bottom: 1px dashed var(--ep-border);
+}
+
+.ep-list li:last-child a {
+    border: 0;
+}
+
+.ep-list li a:hover {
+    color: var(--ep-accent);
+}
+
+.ep-list small {
+    background: var(--ep-soft);
+    border-radius: 6px;
+    padding: 1px 8px;
+    color: var(--ep-muted);
+}
+
+.ep-ad {
+    border: 1px dashed var(--ep-border);
+    border-radius: var(--ep-radius);
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ep-muted);
+    font-size: 13px;
+}
+
+/* ---------- نوار پایین موبایل ---------- */
+.ep-mbar {
+    display: none;
+}
+
+/* ---------- lightbox ---------- */
+.ep-lb {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(8, 8, 16, .92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.ep-lb.is-open {
+    display: flex;
+}
+
+.ep-lb img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.ep-lb button {
+    position: absolute;
+    top: 18px;
+    inset-inline-start: 18px;
+}
+
+/* ---------- toast ---------- */
+.ep-toast {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 90px;
+    margin: auto;
+    width: max-content;
+    max-width: 90vw;
+    background: #181823;
+    color: #fff;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    opacity: 0;
+    transform: translateY(14px);
+    pointer-events: none;
+    transition: .3s;
+    z-index: 10000;
+}
+
+.ep-toast.is-show {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- شبکه ---------- */
+.ep-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* حالت ماسونری: هر کارت با نسبت واقعی تصویر خودش */
+.ep-grid.is-masonry {
+    display: block;
+    column-count: 3;
+    column-gap: 22px;
+}
+
+.ep-grid.is-masonry .ep-card {
+    break-inside: avoid;
+    margin-bottom: 22px;
+}
+
+.ep-grid.is-masonry .ep-card__media {
+    aspect-ratio: var(--r, 4/5);
+}
+
+/* ---------- کارت ---------- */
+.ep-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--ep-radius);
+    background: var(--ep-card);
+    border: 1px solid var(--ep-border);
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.ep-card:hover,
+.ep-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--ep-shadow);
+    border-color: transparent;
+}
+
+/* تصویر: پیش‌فرض ۴:۵ ثابت تا ردیف‌ها هم‌تراز بمانند */
+.ep-card__media {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: var(--ep-soft);
+}
+
+.ep-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s cubic-bezier(.2, .7, .2, 1);
+}
+
+.ep-card:hover .ep-card__media img {
+    transform: scale(1.06);
+}
+
+/* گرادیان پایین تصویر برای خوانایی snippet و نشان‌ها */
+.ep-card__media::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 62%;
+    background: linear-gradient(to top, rgba(10, 10, 20, .88), rgba(10, 10, 20, 0));
+    opacity: 0;
+    transition: opacity .3s;
+    pointer-events: none;
+}
+
+.ep-card:hover .ep-card__media::after,
+.ep-card:focus-within .ep-card__media::after,
+.ep-grid.show-snippet .ep-card__media::after {
+    opacity: 1;
+}
+
+/* نشان مدل */
+.ep-card__model {
+    position: absolute;
+    inset-inline-start: 10px;
+    top: 10px;
+    z-index: 2;
+    padding: 4px 11px;
+    border-radius: 7px;
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #fff;
+    background: rgba(15, 15, 28, .6);
+    backdrop-filter: blur(6px);
+    direction: ltr;
+}
+
+/* دکمه کپی سریع */
+.ep-card__copy {
+    position: absolute;
+    inset-inline-end: 10px;
+    top: 10px;
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #fff;
+    background: rgba(15, 15, 28, .6);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition: background .2s, transform .2s, opacity .2s;
+}
+
+.ep-card__copy:hover {
+    background: var(--ep-accent);
+    transform: scale(1.08);
+}
+
+.ep-card__copy.is-done {
+    background: var(--color-success, #3EB75E);
+}
+
+/* روی دسکتاپ فقط با hover دیده شود؛ روی لمسی همیشه */
+@media (hover: hover) {
+    .ep-card__copy {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    .ep-card:hover .ep-card__copy,
+    .ep-card:focus-within .ep-card__copy,
+    .ep-card__copy:focus-visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    .ep-card__copy:hover {
+        transform: scale(1.08);
+    }
+}
+
+/* چند تصویر */
+.ep-card__count {
+    position: absolute;
+    inset-inline-end: 10px;
+    bottom: 10px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 7px;
+    font-size: 11.5px;
+    color: #fff;
+    background: rgba(15, 15, 28, .6);
+    backdrop-filter: blur(6px);
+    transition: opacity .25s;
+}
+
+.ep-card:hover .ep-card__count,
+.ep-grid.show-snippet .ep-card__count {
+    opacity: 0;
+}
+
+/* snippet پرامپت روی تصویر (hover) */
+.ep-card__snippet {
+    position: absolute;
+    inset-inline: 14px;
+    bottom: 14px;
+    z-index: 2;
+    margin: 0;
+    direction: ltr;
+    text-align: left;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, .92);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .3s, transform .3s;
+    pointer-events: none;
+}
+
+.ep-card:hover .ep-card__snippet,
+.ep-card:focus-within .ep-card__snippet,
+.ep-grid.show-snippet .ep-card__snippet {
+    opacity: 1;
+    transform: none;
+}
+
+/* روی لمسی hover نداریم؛ snippet نمایش داده نشود، عنوان کافی است */
+@media (hover: none) {
+
+    .ep-card__snippet,
+    .ep-card__media::after {
+        display: none;
+    }
+
+    .ep-card:hover .ep-card__count {
+        opacity: 1;
+    }
+}
+
+/* بدنه */
+.ep-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 16px 14px;
+    flex: 1;
+}
+
+.ep-card__cat {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ep-orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ep-card__cat::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.ep-card__title {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.9;
+    font-weight: 700;
+    color: var(--ep-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ep-card__title a {
+    color: inherit;
+    transition: color .2s;
+}
+
+/* کل کارت قابل کلیک؛ لینک عنوان کشیده می‌شود (دکمه کپی بالاتر از آن است) */
+.ep-card__title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.ep-card:hover .ep-card__title a {
+    color: var(--ep-accent);
+}
+
+.ep-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed var(--ep-border);
+    font-size: 12.5px;
+    color: var(--ep-muted);
+}
+
+.ep-card__meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ep-card__meta span:last-child {
+    margin-inline-start: auto;
+}
+
+.ep-card__meta i {
+    color: var(--ep-accent);
+}
+
+/* ---------- ریبون ---------- */
+.ep-card__flag {
+    position: absolute;
+    inset-inline-start: 10px;
+    top: 48px;
+    z-index: 2;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--ep-orange);
+}
+
+/* ---------- کارت فشرده (سایدبار / مشابه) ---------- */
+.ep-row {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+    background: var(--ep-card);
+    border: 1px solid var(--ep-border);
+    transition: .25s;
+}
+
+.ep-row:hover {
+    border-color: var(--ep-accent);
+    box-shadow: var(--ep-shadow);
+}
+
+.ep-row__img {
+    flex: none;
+    width: 84px;
+    height: 84px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ep-row__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ep-row__txt {
+    min-width: 0;
+    flex: 1;
+}
+
+.ep-row__txt small {
+    display: block;
+    font-size: 11.5px;
+    color: var(--ep-orange);
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.ep-row__txt h4 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ep-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ep-row__txt h4 a {
+    color: inherit;
+}
+
+.ep-row__txt h4 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.ep-row .ep-card__copy {
+    position: static;
+    flex: none;
+    opacity: 1;
+    transform: none;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    background: var(--ep-soft);
+    color: var(--ep-text);
+    backdrop-filter: none;
+    position: relative;
+}
+
+.ep-row .ep-card__copy:hover {
+    background: var(--ep-accent);
+    color: #fff;
+}
+
+/* ---------- ریسپانسیو ---------- */
+@media (max-width: 991px) {
+    .ep-side {
+        position: static;
+        margin-top: 30px;
+    }
+
+    .ep-mbar {
+        display: flex;
+        position: fixed;
+        inset-inline: 0;
+        bottom: 0;
+        z-index: 900;
+        gap: 10px;
+        padding: 10px 14px;
+        background: var(--ep-card);
+        border-top: 1px solid var(--ep-border);
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, .08);
+    }
+
+    .ep-mbar .ep-btn:first-child {
+        flex: 1;
+    }
+
+    body.ep-has-mbar {
+        padding-bottom: 70px;
+    }
+
+    .ep-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ep-grid.is-masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .ep-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .ep-stage__frame {
+        padding: 14px;
+    }
+
+    .ep-stage__img {
+        max-height: 440px;
+    }
+
+    .ep-prompt__head {
+        flex-wrap: nowrap;
+    }
+
+    .ep-tabs {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .ep-tabs button {
+        flex: 1;
+        padding: 6px 8px;
+    }
+
+    .ep-prompt__head .ep-btn span {
+        display: none;
+    }
+
+    .ep-negative__body {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 575px) {
+    .ep-grid {
+        gap: 12px;
+    }
+
+    .ep-grid.is-masonry {
+        column-gap: 12px;
+    }
+
+    .ep-grid.is-masonry .ep-card {
+        margin-bottom: 12px;
+    }
+
+    .ep-card__body {
+        padding: 11px 12px;
+        gap: 6px;
+    }
+
+    .ep-card__title {
+        font-size: 13.5px;
+        line-height: 1.8;
+    }
+
+    .ep-card__meta {
+        gap: 10px;
+        font-size: 11.5px;
+    }
+}
+
+/* ---------- جزئیات کوچک ---------- */
+.ep-card__cat {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+}
+
+.ep-row__txt small {
+    position: relative;
+    z-index: 2;
+}
+
+.ep-popular {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ep-prompt__head>strong {
+    font-size: 14px;
+    color: var(--ep-text);
+}
+
+/* ---------- آرشیو: فیلتر، مرتب‌سازی، توضیح ---------- */
+.ep-intro {
+    max-width: 720px;
+    margin: 12px auto 0;
+    color: var(--ep-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.ep-intro p {
+    margin: 0;
+}
+
+.ep-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 26px;
+}
+
+.ep-bar__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.ep-bar__label {
+    font-size: 13px;
+    color: var(--ep-muted);
+    margin-inline-end: 4px;
+    min-width: 40px;
+}
+
+.ep-chip.is-active,
+a.ep-chip.is-active:hover {
+    background: var(--ep-accent);
+    border-color: var(--ep-accent);
+    color: #fff;
+}
+
+.ep-bar__meta {
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px dashed var(--ep-border);
+}
+
+.ep-count {
+    font-size: 13.5px;
+    color: var(--ep-muted);
+}
+
+.ep-sort {
+    display: inline-flex;
+    gap: 16px;
+    font-size: 13.5px;
+}
+
+.ep-sort a {
+    color: var(--ep-muted);
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.ep-sort a:hover,
+.ep-sort a.is-active {
+    color: var(--ep-accent);
+    border-color: var(--ep-accent);
+}
+
+.ep-pager {
+    margin-top: 34px;
+}
+
+.ep-empty {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--ep-muted);
+}
+
+@media (max-width: 575px) {
+    .ep-bar__row:not(.ep-bar__meta) {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 6px;
+    }
+
+    .ep-bar__row .ep-chip,
+    .ep-bar__label {
+        flex: none;
+    }
+}

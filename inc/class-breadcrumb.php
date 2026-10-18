@@ -34,8 +34,32 @@ class Breadcrumb
         $items   = [];
         $items[] = ['url' => home_url('/'), 'label' => 'صفحه اصلی'];
 
+        // --- Single Prompt (ai_prompt): خانه › گالری پرامپت › دسته (و والدها) › عنوان ---
+        if (is_singular('ai_prompt')) {
+
+            $items[] = ['url' => get_post_type_archive_link('ai_prompt'), 'label' => 'گالری پرامپت'];
+
+            $term = echo_news_first_term(get_the_ID(), 'prompt_category');
+            if ($term) {
+                $items = array_merge($items, $this->get_term_hierarchy($term));
+            }
+
+            $items[] = ['url' => get_permalink(), 'label' => get_the_title()];
+        }
+
+        // --- Prompt Archive ---
+        elseif (is_post_type_archive('ai_prompt')) {
+            $items[] = ['url' => get_post_type_archive_link('ai_prompt'), 'label' => 'گالری پرامپت'];
+        }
+
+        // --- Prompt Category / Model ---
+        elseif (is_tax(['prompt_category', 'prompt_model'])) {
+            $items[] = ['url' => get_post_type_archive_link('ai_prompt'), 'label' => 'گالری پرامپت'];
+            $items = array_merge($items, $this->get_term_hierarchy(get_queried_object()));
+        }
+
         // --- Single Post ---
-        if (is_singular('post')) {
+        elseif (is_singular('post')) {
 
             $cats = get_the_category();
             if (!empty($cats)) {
@@ -90,6 +114,25 @@ class Breadcrumb
         }
 
         return $items;
+    }
+
+    // زنجیره‌ی والدها + ترم فعلی برای taxonomyهای دلخواه (مثل prompt_category)
+    private function get_term_hierarchy($term)
+    {
+        $chain = [];
+
+        if (is_taxonomy_hierarchical($term->taxonomy) && $term->parent) {
+            foreach (array_reverse(get_ancestors($term->term_id, $term->taxonomy, 'taxonomy')) as $parent_id) {
+                $parent = get_term($parent_id, $term->taxonomy);
+                if ($parent && !is_wp_error($parent)) {
+                    $chain[] = ['url' => get_term_link($parent), 'label' => $parent->name];
+                }
+            }
+        }
+
+        $chain[] = ['url' => get_term_link($term), 'label' => $term->name];
+
+        return $chain;
     }
 
     private function get_primary_category($cat)

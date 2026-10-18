@@ -23,6 +23,8 @@ function register_incFile()
     require_once get_template_directory() . '/inc/customizer.php';
     require_once get_template_directory() . '/inc/post-callback-functions.php';
     require_once get_template_directory() . '/inc/prompt-metabox.php';
+    require_once get_template_directory() . '/inc/prompt-frontend.php';
+    require_once get_template_directory() . '/inc/prompt-importer.php';
     require_once get_template_directory() . '/inc/class-breadcrumb.php';
     require_once get_template_directory() . '/inc/pagination.php';
     require_once get_template_directory() . '/inc/jdatetime.class.php';
@@ -150,7 +152,7 @@ function register_scripts_EchoNews()
     //     'ajaxUrl' => admin_url('admin-ajax.php'),
     //     'nonce' => wp_create_nonce('echo_news_nonce'),
     // ));
-    if (is_single()) {
+    if (is_singular('post')) { // نه روی ai_prompt: آنجا TOC وجود ندارد
         wp_enqueue_script('single-post-EchoNews', get_template_directory_uri() . '/assets/js/post-scripts.js', array('jquery'), $version, true);
     }
 }
@@ -203,8 +205,8 @@ function add_custom_post_type_prompts()
         'supports'           => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments'),
         'taxonomies'         => array('prompt_category', 'prompt_model'), // نه category و post_tag پیش‌فرض (جلوگیری از صفحات کم‌محتوا)
     );
-    register_post_type('ai_prompt', $args);
-
+    // نکته: taxonomyها باید «قبل» از پست تایپ ثبت شوند؛ وگرنه قانون ضمیمه‌ی پست تایپ
+    // (prompts/x/y) آدرس‌های prompts/category/... و prompts/model/... را می‌بلعد (۴۰۴).
     // موضوع تصویر (سلسله‌مراتبی): پرتره، لوگو، معماری ...  => /prompts/category/portrait/
     register_taxonomy('prompt_category', 'ai_prompt', array(
         'labels' => array(
@@ -256,6 +258,8 @@ function add_custom_post_type_prompts()
         'query_var'         => true,
         'rewrite'           => array('slug' => 'prompts/model', 'with_front' => false),
     ));
+
+    register_post_type('ai_prompt', $args);
 }
 add_action('init', 'add_custom_post_type_prompts');
 
@@ -266,6 +270,17 @@ function echo_news_prompts_flush_rewrite()
     flush_rewrite_rules();
 }
 add_action('after_switch_theme', 'echo_news_prompts_flush_rewrite');
+
+// اگر ساختار آدرس‌های پرامپت عوض شد، عدد نسخه را بالا ببرید تا یک بار خودکار بازسازی شود
+function echo_news_prompts_maybe_flush_rewrite()
+{
+    $version = '3'; // 1: پست تایپ | 2: + taxonomyها | 3: ترتیب ثبت (taxonomy قبل از پست تایپ)
+    if (get_option('echo_news_prompts_rewrite') !== $version) {
+        flush_rewrite_rules(false);
+        update_option('echo_news_prompts_rewrite', $version);
+    }
+}
+add_action('init', 'echo_news_prompts_maybe_flush_rewrite', 99);
 //limited post title
 function Limited_title_characters($limited)
 {

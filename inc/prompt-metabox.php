@@ -34,6 +34,7 @@ function echo_news_prompt_ratios()
         '4:5'  => '4:5 (پرتره)',
         '3:2'  => '3:2 (افقی کلاسیک)',
         '16:9' => '16:9 (عریض)',
+        '2:3'  => '2:3 (عمودی کلاسیک)',
         '9:16' => '9:16 (عمودی / استوری)',
     );
 }
@@ -261,6 +262,81 @@ function echo_news_prompt_metabox_render($post)
  * ذخیره‌سازی
  * ------------------------------------------------------------------ */
 
+/**
+ * پاک‌سازی و اعتبارسنجی فیلدهای پرامپت (مشترک بین متاباکس و Importer)
+ *
+ * @param array $in ورودی خام (بدون slash) با کلیدهای: prompt, prompt_fa, negative, params,
+ *                  ratio, version, seed, steps, guidance, resolution, gallery (آرایه‌ی ID یا رشته‌ی ویرگولی)
+ * @return array meta_key => مقدار تمیز ('' = خالی؛ نباید ذخیره شود)
+ */
+function echo_news_prompt_sanitize_meta(array $in)
+{
+    $get  = function ($key) use ($in) {
+        return isset($in[$key]) ? (string) $in[$key] : '';
+    };
+    $text = function ($key) use ($get) {
+        return sanitize_text_field($get($key));
+    };
+    $area = function ($key) use ($get) {
+        return sanitize_textarea_field($get($key));
+    };
+
+    // نسبت تصویر فقط از لیست مجاز
+    $ratio = $text('ratio');
+    if (!isset(echo_news_prompt_ratios()[$ratio])) {
+        $ratio = '';
+    }
+
+    // پارامترها: هر خط یک مورد
+    $params = array_filter(array_map('sanitize_text_field', preg_split('/\r\n|\r|\n/', $area('params'))));
+
+    // Steps: عدد صحیح مثبت | Guidance: عدد اعشاری
+    $steps    = $text('steps');
+    $steps    = ctype_digit($steps) && (int) $steps > 0 ? (string) (int) $steps : '';
+    $guidance = $text('guidance');
+    $guidance = is_numeric($guidance) ? (string) (float) $guidance : '';
+
+    // گالری: فقط IDهای پیوست واقعی، بدون تکرار، حداکثر ۸ تا
+    $raw_gallery = isset($in['gallery']) ? $in['gallery'] : array();
+    if (!is_array($raw_gallery)) {
+        $raw_gallery = explode(',', (string) $raw_gallery);
+    }
+    $gallery = array();
+    foreach ($raw_gallery as $id) {
+        $id = absint($id);
+        if ($id && get_post_type($id) === 'attachment') {
+            $gallery[] = $id;
+        }
+    }
+    $gallery = array_slice(array_unique($gallery), 0, 8);
+
+    return array(
+        '_ep_prompt'     => $area('prompt'),
+        '_ep_prompt_fa'  => $area('prompt_fa'),
+        '_ep_negative'   => $area('negative'),
+        '_ep_params'     => implode("\n", $params),
+        '_ep_ratio'      => $ratio,
+        '_ep_version'    => $text('version'),
+        '_ep_seed'       => $text('seed'),
+        '_ep_steps'      => $steps,
+        '_ep_guidance'   => $guidance,
+        '_ep_resolution' => $text('resolution'),
+        '_ep_gallery'    => implode(',', $gallery),
+    );
+}
+
+// ذخیره‌ی فیلدهای تمیز: فیلد خالی ذخیره نمی‌شود و meta قبلی‌اش حذف می‌شود
+function echo_news_prompt_store_meta($post_id, array $fields)
+{
+    foreach ($fields as $key => $value) {
+        if ($value === '') {
+            delete_post_meta($post_id, $key);
+        } else {
+            update_post_meta($post_id, $key, $value);
+        }
+    }
+}
+
 function echo_news_prompt_save_metabox($post_id)
 {
     if (!isset($_POST['echo_news_prompt_nonce']) || !wp_verify_nonce(wp_unslash($_POST['echo_news_prompt_nonce']), 'echo_news_prompt_save')) {
@@ -273,61 +349,12 @@ function echo_news_prompt_save_metabox($post_id)
         return;
     }
 
-    $text = function ($key) {
-        return isset($_POST[$key]) ? sanitize_text_field(wp_unslash($_POST[$key])) : '';
-    };
-    $area = function ($key) {
-        return isset($_POST[$key]) ? sanitize_textarea_field(wp_unslash($_POST[$key])) : '';
-    };
-
-    // نسبت تصویر فقط از لیست مجاز
-    $ratio = $text('ep_ratio');
-    if (!isset(echo_news_prompt_ratios()[$ratio])) {
-        $ratio = '';
+    $in = array();
+    foreach (array('prompt', 'prompt_fa', 'negative', 'params', 'ratio', 'version', 'seed', 'steps', 'guidance', 'resolution', 'gallery') as $key) {
+        $in[$key] = isset($_POST['ep_' . $key]) ? wp_unslash($_POST['ep_' . $key]) : '';
     }
 
-    // پارامترها: هر خط یک مورد
-    $params = array_filter(array_map('sanitize_text_field', preg_split('/\r\n|\r|\n/', $area('ep_params'))));
-
-    // Steps: عدد صحیح مثبت | Guidance: عدد اعشاری
-    $steps    = $text('ep_steps');
-    $steps    = ctype_digit($steps) && (int) $steps > 0 ? (string) (int) $steps : '';
-    $guidance = $text('ep_guidance');
-    $guidance = is_numeric($guidance) ? (string) (float) $guidance : '';
-
-    // گالری: فقط IDهای پیوست واقعی، حداکثر ۸ تا
-    $gallery = array();
-    if (!empty($_POST['ep_gallery'])) {
-        foreach (explode(',', sanitize_text_field(wp_unslash($_POST['ep_gallery']))) as $id) {
-            $id = absint($id);
-            if ($id && get_post_type($id) === 'attachment') {
-                $gallery[] = $id;
-            }
-        }
-    }
-    $gallery = array_slice(array_unique($gallery), 0, 8);
-
-    $fields = array(
-        '_ep_prompt'     => $area('ep_prompt'),
-        '_ep_prompt_fa'  => $area('ep_prompt_fa'),
-        '_ep_negative'   => $area('ep_negative'),
-        '_ep_params'     => implode("\n", $params),
-        '_ep_ratio'      => $ratio,
-        '_ep_version'    => $text('ep_version'),
-        '_ep_seed'       => $text('ep_seed'),
-        '_ep_steps'      => $steps,
-        '_ep_guidance'   => $guidance,
-        '_ep_resolution' => $text('ep_resolution'),
-        '_ep_gallery'    => implode(',', $gallery),
-    );
-
-    foreach ($fields as $key => $value) {
-        if ($value === '') {
-            delete_post_meta($post_id, $key); // فیلد خالی ذخیره نشود
-        } else {
-            update_post_meta($post_id, $key, $value);
-        }
-    }
+    echo_news_prompt_store_meta($post_id, echo_news_prompt_sanitize_meta($in));
 }
 add_action('save_post_ai_prompt', 'echo_news_prompt_save_metabox');
 
