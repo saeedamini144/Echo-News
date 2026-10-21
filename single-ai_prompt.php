@@ -49,6 +49,18 @@ while (have_posts()) :
     }
 
     $tool = $model ? $model->name : 'ابزار تولید تصویر';
+
+    // پرامپت «ویرایش عکس» (دسته‌ی photo-editing یا زیرمجموعه‌اش): کاربر اول باید عکس ورودی بدهد
+    $is_edit = false;
+    if ($cat) {
+        foreach (array_merge(array($cat->term_id), get_ancestors($cat->term_id, 'prompt_category', 'taxonomy')) as $term_id) {
+            $t = get_term($term_id, 'prompt_category');
+            if ($t && !is_wp_error($t) && $t->slug === 'photo-editing') {
+                $is_edit = true;
+                break;
+            }
+        }
+    }
     $has_content = trim(wp_strip_all_tags(get_the_content())) !== '';
 ?>
 
@@ -237,9 +249,15 @@ while (have_posts()) :
                                         <section class="ep-block">
                                             <h2 class="ep-section-title"><i class="fa-light fa-bolt"></i> چطور از این پرامپت استفاده کنم؟</h2>
                                             <ol class="ep-steps">
-                                                <li>پرامپت را با دکمه «کپی پرامپت» کپی کنید<?php echo preg_match('/\[[^\]]+\]/', $d['prompt']) ? ('؛ بخش‌های رنگی داخل [ ] را با موضوع خودتان عوض کنید') : ''; ?>.</li>
+                                                <?php if ($is_edit) : ?>
+                                                    <li>یک عکس مناسب را (طبق بخش «عکس ورودی مناسب» پایین همین صفحه) در <b><?php echo esc_html($tool); ?></b> آپلود کنید.</li>
+                                                <?php else : ?>
+                                                    <li>پرامپت را با دکمه «کپی پرامپت» کپی کنید<?php echo preg_match('/\[[^\]]+\]/', $d['prompt']) ? ('؛ بخش‌های رنگی داخل [ ] را با موضوع خودتان عوض کنید') : ''; ?>.</li>
+                                                <?php endif; ?>
                                                 <li>
-                                                    <?php if ($d['params']) : ?>
+                                                    <?php if ($is_edit) : ?>
+                                                        پرامپت را با دکمه‌ی «کپی پرامپت» کپی کنید و زیر همان عکس در <b><?php echo esc_html($tool); ?></b> بفرستید.
+                                                    <?php elseif ($d['params']) : ?>
                                                         پارامترها را کنار پرامپت در <b><?php echo esc_html($tool); ?></b> وارد کنید.
                                                     <?php else : ?>
                                                         پرامپت را در <b><?php echo esc_html($tool); ?></b> وارد کنید.
