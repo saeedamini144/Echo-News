@@ -598,9 +598,9 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- sidebar ---------- */
+/* چسبندگی روی خود ستون (aside.sticky-coloum-item در style.css) انجام می‌شود */
 .ep-side {
-    position: sticky;
-    top: 90px;
+    position: static;
 }
 
 .ep-widget {
@@ -1331,5 +1331,20 @@ a.ep-chip.is-active:hover {
     .ep-bar__row .ep-chip,
     .ep-bar__label {
         flex: none;
+    }
+}
+
+/* ---------- کانتینر ۱۴۴۰: آرشیو ۴ ستونه، تصویر بزرگ‌تر در صفحه‌ی تکی ---------- */
+@media (min-width: 1400px) {
+    .inner-3 .ep-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .inner-3 .ep-grid.is-masonry {
+        column-count: 4;
+    }
+
+    .ep-stage__img {
+        max-height: 640px;
     }
 }

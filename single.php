@@ -84,13 +84,12 @@ get_header();
                                 }
                                 ?>
                                 <!-- Table of Contents -->
-                                <div id="table-of-contents" class=" mb-3 bg-light p-3 toc ">
+                                <div id="table-of-contents" class="toc">
 
                                     <details>
-                                        <summary class="mb-2">
-                                            <?php
-                                            echo esc_html__('جدول مطالب', 'Echo-News');
-                                            ?>
+                                        <summary>
+                                            <i class="fa-light fa-list-ul"></i>
+                                            <span class="toc-title"><?php echo esc_html__('جدول مطالب', 'Echo-News'); ?></span>
                                         </summary>
                                         <ul id="toc-list"></ul>
                                     </details>

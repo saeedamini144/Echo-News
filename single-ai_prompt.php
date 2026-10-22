@@ -324,7 +324,7 @@ while (have_posts()) :
                             </div>
 
                             <!-- ============ سایدبار ============ -->
-                            <aside class="col-xl-4 col-lg-4">
+                            <aside class="col-xl-4 col-lg-4 sticky-coloum-item">
                                 <div class="ep-side">
 
                                     <?php

@@ -10461,7 +10461,7 @@ body {
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1440px;
 }
 
 .title-hover {
@@ -16067,7 +16067,7 @@ html[data-theme=dark] body.home-one .header-sticky .echo-site-main-logo-menu-soc
     justify-content: center;
     background: #fff;
     text-align: center;
-    width: 1170px;
+    width: min(1440px, 96vw); /* هم‌عرض کانتینر سایت */
     right: 50%;
     transform: translateX(50%);
     gap: 20px;
@@ -23534,5 +23534,670 @@ html[data-theme=dark] #table-of-contents {
     .sticky-coloum-item {
         position: sticky;
         top: 100px;
+    }
+}
+
+/*---------------------------
+ Wide container (1440px)
+ کانتینر از 1170 به 1440 رسید؛ مواردی که با پهن‌تر شدن کشیده یا نامتناسب می‌شوند اینجا تنظیم می‌شوند.
+---------------------------*/
+@media (min-width: 1400px) {
+
+    /* کارت‌های آرشیو (inner-3): ستون پهن‌تر شده، ارتفاع تصویر هم متناسب بالا برود */
+    .echo-hero-section.inner-3 .echo-hero-baner .echo-inner-img-ct-1 a>img {
+        height: 360px;
+    }
+
+    /* تصویر شاخص بالای پست در ستون اصلی */
+    .img-transition-scale .echo-post-style-3-hero-banner {
+        height: 560px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    /* متن مقاله: ستون اصلی پهن‌تر شده؛ کمی درشت‌تر و بازتر تا طول خط‌ها خسته‌کننده نشود */
+    .echo-financial-area .content.post-content {
+        font-size: 19px;
+        line-height: 2;
+    }
+}
+
+/* بخش ۳ صفحه‌ی اصلی: تصویرهای کوچک‌تر از ستون هم کامل پهنای خود را بگیرند و ابعادشان یکدست شود */
+.echo-trending-area .echo-trending-full-content .echo-trending-left-site-post .echo-trending-left-site-post-img a img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+
+/*---------------------------
+ سایدبار چسبان (Sticky) در سینگل پست و سینگل پرامپت
+---------------------------*/
+
+/* علت کار نکردن sticky: overflow-x:hidden روی body آن را «ظرف اسکرول» می‌کرد (چون html هم overflow دارد)
+   و sticky نسبت به body (که اسکرول نمی‌شود) می‌چسبید. clip همان برش افقی را بدون ساخت ظرف اسکرول انجام می‌دهد. */
+@supports (overflow: clip) {
+    body {
+        overflow: visible;
+        overflow-x: clip;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    /* بدون اسکرول داخلی: مقدار top را assets/js/sticky-sidebar.js بر اساس ارتفاع سایدبار تنظیم می‌کند
+       (کوتاه: از بالا می‌چسبد | بلندتر از صفحه: با اسکرول بالا می‌رود تا پایینش دیده شود و بعد از پایین می‌چسبد) */
+    .sticky-coloum-item {
+        top: 100px;
+    }
+}
+
+
+/*---------------------------
+ امتیاز با ستاره (فرم ارسال نظر)
+ ترتیب HTML: ۵ تا ۱ با row-reverse → در صفحه‌ی راست‌به‌چپ از راست ۱ تا ۵ دیده می‌شود.
+ انتخاب ۳ یعنی ۳ و ستاره‌های قبل از آن (۲ و ۱) رنگی می‌شوند.
+---------------------------*/
+.comment-form-rating {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 20px;
+}
+
+.comment-form-rating .rating-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.comment-form-rating .star-rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 2px;
+}
+
+/* رادیوها نامرئی‌اند اما با کیبورد قابل‌انتخاب (استایل عمومی input فرم نظر را خنثی می‌کنیم) */
+.echo-hero-section.inner-post .echo-comment-box form .star-rating input[type=radio] {
+    position: absolute !important;
+    opacity: 0;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    pointer-events: none;
+}
+
+.comment-form-rating .star-rating label {
+    cursor: pointer;
+    font-size: 36px;
+    line-height: 1;
+    color: #cfcfcf;
+    padding: 0; /* قاعده‌ی عمومی قالب برای input[type=radio]~label حاشیه‌ی ۲۵ پیکسلی می‌دهد */
+    position: static;
+    transition: color 0.15s, transform 0.15s;
+}
+
+/* قالب برای هر input[type=radio]~label یک دایره/تیک سفارشی با ::before و ::after می‌کشد؛ برای ستاره‌ها لازم نیست */
+.comment-form-rating .star-rating label::before,
+.comment-form-rating .star-rating label::after {
+    content: none;
+    display: none;
+}
+
+.comment-form-rating .star-rating label:hover,
+.comment-form-rating .star-rating label:hover~label,
+.comment-form-rating .star-rating input:checked~label {
+    color: #f4b400;
+}
+
+.comment-form-rating .star-rating label:hover {
+    transform: scale(1.12);
+}
+
+.comment-form-rating .star-rating input:focus-visible+label {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+html[data-theme=dark] .comment-form-rating .star-rating label {
+    color: rgba(255, 255, 255, 0.28);
+}
+
+html[data-theme=dark] .comment-form-rating .star-rating label:hover,
+html[data-theme=dark] .comment-form-rating .star-rating label:hover~label,
+html[data-theme=dark] .comment-form-rating .star-rating input:checked~label {
+    color: #f4b400;
+}
+
+
+/*---------------------------
+ اعلان فرم نظر (موفقیت / خطا / در انتظار تأیید)
+ ساخته‌شده توسط assets/js/comment-notice.js
+---------------------------*/
+.comment-notice {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    border-inline-start-width: 4px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.comment-notice[hidden] {
+    display: none;
+}
+
+.comment-notice i {
+    font-size: 20px;
+    flex: none;
+}
+
+.comment-notice a {
+    margin-inline-start: auto;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: underline;
+    color: inherit;
+}
+
+.comment-notice.is-success {
+    background: #eaf8ee;
+    border-color: #3eb75e;
+    color: #1d6b34;
+}
+
+.comment-notice.is-error {
+    background: #fdecee;
+    border-color: #d6335a;
+    color: #9c1f40;
+}
+
+.comment-notice.is-info {
+    background: #fff6e5;
+    border-color: #f0a30a;
+    color: #8a5a00;
+}
+
+html[data-theme=dark] .comment-notice.is-success {
+    background: rgba(62, 183, 94, 0.14);
+    color: #7be09a;
+}
+
+html[data-theme=dark] .comment-notice.is-error {
+    background: rgba(214, 51, 90, 0.16);
+    color: #ff8fa9;
+}
+
+html[data-theme=dark] .comment-notice.is-info {
+    background: rgba(240, 163, 10, 0.14);
+    color: #ffcb6b;
+}
+
+
+/*---------------------------
+ طراحی لیست نظرات (comments.php)
+ قبلاً دکمه‌ی «پاسخ» با right:0 روی آواتار می‌افتاد (قالب چپ‌به‌راست بود).
+ ساختار: li.wrapper > .comment-body (آواتار + .content) + ul.children (پاسخ‌ها)
+---------------------------*/
+.echo-hero-section.inner-post .echo-reply-area {
+    padding: 30px 34px;
+}
+
+.echo-hero-section.inner-post .echo-reply-area>.title {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.echo-reply-area .comments-count {
+    font-size: 16px;
+    font-weight: 400;
+    color: #8a8f9c;
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* هر نظر: بلوک؛ داخلش .comment-body (آواتار + متن) و بعد پاسخ‌ها */
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper {
+    display: block;
+    position: static;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(69, 69, 69, 0.15);
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner>.wrapper:last-child {
+    border-bottom: 0;
+    padding-bottom: 6px;
+}
+
+.echo-reply-area .comment-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper .image-area {
+    flex: 0 0 56px;
+}
+
+.echo-reply-area .image-area img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e7e9f1;
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper .content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* ردیف بالا: نام + امتیاز در شروع، تاریخ در انتها */
+.echo-reply-area .comment-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 14px;
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper .content .comment-head .title {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.7;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.echo-reply-area .comment-badge {
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.6;
+    padding: 1px 10px;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--color-primary);
+}
+
+.echo-reply-area .comment-head .comment-rating {
+    display: inline-flex;
+    gap: 1px;
+    line-height: 1;
+}
+
+.echo-reply-area .comment-head .comment-rating .star {
+    font-size: 16px;
+}
+
+.echo-reply-area .comment-head .comment-date {
+    margin-inline-start: auto;
+    font-size: 13px;
+    color: #8a8f9c;
+}
+
+.echo-reply-area .comment-pending {
+    margin: 8px 0 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #fff6e5;
+    color: #8a5a00;
+    font-size: 13.5px;
+    line-height: 1.8;
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper .content .desc {
+    margin: 8px 0 0;
+    font-size: 16px;
+    line-height: 2;
+    color: #454545;
+}
+
+.echo-reply-area .desc p {
+    margin: 0 0 10px;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+.echo-reply-area .desc p:last-child {
+    margin-bottom: 0;
+}
+
+/* دکمه‌ی پاسخ: زیر متن، شروع خط (دیگر روی آواتار نمی‌افتد) */
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper .reply {
+    position: static;
+    margin-top: 12px;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+.echo-reply-area .reply .comment-reply-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border: 1px solid rgba(69, 69, 69, 0.2);
+    border-radius: 999px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--color-primary);
+    transition: 0.2s;
+}
+
+.echo-reply-area .reply .comment-reply-link:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+/* پاسخ‌ها: تو‌رفتگی با خط راهنما */
+.echo-reply-area .comment-inner .children {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-inline-start: 28px;
+    padding-inline-start: 24px;
+    border-inline-start: 2px solid rgba(69, 69, 69, 0.12);
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .children .wrapper {
+    padding: 20px 0 6px;
+    border-bottom: 0;
+}
+
+.echo-reply-area .children .image-area img {
+    width: 44px;
+    height: 44px;
+}
+
+.echo-hero-section.inner-post .echo-reply-area .comment-inner .children .wrapper .image-area {
+    flex-basis: 44px;
+}
+
+@media (max-width: 767px) {
+    .echo-hero-section.inner-post .echo-reply-area {
+        padding: 22px 18px;
+    }
+
+    .echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper {
+        display: block;
+    }
+
+    .echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper .content {
+        margin-top: 0;
+    }
+
+    .echo-reply-area .comment-body {
+        gap: 12px;
+    }
+
+    .echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper .image-area {
+        flex-basis: 44px;
+    }
+
+    .echo-reply-area .image-area img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .echo-reply-area .comment-inner .children {
+        margin-inline-start: 8px;
+        padding-inline-start: 14px;
+    }
+
+    .echo-reply-area .comment-head .comment-date {
+        margin-inline-start: 0;
+        flex-basis: 100%;
+    }
+}
+
+html[data-theme=dark] .echo-hero-section.inner-post .echo-reply-area .comment-inner .wrapper {
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme=dark] .echo-reply-area .comment-inner .children {
+    border-inline-start-color: rgba(255, 255, 255, 0.14);
+}
+
+html[data-theme=dark] .echo-reply-area .comment-head .comment-date,
+html[data-theme=dark] .echo-reply-area .comments-count {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+html[data-theme=dark] .echo-reply-area .reply .comment-reply-link {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #9db8ff;
+}
+
+html[data-theme=dark] .echo-reply-area .reply .comment-reply-link:hover {
+    color: #fff;
+}
+
+html[data-theme=dark] .echo-reply-area .comment-pending {
+    background: rgba(240, 163, 10, 0.14);
+    color: #ffcb6b;
+}
+
+html[data-theme=dark] .echo-reply-area .image-area img {
+    background: #2a2a38;
+}
+
+
+/*---------------------------
+ فهرست مطالب مقاله (single.php + assets/js/post-scripts.js)
+ فقط CSS و JS خود قالب؛ شماره‌گذاری با CSS counter.
+---------------------------*/
+#table-of-contents.toc {
+    margin: 0 0 28px;
+    padding: 0;
+    background: #f7f8fb;
+    border: 1px solid #e7e9f1;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#table-of-contents summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 16px 20px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--color-heading-1);
+    user-select: none;
+}
+
+#table-of-contents summary::-webkit-details-marker {
+    display: none;
+}
+
+#table-of-contents summary>i {
+    color: var(--color-primary);
+    font-size: 18px;
+}
+
+#table-of-contents .toc-count {
+    margin-inline-start: auto;
+    padding: 1px 12px;
+    border: 1px solid #e0e3ee;
+    border-radius: 999px;
+    background: #fff;
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #6b6f80;
+}
+
+/* فلش باز و بسته شدن (با border، بدون آیکن‌فونت) */
+#table-of-contents summary::after {
+    content: "";
+    flex: none;
+    margin-inline-start: 6px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor; /* فیزیکی: در راست‌به‌چپ هم فلش درست دیده شود */
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.25s;
+}
+
+#table-of-contents details[open] summary::after {
+    transform: rotate(-135deg) translateY(-2px);
+}
+
+#toc-list {
+    margin: 0;
+    padding: 8px 14px 16px;
+    list-style: none;
+    border-top: 1px solid #e7e9f1;
+    counter-reset: toc-main;
+}
+
+#toc-list li {
+    margin: 0;
+    padding: 0;
+}
+
+#toc-list li a {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--color-body);
+    transition: background 0.2s, color 0.2s;
+}
+
+#toc-list li a:hover {
+    background: rgba(83, 127, 231, 0.09);
+    color: var(--color-primary);
+}
+
+/* سطح اول: شماره‌دار و پررنگ‌تر */
+#toc-list li.toc-depth-0 {
+    counter-increment: toc-main;
+}
+
+#toc-list li.toc-depth-0>a {
+    font-weight: 600;
+    color: var(--color-heading-1);
+}
+
+#toc-list li.toc-depth-0>a::before {
+    content: counter(toc-main, persian) ".";
+    flex: none;
+    min-width: 26px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* زیرتیترها: تو‌رفته با نقطه‌ی کوچک */
+#toc-list li:not(.toc-depth-0)>a::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 6px;
+    margin-inline-start: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.4;
+    transform: translateY(-2px);
+}
+
+#toc-list li.toc-depth-1 {
+    margin-inline-start: 26px;
+}
+
+#toc-list li.toc-depth-2 {
+    margin-inline-start: 50px;
+}
+
+#toc-list li.toc-depth-3 {
+    margin-inline-start: 74px;
+}
+
+#toc-list li.toc-depth-4 {
+    margin-inline-start: 98px;
+}
+
+/* بخشی که الان در حال خواندنش هستید */
+#toc-list li.is-active>a {
+    background: rgba(83, 127, 231, 0.13);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* با کلیک روی فهرست، تیتر زیر هدر چسبان نرود */
+.post-content :is(h2, h3, h4, h5, h6) {
+    scroll-margin-top: 110px;
+}
+
+html[data-theme=dark] #table-of-contents.toc {
+    background-color: #181823 !important;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme=dark] #table-of-contents summary {
+    color: #fff;
+}
+
+html[data-theme=dark] #table-of-contents .toc-count {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.65);
+}
+
+html[data-theme=dark] #toc-list {
+    border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme=dark] #toc-list li a {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+html[data-theme=dark] #toc-list li.toc-depth-0>a {
+    color: #fff;
+}
+
+html[data-theme=dark] #toc-list li a:hover,
+html[data-theme=dark] #toc-list li.is-active>a {
+    background: rgba(83, 127, 231, 0.2);
+    color: #9db8ff;
+}
+
+@media (max-width: 575px) {
+    #table-of-contents summary {
+        padding: 14px 16px;
+    }
+
+    #toc-list {
+        padding: 6px 8px 12px;
+    }
+
+    #toc-list li.toc-depth-1 {
+        margin-inline-start: 16px;
+    }
+
+    #toc-list li.toc-depth-2 {
+        margin-inline-start: 30px;
     }
 }

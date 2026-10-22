@@ -1,6 +1,6 @@
 <div class="echo-video-right-site-content">
     <div class="echo-video-right-site-content-text">
-        <p class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover text-white"><?php echo Limited_title_characters(25); ?></a> </p>
+        <p class="text-capitalize"><a href="<?php the_permalink(); ?>" class="title-hover text-white"><?php echo Limited_title_characters(40); ?></a> </p>
         <hr>
         <i id="card-icon" class="fa-light fa-clock text-white"></i> <span><?php echo EchoNews_time_to_read(); ?></span>
     </div>

@@ -5,7 +5,7 @@
          </a>
      </div>
      <div class="echo-de-category-content-title">
-         <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php echo Limited_title_characters(30) ?></a></p>
+         <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php echo Limited_title_characters(55) ?></a></p>
          <div class="echo-de-category-read">
              <i id="card-icon" class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
          </div>

@@ -47,7 +47,7 @@ if ($args->have_posts()) {
                     </a>
                 </div>
                 <div class="echo-story-text">
-                    <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php echo Limited_title_characters(20); ?></a></p>
+                    <p><a href="<?php the_permalink(); ?>" class="title-hover"><?php echo Limited_title_characters(40); ?></a></p>
                     <div class="echo-trending-post-bottom-icons">
                         <i class="fa-light fa-clock"></i><span><?php echo EchoNews_time_to_read(); ?></span>
                     </div>

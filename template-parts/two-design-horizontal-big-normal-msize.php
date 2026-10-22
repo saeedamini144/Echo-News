@@ -18,6 +18,11 @@ $args = new WP_Query(array(
 if ($args->have_posts()) {
     $counter = 0;
 
+    // اگر ۴ پست یا کمتر داریم، دو ستون را متعادل کن (وگرنه نیمی از بخش خالی می‌ماند)
+    $total = (int) $args->post_count;
+    $few   = $total <= 4;
+    $split = $few ? (int) ceil($total / 2) : 4; // تعداد پست‌های ستون اول
+
     // باز کردن ستون چپ
     echo '<div class="col-xl-6 col-lg-6 col-md-12">';
     echo '<div class="row">';
@@ -26,13 +31,13 @@ if ($args->have_posts()) {
         $args->the_post();
         $counter++;
 
-        // پست‌های ۱ تا ۳ => ستون چپ
-        if ($counter <= 4) {
+        // پست‌های ستون اول (کارت افقی با تصویر بزرگ)
+        if ($counter <= $split) {
             get_template_part('template-parts/horizontal-big-thumbnail-post-html');
         }
 
-        // وقتی رسیدیم به پست ۴ => ستون چپ بسته میشه و ستون راست باز میشه
-        if ($counter == 4) {
+        // وقتی رسیدیم به آخرین پست ستون اول => ستون اول بسته میشه و ستون دوم باز میشه
+        if ($counter == $split) {
             echo '</div>'; // بستن row چپ
             echo '</div>'; // بستن col چپ
 
@@ -40,9 +45,9 @@ if ($args->have_posts()) {
             echo '<div class="row">';
         }
 
-        // پست‌های ۴ و بعد از آن => ستون راست
-        if ($counter > 4) {
-            get_template_part('template-parts/normal-msize-meta-excerpt-post-html');
+        // پست‌های بعد از آن => ستون دوم (با کمتر از ۵ پست، همان کارت افقی؛ وگرنه کارت عمودی)
+        if ($counter > $split) {
+            get_template_part('template-parts/' . ($few ? 'horizontal-big-thumbnail-post-html' : 'normal-msize-meta-excerpt-post-html'));
         }
     }
 

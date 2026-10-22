@@ -6,9 +6,8 @@
             <div class="echo-footer-content-1">
                 <div class="echo-get-in-tuch">
                     <!-- change the title of the footer col1 -->
-                    <<?php echo esc_html(get_theme_mod('tag_heading_footer_first_col_settings')) ?> class="footer-first-col">
-                        <?php echo esc_html(get_theme_mod('title_footer_first_col_settings')) ?>
-                    </<?php echo esc_html(get_theme_mod('tag_heading_footer_first_col_settings')) ?>>
+                    <?php $tag = echo_news_heading_tag('tag_heading_footer_first_col_settings'); ?>
+                    <<?php echo $tag; ?>><?php echo esc_html(get_theme_mod('title_footer_first_col_settings')); ?></<?php echo $tag; ?>>
                 </div>
                 <div class="echo-footer-address">
 
@@ -30,9 +29,8 @@
             <div class="echo-footer-content-2">
                 <div class="echo-get-in-tuch">
                     <!-- change the title of the footer col2 -->
-                    <<?php echo esc_html(get_theme_mod('tag_heading_footer_second_col_settings', 'h2')); ?>>
-                        <?php echo esc_html(get_theme_mod('title_footer_second_col_settings')); ?>
-                    </<?php echo esc_html(get_theme_mod('tag_heading_footer_second_col_settings')); ?>>
+                    <?php $tag = echo_news_heading_tag('tag_heading_footer_second_col_settings'); ?>
+                    <<?php echo $tag; ?>><?php echo esc_html(get_theme_mod('title_footer_second_col_settings')); ?></<?php echo $tag; ?>>
                 </div>
                 <div class="echo-footer-most-popular">
                     <!-- call back the repeatable footer second column settings from customizer -->
@@ -52,15 +50,14 @@
             <div class="echo-footer-content-3">
                 <div class="echo-get-in-tuch">
                     <!-- change the title of the footer col3 -->
-                    <<?php echo esc_html(get_theme_mod('tag_heading_footer_third_col_settings', 'h2')); ?>>
-                        <?php echo esc_html(get_theme_mod('title_footer_third_col_settings')); ?>
-                    </<?php echo esc_html(get_theme_mod('tag_heading_footer_third_col_settings')); ?>>
+                    <?php $tag = echo_news_heading_tag('tag_heading_footer_third_col_settings'); ?>
+                    <<?php echo $tag; ?>><?php echo esc_html(get_theme_mod('title_footer_third_col_settings')); ?></<?php echo $tag; ?>>
                 </div>
                 <div class="echo-footer-help">
                     <!-- call back the repeatable footer third column settings from customizer -->
                     <?php
                     $footer_col3_content = get_theme_mod('footer_third_col_repeatable_content_settings');
-                    if (!empty($footer_col3_content) && is_array($footer_col2_content)) {
+                    if (!empty($footer_col3_content) && is_array($footer_col3_content)) {
                         foreach ($footer_col3_content as $key => $values) {
                     ?>
                             <a href="<?php echo esc_attr($values['footer_third_col_link']) ?>"> <span class="text-capitalize"><i class=" <?php echo esc_attr($values['footer_third_col_icon']) ?>"></i><?php echo esc_attr($values['footer_third_col_text']) ?></span></a>
@@ -74,9 +71,8 @@
             <div class="echo-footer-content-4">
                 <div class="echo-get-in-tuch">
                     <!-- change the title of the footer col4 -->
-                    <<?php echo esc_html(get_theme_mod('tag_heading_footer_fourth_col_settings', 'h2')); ?>>
-                        <?php echo esc_html(get_theme_mod('title_footer_fourth_col_settings')); ?>
-                    </<?php echo esc_html(get_theme_mod('tag_heading_footer_fourth_col_settings')); ?>>
+                    <?php $tag = echo_news_heading_tag('tag_heading_footer_fourth_col_settings'); ?>
+                    <<?php echo $tag; ?>><?php echo esc_html(get_theme_mod('title_footer_fourth_col_settings')); ?></<?php echo $tag; ?>>
                 </div>
                 <div class="echo-footer-news-text">
                     <!-- call back the textarea footer fourth column settings from customizer -->

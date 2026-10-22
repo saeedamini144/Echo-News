@@ -25,6 +25,7 @@ function register_incFile()
     require_once get_template_directory() . '/inc/prompt-metabox.php';
     require_once get_template_directory() . '/inc/prompt-frontend.php';
     require_once get_template_directory() . '/inc/prompt-importer.php';
+    require_once get_template_directory() . '/inc/comment-ajax.php';
     require_once get_template_directory() . '/inc/class-breadcrumb.php';
     require_once get_template_directory() . '/inc/pagination.php';
     require_once get_template_directory() . '/inc/jdatetime.class.php';
@@ -154,6 +155,17 @@ function register_scripts_EchoNews()
     // ));
     if (is_singular('post')) { // نه روی ai_prompt: آنجا TOC وجود ندارد
         wp_enqueue_script('single-post-EchoNews', get_template_directory_uri() . '/assets/js/post-scripts.js', array('jquery'), $version, true);
+    }
+
+    // ثبت نظر با AJAX و اعلان فارسی (موفقیت / خطا)
+    if (is_singular(array('post', 'ai_prompt')) && comments_open()) {
+        wp_enqueue_script('comment-notice-EchoNews', get_template_directory_uri() . '/assets/js/comment-notice.js', array(), $version, true);
+        wp_localize_script('comment-notice-EchoNews', 'echoNewsComment', array('ajaxUrl' => admin_url('admin-ajax.php')));
+    }
+
+    // سایدبار چسبان (بدون اسکرول داخلی) در سینگل پست و سینگل پرامپت
+    if (is_singular(array('post', 'ai_prompt'))) {
+        wp_enqueue_script('sticky-sidebar-EchoNews', get_template_directory_uri() . '/assets/js/sticky-sidebar.js', array(), $version, true);
     }
 }
 add_action('wp_enqueue_scripts', 'register_scripts_EchoNews');
@@ -292,14 +304,26 @@ function Limited_title_characters($limited)
 }
 //time to read the post
 
+// تگ عنوان (p, h1..h6) از تنظیمات سفارشی‌ساز؛ همیشه معتبر برمی‌گردد تا تگ باز و بسته خراب نشود
+function echo_news_heading_tag($mod, $default = 'h2')
+{
+    $tag = get_theme_mod($mod, $default);
+    return in_array($tag, array('p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'), true) ? $tag : $default;
+}
+
 function EchoNews_time_to_read()
 {
     $content = get_post_field('post_content', get_the_id());
-    $word_count = str_word_count(strip_tags($content)); //str_word_count counts the number of words in a string and strip_tags removes HTML tags
+
+    // str_word_count فقط حروف لاتین را کلمه می‌شمارد و روی متن فارسی ۰ برمی‌گرداند؛
+    // پس متن را تمیز می‌کنیم و با فاصله (یونیکد) می‌شکنیم. نیم‌فاصله (می‌شود) کلمه‌ی جدا حساب نمی‌شود.
+    $text = html_entity_decode(wp_strip_all_tags(strip_shortcodes($content)), ENT_QUOTES, 'UTF-8');
+    $words = preg_split('/\s+/u', trim($text), -1, PREG_SPLIT_NO_EMPTY);
+    $word_count = $words ? count($words) : 0;
     if (empty($word_count)) {
         return esc_html__('محتوایی یافت نشد', 'Echo-News');
     }
-    $reading_time = ceil($word_count / 200); //assuming average reading speed is 200 words per minute
+    $reading_time = max(1, (int) ceil($word_count / 200)); //assuming average reading speed is 200 words per minute
     $total_reading_time = $reading_time . ' ' . esc_html__('دقیقه مطالعه', 'Echo-News');
     return $total_reading_time;
 }
@@ -431,6 +455,8 @@ function get_related_posts_by_category()
     } else {
         echo esc_html__('پست مرتبطی یافت نشد', 'Echo-News');
     }
+    // بدون این خط، پست جاری (global $post) همان آخرین پست مرتبط می‌ماند و فرم و لیست نظرات به پست اشتباه وصل می‌شود
+    wp_reset_postdata();
     return;
 }
 
