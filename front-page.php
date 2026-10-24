@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Start Hero Area First section -->
+<?php if (get_theme_mod('show_main_page_section_1_settings', true)) : ?>
 <section class="echo-hero-section">
     <div class="echo-hero">
         <div class="container">
@@ -28,8 +29,10 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- End Hero Area -->
 <!-- Start Latest News Slider (using Slick Slider version 1.8.1) Second section -->
+<?php if (get_theme_mod('show_main_page_section_2_settings', true)) : ?>
 <section class="echo-latest-news-area">
     <div class="echo-latest-news-content">
         <div class="container">
@@ -60,8 +63,10 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- End Latest News Slider (using Slick Slider version 1.8.1) -->
 <!-- Start Trending News Area Third section -->
+<?php if (get_theme_mod('show_main_page_section_3_settings', true)) : ?>
 <section class="echo-trending-area">
     <div class="echo-trending-content">
         <div class="container">
@@ -80,8 +85,11 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- End Trending News Area -->
+<?php get_template_part('template-parts/home-prompts'); ?>
 <!-- Start Video Area Fourth section-->
+<?php if (get_theme_mod('show_main_page_section_4_settings', true)) : ?>
 <section class="echo-video-area">
     <div class="echo-video-content">
         <div class="container">
@@ -103,8 +111,10 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- End Video Area -->
 <!-- Start De-category Area Fifth section -->
+<?php if (get_theme_mod('show_main_page_section_5_settings', true)) : ?>
 <section class="echo-de-category-area">
     <div class="echo-de-category-area-content">
         <div class="container">
@@ -166,7 +176,9 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- Start Feature Area sixth -->
+<?php if (get_theme_mod('show_main_page_section_6_settings', true)) : ?>
 <section class="echo-feature-area">
     <div class="echo-feature-area-content">
         <div class="container">
@@ -233,8 +245,10 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- End Feature Area sixth -->
 <!-- Start popular News Area Seventh Section -->
+<?php if (get_theme_mod('show_main_page_section_7_settings', true)) : ?>
 <section class="echo-popular-news-area">
     <div class="echo-popular-news-area-content">
         <div class="container">
@@ -257,6 +271,7 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 <!-- End Popular News Area Seventh Section -->
 <!-- End Our Software Download seventh -->
 <?php get_footer(); ?>

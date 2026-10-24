@@ -25,9 +25,15 @@ function echo_news_is_prompt_page()
 /* ------------------------------------------------------------------
  * CSS / JS
  * ------------------------------------------------------------------ */
+// سکشن پرامپت صفحه‌ی اصلی (کاستومایزر) هم به CSS/JS کارت‌ها نیاز دارد
+function echo_news_is_home_prompt_section()
+{
+    return is_front_page() && get_theme_mod('prompt_section_show_settings', true);
+}
+
 function echo_news_prompt_assets()
 {
-    if (!echo_news_is_prompt_page()) {
+    if (!echo_news_is_prompt_page() && !echo_news_is_home_prompt_section()) {
         return;
     }
 
@@ -41,6 +47,15 @@ function echo_news_prompt_assets()
     ));
 }
 add_action('wp_enqueue_scripts', 'echo_news_prompt_assets', 20);
+
+// آمار سکشن صفحه‌ی اصلی با تغییر پرامپت‌ها دوباره محاسبه شود
+function echo_news_prompt_clear_home_stats()
+{
+    delete_transient('echo_news_prompt_home_stats');
+}
+add_action('save_post_ai_prompt', 'echo_news_prompt_clear_home_stats');
+add_action('deleted_post', 'echo_news_prompt_clear_home_stats');
+add_action('created_prompt_category', 'echo_news_prompt_clear_home_stats');
 
 // کلاس body برای فاصله‌ی نوار چسبان موبایل
 function echo_news_prompt_body_class($classes)

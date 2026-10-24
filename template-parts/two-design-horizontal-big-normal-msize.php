@@ -4,7 +4,7 @@ $select_category = (array) get_theme_mod('third_section_posts_settings');
 $args = new WP_Query(array(
     'post_type'      => 'post',
     'orderby'        => 'date',
-    'posts_per_page' => 6,
+    'posts_per_page' => echo_news_section_count('third_section_count_settings', 6, 2, 12),
     'order'          => 'DESC',
     'tax_query'      => array(
         array(

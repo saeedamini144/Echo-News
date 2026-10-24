@@ -4,7 +4,7 @@ $select_category = get_theme_mod('blog_sidebar_first_cats_settings');
 $args = new WP_Query(
     array(
         'post_type' => 'post',
-        'posts_per_page' => 5,
+        'posts_per_page' => echo_news_section_count('blog_sidebar_first_count_settings', 5, 1, 10),
         'orderby' => 'date',
         'order' => 'DESC',
         'tax_query' => array(

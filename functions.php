@@ -311,6 +311,12 @@ function echo_news_heading_tag($mod, $default = 'h2')
     return in_array($tag, array('p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'), true) ? $tag : $default;
 }
 
+// تعداد پست هر بخش از کاستومایزر (با حداقل/حداکثر امن)
+function echo_news_section_count($mod, $default, $min = 1, $max = 12)
+{
+    return max($min, min($max, (int) get_theme_mod($mod, $default)));
+}
+
 function EchoNews_time_to_read()
 {
     $content = get_post_field('post_content', get_the_id());

@@ -4,7 +4,7 @@ $select_category = get_theme_mod('sixth_section_main_posts_col3_settings');
 $args = new WP_Query(
     array(
         'post_type' => 'post',
-        'posts_per_page' => 6,
+        'posts_per_page' => echo_news_section_count('sixth_section_col3_count_settings', 6, 1, 10),
         'orderby' => 'date',
         'order' => 'DESC',
         'tax_query' => array(

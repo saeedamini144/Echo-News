@@ -7,6 +7,7 @@
 /* ==========================================================
    گالری پرامپت — استایل‌های اختصاصی (پیشوند ep-)
    ========================================================== */
+
 .ep {
     --ep-card: #ffffff;
     --ep-soft: #f6f7fb;
@@ -58,6 +59,7 @@ html[data-theme=dark] body {
 }
 
 /* ---------- chips ---------- */
+
 .ep-chips {
     display: flex;
     flex-wrap: wrap;
@@ -104,6 +106,7 @@ html[data-theme=dark] .ep-chip.is-model {
 }
 
 /* ---------- image stage ---------- */
+
 .ep-stage {
     position: relative;
     margin: 0;
@@ -114,6 +117,7 @@ html[data-theme=dark] .ep-chip.is-model {
 }
 
 /* پس‌زمینه بلوردار از خود تصویر؛ هر نسبتی (۱:۱، ۹:۱۶، ۱۶:۹ ...) را قشنگ پر می‌کند */
+
 .ep-stage__bg {
     position: absolute;
     inset: -40px;
@@ -233,6 +237,7 @@ html[data-theme=dark] .ep-chip.is-model {
 }
 
 /* ---------- prompt card (هسته صفحه) ---------- */
+
 .ep-prompt {
     border: 1px solid var(--ep-border);
     border-radius: var(--ep-radius);
@@ -356,6 +361,7 @@ html[data-theme=dark] .ep-chip.is-model {
 }
 
 /* بخش‌های جایگزین‌شدنی، مثل [subject] */
+
 .ep-var {
     background: var(--ep-accent-soft);
     color: var(--ep-accent);
@@ -486,6 +492,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- specs ---------- */
+
 .ep-specs {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -532,6 +539,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- how to ---------- */
+
 .ep-steps {
     counter-reset: s;
     list-style: none;
@@ -569,6 +577,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- محتوای یکتا ---------- */
+
 .ep-content {
     font-size: 16px;
     line-height: 2.1;
@@ -598,7 +607,9 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- sidebar ---------- */
+
 /* چسبندگی روی خود ستون (aside.sticky-coloum-item در style.css) انجام می‌شود */
+
 .ep-side {
     position: static;
 }
@@ -648,23 +659,14 @@ html[data-theme=dark] .ep-var {
     color: var(--ep-muted);
 }
 
-.ep-ad {
-    border: 1px dashed var(--ep-border);
-    border-radius: var(--ep-radius);
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--ep-muted);
-    font-size: 13px;
-}
-
 /* ---------- نوار پایین موبایل ---------- */
+
 .ep-mbar {
     display: none;
 }
 
 /* ---------- lightbox ---------- */
+
 .ep-lb {
     position: fixed;
     inset: 0;
@@ -693,6 +695,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- toast ---------- */
+
 .ep-toast {
     position: fixed;
     inset-inline: 0;
@@ -719,6 +722,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- شبکه ---------- */
+
 .ep-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -726,6 +730,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* حالت ماسونری: هر کارت با نسبت واقعی تصویر خودش */
+
 .ep-grid.is-masonry {
     display: block;
     column-count: 3;
@@ -742,6 +747,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- کارت ---------- */
+
 .ep-card {
     position: relative;
     display: flex;
@@ -761,6 +767,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* تصویر: پیش‌فرض ۴:۵ ثابت تا ردیف‌ها هم‌تراز بمانند */
+
 .ep-card__media {
     position: relative;
     aspect-ratio: 4/5;
@@ -781,6 +788,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* گرادیان پایین تصویر برای خوانایی snippet و نشان‌ها */
+
 .ep-card__media::after {
     content: "";
     position: absolute;
@@ -793,12 +801,12 @@ html[data-theme=dark] .ep-var {
 }
 
 .ep-card:hover .ep-card__media::after,
-.ep-card:focus-within .ep-card__media::after,
-.ep-grid.show-snippet .ep-card__media::after {
+.ep-card:focus-within .ep-card__media::after {
     opacity: 1;
 }
 
 /* نشان مدل */
+
 .ep-card__model {
     position: absolute;
     inset-inline-start: 10px;
@@ -816,6 +824,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* دکمه کپی سریع */
+
 .ep-card__copy {
     position: absolute;
     /* روبروی نشان مدل (که چپ است)؛ جهت فیزیکی تا هرگز روی آن نیفتد */
@@ -849,6 +858,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* روی دسکتاپ فقط با hover دیده شود؛ روی لمسی همیشه */
+
 @media (hover: hover) {
     .ep-card__copy {
         opacity: 0;
@@ -868,6 +878,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* چند تصویر */
+
 .ep-card__count {
     position: absolute;
     inset-inline-end: 10px;
@@ -885,12 +896,12 @@ html[data-theme=dark] .ep-var {
     transition: opacity .25s;
 }
 
-.ep-card:hover .ep-card__count,
-.ep-grid.show-snippet .ep-card__count {
+.ep-card:hover .ep-card__count {
     opacity: 0;
 }
 
 /* snippet پرامپت روی تصویر (hover) */
+
 .ep-card__snippet {
     position: absolute;
     inset-inline: 14px;
@@ -914,15 +925,14 @@ html[data-theme=dark] .ep-var {
 }
 
 .ep-card:hover .ep-card__snippet,
-.ep-card:focus-within .ep-card__snippet,
-.ep-grid.show-snippet .ep-card__snippet {
+.ep-card:focus-within .ep-card__snippet {
     opacity: 1;
     transform: none;
 }
 
 /* روی لمسی hover نداریم؛ snippet نمایش داده نشود، عنوان کافی است */
-@media (hover: none) {
 
+@media (hover: none) {
     .ep-card__snippet,
     .ep-card__media::after {
         display: none;
@@ -934,6 +944,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* بدنه */
+
 .ep-card__body {
     display: flex;
     flex-direction: column;
@@ -977,6 +988,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* کل کارت قابل کلیک؛ لینک عنوان کشیده می‌شود (دکمه کپی بالاتر از آن است) */
+
 .ep-card__title a::after {
     content: "";
     position: absolute;
@@ -1014,6 +1026,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- ریبون ---------- */
+
 .ep-card__flag {
     position: absolute;
     left: 10px;
@@ -1029,6 +1042,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- کارت فشرده (سایدبار / مشابه) ---------- */
+
 .ep-row {
     position: relative;
     display: flex;
@@ -1117,6 +1131,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- ریسپانسیو ---------- */
+
 @media (max-width: 991px) {
     .ep-side {
         position: static;
@@ -1219,6 +1234,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- جزئیات کوچک ---------- */
+
 .ep-card__cat {
     position: relative;
     z-index: 2;
@@ -1242,6 +1258,7 @@ html[data-theme=dark] .ep-var {
 }
 
 /* ---------- آرشیو: فیلتر، مرتب‌سازی، توضیح ---------- */
+
 .ep-intro {
     max-width: 720px;
     margin: 12px auto 0;
@@ -1335,6 +1352,7 @@ a.ep-chip.is-active:hover {
 }
 
 /* ---------- کانتینر ۱۴۴۰: آرشیو ۴ ستونه، تصویر بزرگ‌تر در صفحه‌ی تکی ---------- */
+
 @media (min-width: 1400px) {
     .inner-3 .ep-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1346,5 +1364,284 @@ a.ep-chip.is-active:hover {
 
     .ep-stage__img {
         max-height: 640px;
+    }
+}
+
+/* ==========================================================
+   سکشن گالری پرامپت — صفحه‌ی اصلی (پیشوند ep-home)
+   مارکاپ: template-parts/home-prompts.php | تنظیمات: کاستومایزر > تنظیمات صفحه اصلی
+   رنگ‌های پنل با --ep-home-from / --ep-home-to از کاستومایزر عوض می‌شوند.
+   ========================================================== */
+.ep-home {
+    --ep-home-from: var(--color-primary, #537FE7);
+    --ep-home-to: #7817F2;
+    padding: 90px 0;
+    background: #f9f9f9;
+}
+
+html[data-theme=dark] .ep-home {
+    background: var(--bg-dark-three, #0f0f1c);
+}
+
+.ep-home__grid {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 34px;
+    align-items: start;
+}
+
+/* ---------- پنل معرفی (چسبان) ---------- */
+.ep-home__intro {
+    position: sticky;
+    top: 100px;
+    overflow: hidden;
+    padding: 36px 32px 32px;
+    border-radius: 20px;
+    color: #fff;
+    background: linear-gradient(155deg, var(--ep-home-from) 0%, var(--ep-home-to) 100%);
+    box-shadow: 0 24px 50px color-mix(in srgb, var(--ep-home-from) 28%, transparent);
+}
+
+.ep-home__intro::before,
+.ep-home__intro::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ep-home__intro::before {
+    width: 260px;
+    height: 260px;
+    top: -90px;
+    inset-inline-start: -80px;
+    background: radial-gradient(circle, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 70%);
+}
+
+.ep-home__intro::after {
+    width: 200px;
+    height: 200px;
+    bottom: -70px;
+    inset-inline-end: -60px;
+    background: radial-gradient(circle, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0) 70%);
+}
+
+.ep-home__intro>* {
+    position: relative;
+    z-index: 1;
+}
+
+.ep-home__kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .28);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.ep-home__title {
+    margin: 18px 0 12px;
+    font-size: 28px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.ep-home__lead {
+    margin: 0 0 22px;
+    font-size: 15px;
+    line-height: 2;
+    color: rgba(255, 255, 255, .88);
+}
+
+.ep-home__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.ep-home__stats li {
+    padding: 12px 8px;
+    border-radius: 12px;
+    text-align: center;
+    background: rgba(255, 255, 255, .12);
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.ep-home__stats b {
+    display: block;
+    font-size: 22px;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.ep-home__stats span {
+    display: block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .8);
+}
+
+.ep-home__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 26px;
+}
+
+.ep-home__chips a {
+    padding: 5px 15px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .35);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.8;
+    transition: .2s;
+}
+
+.ep-home__chips a:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #4b3fd1;
+}
+
+.ep-home__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background: #fff;
+    color: #4b3fd1;
+    font-size: 15px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.ep-home__cta i {
+    transition: transform .25s;
+}
+
+.ep-home__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+    color: #4b3fd1;
+}
+
+.ep-home__cta:hover i {
+    transform: translateX(-4px);
+}
+
+/* ---------- گالری (ستون‌بندی ماسونری؛ نسبت هر تصویر از --r) ---------- */
+.ep-home__cards {
+    column-count: 3;
+    column-gap: 22px;
+}
+
+.ep-home__cards .ep-card {
+    break-inside: avoid;
+    margin-bottom: 22px;
+}
+
+/* ۴ کارت یا کمتر: دو ستون تا بخشی از گالری خالی نماند */
+.ep-home__cards--few {
+    column-count: 2;
+}
+
+.ep-home__cards .ep-card__media {
+    aspect-ratio: var(--r, 4/5);
+}
+
+/* دکمه‌ی پایین (فقط موبایل/تبلت؛ در دسکتاپ دکمه‌ی پنل کافی است) */
+.ep-home__more {
+    display: none;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.ep-home__more a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    border-radius: 12px;
+    border: 1px solid var(--ep-border);
+    background: var(--ep-card);
+    color: var(--ep-text);
+    font-weight: 700;
+}
+
+.ep-home__more a:hover {
+    background: var(--ep-accent);
+    border-color: var(--ep-accent);
+    color: #fff;
+}
+
+/* ---------- ریسپانسیو ---------- */
+@media (max-width: 1399px) {
+    .ep-home__grid {
+        grid-template-columns: 330px 1fr;
+        gap: 26px;
+    }
+
+    .ep-home__cards {
+        column-gap: 16px;
+    }
+
+    .ep-home__cards .ep-card {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .ep-home__cards {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 991px) {
+    .ep-home {
+        padding: 50px 0;
+    }
+
+    .ep-home__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ep-home__intro {
+        position: static;
+    }
+
+    .ep-home__cards {
+        column-count: 3;
+    }
+
+    .ep-home__more {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .ep-home__cards {
+        column-count: 2;
+        column-gap: 12px;
+    }
+
+    .ep-home__cards .ep-card {
+        margin-bottom: 12px;
+    }
+
+    .ep-home__title {
+        font-size: 23px;
+    }
+
+    .ep-home__intro {
+        padding: 28px 22px 24px;
     }
 }

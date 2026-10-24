@@ -3,7 +3,7 @@ $select_category = get_theme_mod('category_first_section_side_settings');
 
 $args = new WP_Query(array(
     'post_type'      => 'post',
-    'posts_per_page' => 5,
+    'posts_per_page' => echo_news_section_count('first_section_side_count_settings', 5, 1, 8),
     'orderby'        => 'date',
     'order'          => 'DESC',
     'tax_query'      => array(

@@ -3,7 +3,7 @@
     $args = new WP_Query(
         array(
             'post_type' => 'post',
-            'posts_per_page' => 10,
+            'posts_per_page' => echo_news_section_count('second_section_count_settings', 10, 3, 20),
             'orderby' => 'date',
             'order' => 'DESC',
             'tax_query' => array(
